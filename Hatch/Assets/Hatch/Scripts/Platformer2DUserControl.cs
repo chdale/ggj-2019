@@ -10,6 +10,8 @@ namespace UnityStandardAssets._2D
         private bool m_Jump;
         private float h;
         private bool ableToJump;
+        public delegate void InteractAction();
+        public static event InteractAction Interact;
 
 
         private void Awake()
@@ -32,6 +34,10 @@ namespace UnityStandardAssets._2D
             if (Input.GetKey(KeyCode.DownArrow))
             {
                 m_Character.DismountLedge();
+            }
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Interact();
             }
         }
 
