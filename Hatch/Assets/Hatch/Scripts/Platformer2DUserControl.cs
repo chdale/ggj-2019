@@ -28,11 +28,15 @@ namespace UnityStandardAssets._2D
         public Spine.AnimationState spineAnimationState;
         public Spine.Skeleton skeleton;
         private string currentAnimationState = "idle";
+        private GameObject interactText;
 
 
         private void Awake()
         {
             m_Character = GetComponent<PlatformerCharacter2D>();
+            GameEventManager.OnEntered += SetInteractTextActive;
+            GameEventManager.OnExited += SetInteractTextInactive;
+            interactText = transform.GetChild(0).gameObject;
             AnimationAwake();
         }
 
@@ -104,6 +108,7 @@ namespace UnityStandardAssets._2D
                 SetAnimationState(0, idleAnimationName, true);
             }
         }
+
         void SetAnimationState(int trackindex, string animationName, bool loop)
         {
             if (currentAnimationState != animationName)
@@ -113,6 +118,16 @@ namespace UnityStandardAssets._2D
                 spineAnimationState.SetAnimation(0, animationName, true);
                 currentAnimationState = animationName;
             }
+        }
+
+        private void SetInteractTextInactive()
+        {
+            interactText.SetActive(false);
+        }
+
+        private void SetInteractTextActive()
+        {
+            interactText.SetActive(true);
         }
     }
 }
