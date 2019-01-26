@@ -156,6 +156,11 @@ Prefab:
       propertyPath: m_Name
       value: Player_Wireframe
       objectReference: {fileID: 0}
+    - target: {fileID: 223732484008961794, guid: 56d57ee7c1d1ae84d8044b35d5b57264,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 799184983
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114300672853045846, guid: 56d57ee7c1d1ae84d8044b35d5b57264, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 56d57ee7c1d1ae84d8044b35d5b57264, type: 2}
