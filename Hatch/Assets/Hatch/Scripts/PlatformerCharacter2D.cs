@@ -34,8 +34,9 @@ namespace UnityStandardAssets._2D
             m_CeilingCheck = transform.Find("CeilingCheck");
             //m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
+            GameEventManager.OnEntered += EnableInteractText;
+            GameEventManager.OnExited += DisableInteractText;
         }
-
 
         private void FixedUpdate()
         {
@@ -151,8 +152,11 @@ namespace UnityStandardAssets._2D
 
             // Multiply the player's x local scale by -1.
             Vector3 theScale = transform.localScale;
+            Vector3 textScale = transform.GetChild(0).localScale;
             theScale.x *= -1;
+            textScale.x *= -1;
             transform.localScale = theScale;
+            transform.GetChild(0).localScale = textScale;
         }
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -164,6 +168,16 @@ namespace UnityStandardAssets._2D
                 ledgeTransform = other.transform;
                 isHanging = true;
             }
+        }
+
+        private void EnableInteractText()
+        {
+            transform.GetChild(0).gameObject.SetActive(true);
+        }
+
+        private void DisableInteractText()
+        {
+            transform.GetChild(0).gameObject.SetActive(false);
         }
         public bool IsGrounded()
         {
