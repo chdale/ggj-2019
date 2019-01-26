@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	120636164	home_1_music			\Default Work Unit\home_1_music	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	391852008	Hatch Home 1	C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\.cache\Windows\SFX\Hatch Home 1_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Hatch Home 1		14680128
+

@@ -15,6 +15,7 @@ namespace AK
     {
         static const AkUniqueID BONE_CRACK = 3507305104U;
         static const AkUniqueID FOOTSTEP = 1866025847U;
+        static const AkUniqueID HOME_1_MUSIC = 120636164U;
         static const AkUniqueID MENU_AMBIENT = 2594531601U;
         static const AkUniqueID MENU_HOVER = 309439191U;
         static const AkUniqueID MENU_SELECT = 4203375351U;

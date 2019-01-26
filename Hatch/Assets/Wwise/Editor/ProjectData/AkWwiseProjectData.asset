@@ -27,7 +27,7 @@ MonoBehaviour:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 4df1cb7e1dce26469b128d193ed73c16
-    m_lastTime: -8586530727923817278
+    m_lastTime: -8586530698268891382
     List:
     - name: Hatch_Home
       guid: 787fdd267a4bc1448633a98a57e4c2d9
@@ -60,7 +60,7 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: d491df99fbff8c4f8dcacf5e9579f040
-    m_lastTime: -8586530727924096533
+    m_lastTime: -8586530698268595710
     List:
     - name: bone_crack
       guid: 99448a71ec4c514a8791842a4debee8a
@@ -83,6 +83,18 @@ MonoBehaviour:
       - ElementName: footstep
         ObjectType: 3
       Path: Default Work Unit\footstep
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: home_1_music
+      guid: 7423e0c85e25c742aea66efc3465a361
+      id: 120636164
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: home_1_music
+        ObjectType: 3
+      Path: Default Work Unit\home_1_music
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -184,5 +196,9 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /Hatch_WwiseProject
+  - /Hatch_WwiseProject/Events
+  - /Hatch_WwiseProject/Events/Default Work Unit
+  - /Hatch_WwiseProject/SoundBanks
+  - /Hatch_WwiseProject/SoundBanks/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

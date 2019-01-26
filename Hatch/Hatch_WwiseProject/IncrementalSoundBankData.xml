@@ -3,6 +3,7 @@
 	<Platform GUID="{A19FA255-D51D-43D5-94A3-CD9DB32DF157}">
 		<Banks>
 			<Language ID="393239870">
+				<File Name="Hatch_Home" Hash="1844388061" Timestamp="1548537052"/>
 				<File Name="Init" Hash="3121226777" Timestamp="1548534086"/>
 				<File Name="Title_Screen" Hash="2305775730" Timestamp="1548534086"/>
 				<File Name="Tunnel" Hash="3044097786" Timestamp="1548534086"/>
@@ -10,7 +11,22 @@
 		</Banks>
 		<XMLInfo>
 			<Language ID="-1">
-				<File Name="" Hash="496170986" Timestamp="1548534086"/>
+				<File Name="" Hash="2574244701" Timestamp="1548537052"/>
+			</Language>
+		</XMLInfo>
+	</Platform>
+	<Platform GUID="{AEAEA9E4-57A6-4A2C-885F-24478A62FE40}">
+		<Banks>
+			<Language ID="393239870">
+				<File Name="Hatch_Home" Hash="1844388061" Timestamp="1548537052"/>
+				<File Name="Init" Hash="872944895" Timestamp="1548537052"/>
+				<File Name="Title_Screen" Hash="2305775730" Timestamp="1548537052"/>
+				<File Name="Tunnel" Hash="3044097786" Timestamp="1548537052"/>
+			</Language>
+		</Banks>
+		<XMLInfo>
+			<Language ID="-1">
+				<File Name="" Hash="822649151" Timestamp="1548537052"/>
 			</Language>
 		</XMLInfo>
 	</Platform>

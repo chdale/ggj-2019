@@ -15,6 +15,15 @@
 			<ObjectPath>\SoundBanks\Default Work Unit\Hatch_Home</ObjectPath>
 			<ShortName>Hatch_Home</ShortName>
 			<Path>Hatch_Home.bnk</Path>
+			<IncludedEvents>
+				<Event Id="120636164" Name="home_1_music" ObjectPath="\Events\Default Work Unit\home_1_music"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="391852008" Language="SFX">
+					<ShortName>Hatch Home 1.wav</ShortName>
+					<Path>SFX\Hatch Home 1_56D34C19.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
 		</SoundBank>
 		<SoundBank Id="1355168291" Language="SFX">
 			<ObjectPath>Init</ObjectPath>

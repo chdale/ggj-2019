@@ -27,7 +27,9 @@
 					<GameSyncExclusionList/>
 				</SoundBank>
 				<SoundBank Name="Hatch_Home" ID="{26DD7F78-4B7A-44C1-8633-A98A57E4C2D9}">
-					<ObjectInclusionList/>
+					<ObjectInclusionList>
+						<ObjectRef Name="home_1_music" ID="{C8E02374-255E-42C7-AEA6-6EFC3465A361}" WorkUnitID="{99DF91D4-FFFB-4F8C-8DCA-CF5E9579F040}" Filter="7" Origin="Manual"/>
+					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
 				</SoundBank>

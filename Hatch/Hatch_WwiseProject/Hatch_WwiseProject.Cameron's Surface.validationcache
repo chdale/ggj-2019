@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ValidationCache Version="1" SchemaVersion="89">
-	<ValidationCacheItem File="C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1548528870" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1548534093" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\Attenuations\Default Work Unit.wwu" DateLow="1548528870" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\Audio Devices\Default Work Unit.wwu" DateLow="1548528870" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\Control Surface Sessions\Default Work Unit.wwu" DateLow="1548528870" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\Control Surface Sessions\Default Work Unit.wwu" DateLow="1548534093" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\Conversion Settings\Default Work Unit.wwu" DateLow="1548528870" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\Conversion Settings\Factory Conversion Settings.wwu" DateLow="1548528870" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\Dynamic Dialogue\Default Work Unit.wwu" DateLow="1548528870" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\Effects\Default Work Unit.wwu" DateLow="1548528870" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\Effects\Factory Effects.wwu" DateLow="1548528870" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\Events\Default Work Unit.wwu" DateLow="1548528870" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\Events\Default Work Unit.wwu" DateLow="1548534093" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\Game Parameters\Default Work Unit.wwu" DateLow="1548528870" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\Hatch_WwiseProject.Cameron's Surface.wsettings" DateLow="1548534094" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\Hatch_WwiseProject.wproj" DateLow="1548528870" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="1548528870" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\Master-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1548528870" DateHigh="0"/>
@@ -19,7 +20,7 @@
 	<ValidationCacheItem File="C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\Presets\Default Work Unit.wwu" DateLow="1548528870" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\Queries\Default Work Unit.wwu" DateLow="1548528870" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\Queries\Factory Queries.wwu" DateLow="1548528870" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\SoundBanks\Default Work Unit.wwu" DateLow="1548528870" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\SoundBanks\Default Work Unit.wwu" DateLow="1548534093" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\Soundcaster Sessions\Default Work Unit.wwu" DateLow="1548528870" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\States\Default Work Unit.wwu" DateLow="1548528870" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\Switches\Default Work Unit.wwu" DateLow="1548528870" DateHigh="0"/>

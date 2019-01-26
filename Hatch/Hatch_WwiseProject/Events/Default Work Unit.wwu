@@ -115,6 +115,20 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="home_1_music" ID="{C8E02374-255E-42C7-AEA6-6EFC3465A361}">
+					<ChildrenList>
+						<Action Name="" ID="{D918C81B-9938-4030-9C76-AB7E47C286AE}" ShortID="165669102">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Hatch Home 1" ID="{7D9CCB40-ECB2-416F-BAA4-1F180FEC5AB6}" WorkUnitID="{63AD1155-349B-408E-A0AD-9EB90F75F835}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
