@@ -165,5 +165,9 @@ namespace UnityStandardAssets._2D
                 isHanging = true;
             }
         }
+        public bool IsGrounded()
+        {
+            return m_Grounded;
+        }
     }
 }

@@ -1,9 +1,11 @@
+using Spine.Unity;
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace UnityStandardAssets._2D
 {
-    [RequireComponent(typeof (PlatformerCharacter2D))]
+    [RequireComponent(typeof(PlatformerCharacter2D))]
     public class Platformer2DUserControl : MonoBehaviour
     {
         private PlatformerCharacter2D m_Character;
@@ -11,10 +13,32 @@ namespace UnityStandardAssets._2D
         private float h;
         private bool ableToJump;
 
+        // Animation
+
+        [SpineAnimation]
+        public string idleAnimationName;
+        [SpineAnimation]
+        public string walkAnimationName;
+        [SpineAnimation]
+        public string jumpAnimationName;
+
+        SkeletonAnimation skeletonAnimation;
+        public Spine.AnimationState spineAnimationState;
+        public Spine.Skeleton skeleton;
+        private string currentAnimationState = "idle";
+
 
         private void Awake()
         {
             m_Character = GetComponent<PlatformerCharacter2D>();
+            AnimationAwake();
+        }
+
+        private void AnimationAwake()
+        {
+            skeletonAnimation = GameObject.Find("PlayerAnim").GetComponent<SkeletonAnimation>();
+            spineAnimationState = skeletonAnimation.AnimationState;
+            skeleton = skeletonAnimation.Skeleton;
         }
 
 
@@ -53,9 +77,34 @@ namespace UnityStandardAssets._2D
                 h = 0.0f;
             }
             // Pass all parameters to the character control script.
-            
+
             m_Character.Move(h, crouch, m_Jump);
+            AnimationUpdate();
             m_Jump = false;
+        }
+
+        void AnimationUpdate()
+        {
+            if (!m_Character.IsGrounded())
+            {
+                SetAnimationState(0, jumpAnimationName, true);
+            }
+            else if (Math.Abs(h) > 0)
+            {
+                SetAnimationState(0, walkAnimationName, true);
+            }
+            else
+            {
+                SetAnimationState(0, idleAnimationName, true);
+            }
+        }
+        void SetAnimationState(int trackindex, string animationName, bool loop)
+        {
+            if (currentAnimationState != animationName)
+            {
+                spineAnimationState.SetAnimation(0, animationName, true);
+                currentAnimationState = animationName;
+            }
         }
     }
 }
