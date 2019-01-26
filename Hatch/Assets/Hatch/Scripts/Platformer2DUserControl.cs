@@ -57,22 +57,5 @@ namespace UnityStandardAssets._2D
             m_Character.Move(h, crouch, m_Jump);
             m_Jump = false;
         }
-
-        //private void OnCollisionStay2D(Collision2D collision)
-        //{
-        //    if (collision.gameObject.layer == 8)
-        //    {
-        //        ableToJump = true;
-        //    }
-        //    else
-        //    {
-        //        ableToJump = false;
-        //    }
-        //}
-
-        //private void OnCollisionExit2D(Collision2D collision)
-        //{
-        //    ableToJump = false;
-        //}
     }
 }
