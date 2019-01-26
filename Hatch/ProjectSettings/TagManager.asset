@@ -54,3 +54,12 @@ TagManager:
   - name: Foreground
     uniqueID: 3179986539
     locked: 0
+  - name: UI Container
+    uniqueID: 2407055857
+    locked: 0
+  - name: UI FX
+    uniqueID: 4060982249
+    locked: 0
+  - name: UI Text
+    uniqueID: 799184983
+    locked: 0
