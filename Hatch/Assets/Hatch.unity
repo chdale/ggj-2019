@@ -353,6 +353,11 @@ Prefab:
       propertyPath: jumpAnimationName
       value: jump
       objectReference: {fileID: 0}
+    - target: {fileID: 114384793853011188, guid: 56d57ee7c1d1ae84d8044b35d5b57264,
+        type: 2}
+      propertyPath: skeletonAnimation
+      value: 
+      objectReference: {fileID: 99957008}
     m_RemovedComponents:
     - {fileID: 212522532282759204, guid: 56d57ee7c1d1ae84d8044b35d5b57264, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 56d57ee7c1d1ae84d8044b35d5b57264, type: 2}
@@ -488,7 +493,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 889603257}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -19.015, y: -3.285, z: 0}
+  m_LocalPosition: {x: -19.015, y: -4.64, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 536716251}

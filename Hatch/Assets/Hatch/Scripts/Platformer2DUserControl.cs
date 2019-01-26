@@ -22,7 +22,7 @@ namespace UnityStandardAssets._2D
         [SpineAnimation]
         public string jumpAnimationName;
 
-        SkeletonAnimation skeletonAnimation;
+        public SkeletonAnimation skeletonAnimation;
         public Spine.AnimationState spineAnimationState;
         public Spine.Skeleton skeleton;
         private string currentAnimationState = "idle";
@@ -102,6 +102,8 @@ namespace UnityStandardAssets._2D
         {
             if (currentAnimationState != animationName)
             {
+                skeletonAnimation = GameObject.Find("PlayerAnim").GetComponent<SkeletonAnimation>();
+                spineAnimationState = skeletonAnimation.AnimationState;
                 spineAnimationState.SetAnimation(0, animationName, true);
                 currentAnimationState = animationName;
             }
