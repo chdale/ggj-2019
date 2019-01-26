@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="132">
+	<RootPaths>
+		<ProjectRoot>C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1273277481" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Hatch_Home</ObjectPath>
+			<ShortName>Hatch_Home</ShortName>
+			<Path>Hatch_Home.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="3059984139" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Tunnel</ObjectPath>
+			<ShortName>Tunnel</ShortName>
+			<Path>Tunnel.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3507305104" Name="bone_crack" ObjectPath="\Events\Default Work Unit\bone_crack"/>
+				<Event Id="1866025847" Name="footstep" ObjectPath="\Events\Default Work Unit\footstep"/>
+				<Event Id="309439191" Name="menu_hover" ObjectPath="\Events\Default Work Unit\menu_hover"/>
+				<Event Id="4203375351" Name="menu_select" ObjectPath="\Events\Default Work Unit\menu_select"/>
+				<Event Id="3281176347" Name="opening_sfx" ObjectPath="\Events\Default Work Unit\opening_sfx"/>
+				<Event Id="952565488" Name="pause_ambient" ObjectPath="\Events\Default Work Unit\pause_ambient"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="40723580" Language="SFX">
+					<ShortName>Bounced Files\Footstep SFX.wav</ShortName>
+					<Path>SFX\Bounced Files\Footstep SFX_56D34C19.wem</Path>
+				</File>
+				<File Id="460888108" Language="SFX">
+					<ShortName>Bounced Files\Menu Select SFX.wav</ShortName>
+					<Path>SFX\Bounced Files\Menu Select SFX_56D34C19.wem</Path>
+				</File>
+				<File Id="531495778" Language="SFX">
+					<ShortName>Bounced Files\Start Game Crash SFX.wav</ShortName>
+					<Path>SFX\Bounced Files\Start Game Crash SFX_56D34C19.wem</Path>
+				</File>
+				<File Id="602113896" Language="SFX">
+					<ShortName>Bounced Files\Menu Hover SFX.wav</ShortName>
+					<Path>SFX\Bounced Files\Menu Hover SFX_56D34C19.wem</Path>
+				</File>
+				<File Id="710953346" Language="SFX">
+					<ShortName>Bounced Files\Pause SFX.wav</ShortName>
+					<Path>SFX\Bounced Files\Pause SFX_56D34C19.wem</Path>
+				</File>
+				<File Id="874410311" Language="SFX">
+					<ShortName>Bounced Files\Bone Reset SFX.wav</ShortName>
+					<Path>SFX\Bounced Files\Bone Reset SFX_56D34C19.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+		<SoundBank Id="3853285476" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Title_Screen</ObjectPath>
+			<ShortName>Title_Screen</ShortName>
+			<Path>Title_Screen.bnk</Path>
+			<IncludedEvents>
+				<Event Id="2594531601" Name="menu_ambient" ObjectPath="\Events\Default Work Unit\menu_ambient"/>
+				<Event Id="309439191" Name="menu_hover" ObjectPath="\Events\Default Work Unit\menu_hover"/>
+				<Event Id="4203375351" Name="menu_select" ObjectPath="\Events\Default Work Unit\menu_select"/>
+				<Event Id="3281176347" Name="opening_sfx" ObjectPath="\Events\Default Work Unit\opening_sfx"/>
+				<Event Id="1267737896" Name="start_game_music" ObjectPath="\Events\Default Work Unit\start_game_music"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="20151318" Language="SFX">
+					<ShortName>Bounced Files\Start Game SFX.wav</ShortName>
+					<Path>SFX\Bounced Files\Start Game SFX_56D34C19.wem</Path>
+				</File>
+				<File Id="460888108" Language="SFX">
+					<ShortName>Bounced Files\Menu Select SFX.wav</ShortName>
+					<Path>SFX\Bounced Files\Menu Select SFX_56D34C19.wem</Path>
+				</File>
+				<File Id="531495778" Language="SFX">
+					<ShortName>Bounced Files\Start Game Crash SFX.wav</ShortName>
+					<Path>SFX\Bounced Files\Start Game Crash SFX_56D34C19.wem</Path>
+				</File>
+				<File Id="602113896" Language="SFX">
+					<ShortName>Bounced Files\Menu Hover SFX.wav</ShortName>
+					<Path>SFX\Bounced Files\Menu Hover SFX_56D34C19.wem</Path>
+				</File>
+				<File Id="813256043" Language="SFX">
+					<ShortName>Bounced Files\Ambient Title Screen SFX.wav</ShortName>
+					<Path>SFX\Bounced Files\Ambient Title Screen SFX_56D34C19.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

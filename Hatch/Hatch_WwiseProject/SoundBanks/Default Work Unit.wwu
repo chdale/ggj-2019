@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{7ECBF14D-CE1D-4626-9B12-8D193ED73C16}" SchemaVersion="89">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{7ECBF14D-CE1D-4626-9B12-8D193ED73C16}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Title_Screen" ID="{157B1C68-647D-4D82-93D0-AEA57A18959B}">
+					<ObjectInclusionList>
+						<ObjectRef Name="menu_ambient" ID="{3AC879B2-8365-4346-A07D-B0A7D2A07E54}" WorkUnitID="{99DF91D4-FFFB-4F8C-8DCA-CF5E9579F040}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="menu_hover" ID="{9DD88DEF-B238-451D-9FE8-5DE290222C5A}" WorkUnitID="{99DF91D4-FFFB-4F8C-8DCA-CF5E9579F040}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="opening_sfx" ID="{7E27006E-49A7-47DA-AA27-BED13DC372C0}" WorkUnitID="{99DF91D4-FFFB-4F8C-8DCA-CF5E9579F040}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="start_game_music" ID="{9E2FC43C-ED00-4A00-B20E-7415947EAD88}" WorkUnitID="{99DF91D4-FFFB-4F8C-8DCA-CF5E9579F040}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="menu_select" ID="{01B27DE4-40B4-4C1B-B58F-D522D815E513}" WorkUnitID="{99DF91D4-FFFB-4F8C-8DCA-CF5E9579F040}" Filter="7" Origin="Manual"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+				<SoundBank Name="Tunnel" ID="{6B6BFACA-04DE-4660-8E75-EBB04C468865}">
+					<ObjectInclusionList>
+						<ObjectRef Name="footstep" ID="{934395CE-671E-401D-B248-BF1B171E2E70}" WorkUnitID="{99DF91D4-FFFB-4F8C-8DCA-CF5E9579F040}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="pause_ambient" ID="{3DF3040E-76B0-40E6-B37A-2F40CA7CEFA9}" WorkUnitID="{99DF91D4-FFFB-4F8C-8DCA-CF5E9579F040}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="menu_hover" ID="{9DD88DEF-B238-451D-9FE8-5DE290222C5A}" WorkUnitID="{99DF91D4-FFFB-4F8C-8DCA-CF5E9579F040}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="opening_sfx" ID="{7E27006E-49A7-47DA-AA27-BED13DC372C0}" WorkUnitID="{99DF91D4-FFFB-4F8C-8DCA-CF5E9579F040}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="bone_crack" ID="{718A4499-4CEC-4A51-8791-842A4DEBEE8A}" WorkUnitID="{99DF91D4-FFFB-4F8C-8DCA-CF5E9579F040}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="menu_select" ID="{01B27DE4-40B4-4C1B-B58F-D522D815E513}" WorkUnitID="{99DF91D4-FFFB-4F8C-8DCA-CF5E9579F040}" Filter="7" Origin="Manual"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+				<SoundBank Name="Hatch_Home" ID="{26DD7F78-4B7A-44C1-8633-A98A57E4C2D9}">
+					<ObjectInclusionList/>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

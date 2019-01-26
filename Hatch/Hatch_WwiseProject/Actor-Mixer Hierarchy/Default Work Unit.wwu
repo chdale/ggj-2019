@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{63AD1155-349B-408E-A0AD-9EB90F75F835}" SchemaVersion="89">
+	<AudioObjects>
+		<WorkUnit Name="Default Work Unit" ID="{63AD1155-349B-408E-A0AD-9EB90F75F835}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="Bounced Files" ID="{FC494B8D-DB5E-47EE-806D-E4E2E31D51D5}" ShortID="251551946">
+					<ChildrenList>
+						<Sound Name="Ambient Dusty Dirt SFX" ID="{2C4A6667-CB49-4824-AFB4-256071D07CB0}" ShortID="219183512">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C8FB9902-BF48-4A4B-9DDB-5D016C697E66}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{04AE9051-A1AE-4B37-8788-20435135F272}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Ambient Dusty Dirt SFX" ID="{6D5EDF1A-EB73-4B28-8E1D-DF01254AF27E}" ShortID="848140546">
+									<Language>SFX</Language>
+									<AudioFile>Bounced Files\Ambient Dusty Dirt SFX.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Ambient Dusty Dirt SFX" ID="{6D5EDF1A-EB73-4B28-8E1D-DF01254AF27E}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Ambient Title Screen SFX" ID="{C45974B4-E849-4C2B-89DE-CE12E9DB5F31}" ShortID="260824038">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C8FB9902-BF48-4A4B-9DDB-5D016C697E66}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{04AE9051-A1AE-4B37-8788-20435135F272}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Ambient Title Screen SFX" ID="{1F9F895B-B6A1-49DE-9966-D8D1CDD07107}" ShortID="813256043">
+									<Language>SFX</Language>
+									<AudioFile>Bounced Files\Ambient Title Screen SFX.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Ambient Title Screen SFX" ID="{1F9F895B-B6A1-49DE-9966-D8D1CDD07107}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Bone Reset SFX" ID="{08D7F839-2DF5-4AA9-94DC-61D207966B4A}" ShortID="408829520">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C8FB9902-BF48-4A4B-9DDB-5D016C697E66}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{04AE9051-A1AE-4B37-8788-20435135F272}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Bone Reset SFX" ID="{C06E2A55-94A2-4632-AB96-6D732932E522}" ShortID="874410311">
+									<Language>SFX</Language>
+									<AudioFile>Bounced Files\Bone Reset SFX.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Bone Reset SFX" ID="{C06E2A55-94A2-4632-AB96-6D732932E522}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Footstep SFX" ID="{3C66C3B3-CE37-4048-8541-A59B24DD2A42}" ShortID="459441939">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{2D39A995-F648-4B75-8ABC-4ADD00275561}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="682"/>
+													<Property Name="Min" Type="Real64" Value="-126"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C8FB9902-BF48-4A4B-9DDB-5D016C697E66}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{04AE9051-A1AE-4B37-8788-20435135F272}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Footstep SFX" ID="{1A273217-5D5E-4671-A0F1-C51DAAE97937}" ShortID="40723580">
+									<Language>SFX</Language>
+									<AudioFile>Bounced Files\Footstep SFX.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Footstep SFX" ID="{1A273217-5D5E-4671-A0F1-C51DAAE97937}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Menu Hover SFX" ID="{ECFE8DC3-5B87-4990-9FA1-8AA87405B066}" ShortID="901602972">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C8FB9902-BF48-4A4B-9DDB-5D016C697E66}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{04AE9051-A1AE-4B37-8788-20435135F272}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Menu Hover SFX" ID="{31ECD3BD-A779-4807-99C7-90473AE9D6FD}" ShortID="602113896">
+									<Language>SFX</Language>
+									<AudioFile>Bounced Files\Menu Hover SFX.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Menu Hover SFX" ID="{31ECD3BD-A779-4807-99C7-90473AE9D6FD}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Menu Select SFX" ID="{AECC054E-0D6B-4F38-80E9-E23D94B84D7D}" ShortID="281731101">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C8FB9902-BF48-4A4B-9DDB-5D016C697E66}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{04AE9051-A1AE-4B37-8788-20435135F272}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Menu Select SFX" ID="{85143E19-83CC-4BEC-9072-F042AA33BB3B}" ShortID="460888108">
+									<Language>SFX</Language>
+									<AudioFile>Bounced Files\Menu Select SFX.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Menu Select SFX" ID="{85143E19-83CC-4BEC-9072-F042AA33BB3B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Metal Screech SFX" ID="{F7312B11-46A2-45F4-AE81-3357596DCFDB}" ShortID="675584847">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C8FB9902-BF48-4A4B-9DDB-5D016C697E66}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{04AE9051-A1AE-4B37-8788-20435135F272}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Metal Screech SFX" ID="{8CCC6D23-E6F7-48EE-8691-EAA397029839}" ShortID="26839457">
+									<Language>SFX</Language>
+									<AudioFile>Bounced Files\Metal Screech SFX.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Metal Screech SFX" ID="{8CCC6D23-E6F7-48EE-8691-EAA397029839}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Pause SFX" ID="{830B7A5E-E648-4E4A-81AD-C2EBA67642FD}" ShortID="354573551">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C8FB9902-BF48-4A4B-9DDB-5D016C697E66}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{04AE9051-A1AE-4B37-8788-20435135F272}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Pause SFX" ID="{84EE589B-A281-4B04-84CE-5C9D16B53060}" ShortID="710953346">
+									<Language>SFX</Language>
+									<AudioFile>Bounced Files\Pause SFX.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Pause SFX" ID="{84EE589B-A281-4B04-84CE-5C9D16B53060}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Start Game Crash SFX" ID="{E2CB6F40-660F-4A96-B3C5-C3677639DA13}" ShortID="1058976991">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C8FB9902-BF48-4A4B-9DDB-5D016C697E66}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{04AE9051-A1AE-4B37-8788-20435135F272}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Start Game Crash SFX" ID="{73C257FE-B1D3-4FB2-8F3D-126AB2AAFCD8}" ShortID="531495778">
+									<Language>SFX</Language>
+									<AudioFile>Bounced Files\Start Game Crash SFX.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Start Game Crash SFX" ID="{73C257FE-B1D3-4FB2-8F3D-126AB2AAFCD8}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Start Game SFX" ID="{B0E178AB-DB17-4F05-9E76-6EB881EF647C}" ShortID="798157016">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C8FB9902-BF48-4A4B-9DDB-5D016C697E66}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{04AE9051-A1AE-4B37-8788-20435135F272}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Start Game SFX" ID="{F6B4296F-43F3-4B31-A257-D1F0ECC10575}" ShortID="20151318">
+									<Language>SFX</Language>
+									<AudioFile>Bounced Files\Start Game SFX.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Start Game SFX" ID="{F6B4296F-43F3-4B31-A257-D1F0ECC10575}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Subway Rumble SFX" ID="{A63EE851-D620-4543-9ADA-0A427072ECDF}" ShortID="563233637">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C8FB9902-BF48-4A4B-9DDB-5D016C697E66}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{04AE9051-A1AE-4B37-8788-20435135F272}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Subway Rumble SFX" ID="{A493D7C0-A1AA-4A79-B580-88185C12D65B}" ShortID="360322292">
+									<Language>SFX</Language>
+									<AudioFile>Bounced Files\Subway Rumble SFX.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Subway Rumble SFX" ID="{A493D7C0-A1AA-4A79-B580-88185C12D65B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

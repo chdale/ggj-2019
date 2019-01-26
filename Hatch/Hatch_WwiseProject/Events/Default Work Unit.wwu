@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{99DF91D4-FFFB-4F8C-8DCA-CF5E9579F040}" SchemaVersion="89">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{99DF91D4-FFFB-4F8C-8DCA-CF5E9579F040}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="menu_hover" ID="{9DD88DEF-B238-451D-9FE8-5DE290222C5A}">
+					<ChildrenList>
+						<Action Name="" ID="{73742158-FC38-463E-A0A9-CB988E050139}" ShortID="108343944">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Menu Hover SFX" ID="{ECFE8DC3-5B87-4990-9FA1-8AA87405B066}" WorkUnitID="{63AD1155-349B-408E-A0AD-9EB90F75F835}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="menu_select" ID="{01B27DE4-40B4-4C1B-B58F-D522D815E513}">
+					<ChildrenList>
+						<Action Name="" ID="{C87F0793-D1AB-4095-AC8A-F536CB269381}" ShortID="1016604632">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Menu Select SFX" ID="{AECC054E-0D6B-4F38-80E9-E23D94B84D7D}" WorkUnitID="{63AD1155-349B-408E-A0AD-9EB90F75F835}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="start_game_music" ID="{9E2FC43C-ED00-4A00-B20E-7415947EAD88}">
+					<ChildrenList>
+						<Action Name="" ID="{392A333E-5332-4B9F-BEC1-B67495E6C6EB}" ShortID="990168048">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Start Game SFX" ID="{B0E178AB-DB17-4F05-9E76-6EB881EF647C}" WorkUnitID="{63AD1155-349B-408E-A0AD-9EB90F75F835}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="opening_sfx" ID="{7E27006E-49A7-47DA-AA27-BED13DC372C0}">
+					<ChildrenList>
+						<Action Name="" ID="{29A57E66-CEA7-4A54-9118-1AEEB3FD3DD4}" ShortID="374600094">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Start Game Crash SFX" ID="{E2CB6F40-660F-4A96-B3C5-C3677639DA13}" WorkUnitID="{63AD1155-349B-408E-A0AD-9EB90F75F835}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="menu_ambient" ID="{3AC879B2-8365-4346-A07D-B0A7D2A07E54}">
+					<ChildrenList>
+						<Action Name="" ID="{E653F5A2-6133-4978-BAB8-4DE2DB4FD13A}" ShortID="1032562457">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Ambient Title Screen SFX" ID="{C45974B4-E849-4C2B-89DE-CE12E9DB5F31}" WorkUnitID="{63AD1155-349B-408E-A0AD-9EB90F75F835}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="pause_ambient" ID="{3DF3040E-76B0-40E6-B37A-2F40CA7CEFA9}">
+					<ChildrenList>
+						<Action Name="" ID="{1F438C7E-E6D6-4A52-A069-88B8808AA321}" ShortID="769443354">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Pause SFX" ID="{830B7A5E-E648-4E4A-81AD-C2EBA67642FD}" WorkUnitID="{63AD1155-349B-408E-A0AD-9EB90F75F835}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="footstep" ID="{934395CE-671E-401D-B248-BF1B171E2E70}">
+					<ChildrenList>
+						<Action Name="" ID="{3E16CB49-0F43-4332-AFD4-0B54DB3368A9}" ShortID="753732789">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Footstep SFX" ID="{3C66C3B3-CE37-4048-8541-A59B24DD2A42}" WorkUnitID="{63AD1155-349B-408E-A0AD-9EB90F75F835}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="bone_crack" ID="{718A4499-4CEC-4A51-8791-842A4DEBEE8A}">
+					<ChildrenList>
+						<Action Name="" ID="{F5E6E5D1-50EA-4045-BDF3-CBF63298D383}" ShortID="307930234">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Bone Reset SFX" ID="{08D7F839-2DF5-4AA9-94DC-61D207966B4A}" WorkUnitID="{63AD1155-349B-408E-A0AD-9EB90F75F835}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

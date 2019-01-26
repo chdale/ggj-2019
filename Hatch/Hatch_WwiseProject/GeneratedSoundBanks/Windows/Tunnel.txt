@@ -1,0 +1,16 @@
+Event	ID	Name			Wwise Object Path	Notes
+	309439191	menu_hover			\Default Work Unit\menu_hover	
+	952565488	pause_ambient			\Default Work Unit\pause_ambient	
+	1866025847	footstep			\Default Work Unit\footstep	
+	3281176347	opening_sfx			\Default Work Unit\opening_sfx	
+	3507305104	bone_crack			\Default Work Unit\bone_crack	
+	4203375351	menu_select			\Default Work Unit\menu_select	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	40723580	Footstep SFX	C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\.cache\Windows\SFX\Bounced Files\Footstep SFX_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bounced Files\Footstep SFX		202816
+	460888108	Menu Select SFX	C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\.cache\Windows\SFX\Bounced Files\Menu Select SFX_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bounced Files\Menu Select SFX		397376
+	531495778	Start Game Crash SFX	C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\.cache\Windows\SFX\Bounced Files\Start Game Crash SFX_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bounced Files\Start Game Crash SFX		3539008
+	602113896	Menu Hover SFX	C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\.cache\Windows\SFX\Bounced Files\Menu Hover SFX_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bounced Files\Menu Hover SFX		405568
+	710953346	Pause SFX	C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\.cache\Windows\SFX\Bounced Files\Pause SFX_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bounced Files\Pause SFX		10434292
+	874410311	Bone Reset SFX	C:\Users\Cameron's Surface\Documents\GitHub\ggj-2019\Hatch\Hatch_WwiseProject\.cache\Windows\SFX\Bounced Files\Bone Reset SFX_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bounced Files\Bone Reset SFX		54592
+

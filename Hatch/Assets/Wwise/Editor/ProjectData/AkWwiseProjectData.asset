@@ -1,0 +1,188 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ea99e39af609d42a0523b8be8e12f9, type: 3}
+  m_Name: AkWwiseProjectData
+  m_EditorClassIdentifier: 
+  AcousticTextureWwu:
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 78c311c54967af46bd7326ff97a046ed
+    m_lastTime: -8586530780150633927
+    List: []
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 5190ae04aea1374b878820435135f272
+    m_lastTime: -8586530780151770881
+    List: []
+  BankWwu:
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 4df1cb7e1dce26469b128d193ed73c16
+    m_lastTime: -8586530727923817278
+    List:
+    - name: Hatch_Home
+      guid: 787fdd267a4bc1448633a98a57e4c2d9
+      id: 1273277481
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Hatch_Home
+        ObjectType: 7
+      Path: Default Work Unit\Hatch_Home
+    - name: Title_Screen
+      guid: 681c7b157d64824d93d0aea57a18959b
+      id: 3853285476
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Title_Screen
+        ObjectType: 7
+      Path: Default Work Unit\Title_Screen
+    - name: Tunnel
+      guid: cafa6b6bde0460468e75ebb04c468865
+      id: 3059984139
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Tunnel
+        ObjectType: 7
+      Path: Default Work Unit\Tunnel
+  EventWwu:
+  - PhysicalPath: Events\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: d491df99fbff8c4f8dcacf5e9579f040
+    m_lastTime: -8586530727924096533
+    List:
+    - name: bone_crack
+      guid: 99448a71ec4c514a8791842a4debee8a
+      id: 3507305104
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: bone_crack
+        ObjectType: 3
+      Path: Default Work Unit\bone_crack
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: footstep
+      guid: ce9543931e671d40b248bf1b171e2e70
+      id: 1866025847
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: footstep
+        ObjectType: 3
+      Path: Default Work Unit\footstep
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: menu_ambient
+      guid: b279c83a65834643a07db0a7d2a07e54
+      id: 2594531601
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: menu_ambient
+        ObjectType: 3
+      Path: Default Work Unit\menu_ambient
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: menu_hover
+      guid: ef8dd89d38b21d459fe85de290222c5a
+      id: 309439191
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: menu_hover
+        ObjectType: 3
+      Path: Default Work Unit\menu_hover
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: menu_select
+      guid: e47db201b4401b4cb58fd522d815e513
+      id: 4203375351
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: menu_select
+        ObjectType: 3
+      Path: Default Work Unit\menu_select
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: opening_sfx
+      guid: 6e00277ea749da47aa27bed13dc372c0
+      id: 3281176347
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: opening_sfx
+        ObjectType: 3
+      Path: Default Work Unit\opening_sfx
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: pause_ambient
+      guid: 0e04f33db076e640b37a2f40ca7cefa9
+      id: 952565488
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: pause_ambient
+        ObjectType: 3
+      Path: Default Work Unit\pause_ambient
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: start_game_music
+      guid: 3cc42f9e00ed004ab20e7415947ead88
+      id: 1267737896
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: start_game_music
+        ObjectType: 3
+      Path: Default Work Unit\start_game_music
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+  RtpcWwu:
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 0cd1220d64332944923ee90bf2c508a4
+    m_lastTime: -8586530780151960373
+    List: []
+  StateWwu:
+  - PhysicalPath: States\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 69097d6a78d8f441bab8e6eec8901836
+    m_lastTime: -8586530780151062757
+    List: []
+  SwitchWwu:
+  - PhysicalPath: Switches\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 7decfd9658c1d94ab681ffe0ca22198a
+    m_lastTime: -8586530780150833384
+    List: []
+  TriggerWwu:
+  - PhysicalPath: Triggers\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 15de069e8a5a754e85a2ddb88a917a69
+    m_lastTime: -8586530780150753601
+    List: []
+  ExpandedItems:
+  - /Hatch_WwiseProject
+  autoPopulateEnabled: 1
+  CurrentPluginConfig: 
