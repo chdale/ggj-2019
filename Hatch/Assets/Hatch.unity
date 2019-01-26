@@ -156,7 +156,8 @@ Prefab:
       propertyPath: m_Name
       value: Player_Wireframe
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114300672853045846, guid: 56d57ee7c1d1ae84d8044b35d5b57264, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 56d57ee7c1d1ae84d8044b35d5b57264, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &306627569 stripped
@@ -207,7 +208,7 @@ Prefab:
         type: 2}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 306627569}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7fe44c9844f1504185dd5882d5b84fe, type: 2}
   m_IsPrefabParent: 0
