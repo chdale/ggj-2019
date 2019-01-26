@@ -179,5 +179,9 @@ namespace UnityStandardAssets._2D
         {
             transform.GetChild(0).gameObject.SetActive(false);
         }
+        public bool IsGrounded()
+        {
+            return m_Grounded;
+        }
     }
 }

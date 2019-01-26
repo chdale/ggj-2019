@@ -1,9 +1,11 @@
+using Spine.Unity;
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace UnityStandardAssets._2D
 {
-    [RequireComponent(typeof (PlatformerCharacter2D))]
+    [RequireComponent(typeof(PlatformerCharacter2D))]
     public class Platformer2DUserControl : MonoBehaviour
     {
         private PlatformerCharacter2D m_Character;
@@ -13,10 +15,36 @@ namespace UnityStandardAssets._2D
         public delegate void InteractAction();
         public static event InteractAction Interact;
 
+        // Animation
+
+        [SpineAnimation]
+        public string idleAnimationName;
+        [SpineAnimation]
+        public string walkAnimationName;
+        [SpineAnimation]
+        public string jumpAnimationName;
+
+        public SkeletonAnimation skeletonAnimation;
+        public Spine.AnimationState spineAnimationState;
+        public Spine.Skeleton skeleton;
+        private string currentAnimationState = "idle";
+        private GameObject interactText;
+
 
         private void Awake()
         {
             m_Character = GetComponent<PlatformerCharacter2D>();
+            GameEventManager.OnEntered += SetInteractTextActive;
+            GameEventManager.OnExited += SetInteractTextInactive;
+            interactText = transform.GetChild(0).gameObject;
+            AnimationAwake();
+        }
+
+        private void AnimationAwake()
+        {
+            skeletonAnimation = GameObject.Find("PlayerAnim").GetComponent<SkeletonAnimation>();
+            spineAnimationState = skeletonAnimation.AnimationState;
+            skeleton = skeletonAnimation.Skeleton;
         }
 
 
@@ -59,9 +87,47 @@ namespace UnityStandardAssets._2D
                 h = 0.0f;
             }
             // Pass all parameters to the character control script.
-            
+
             m_Character.Move(h, crouch, m_Jump);
+            AnimationUpdate();
             m_Jump = false;
+        }
+
+        void AnimationUpdate()
+        {
+            if (!m_Character.IsGrounded())
+            {
+                SetAnimationState(0, jumpAnimationName, true);
+            }
+            else if (Math.Abs(h) > 0)
+            {
+                SetAnimationState(0, walkAnimationName, true);
+            }
+            else
+            {
+                SetAnimationState(0, idleAnimationName, true);
+            }
+        }
+
+        void SetAnimationState(int trackindex, string animationName, bool loop)
+        {
+            if (currentAnimationState != animationName)
+            {
+                skeletonAnimation = GameObject.Find("PlayerAnim").GetComponent<SkeletonAnimation>();
+                spineAnimationState = skeletonAnimation.AnimationState;
+                spineAnimationState.SetAnimation(0, animationName, true);
+                currentAnimationState = animationName;
+            }
+        }
+
+        private void SetInteractTextInactive()
+        {
+            interactText.SetActive(false);
+        }
+
+        private void SetInteractTextActive()
+        {
+            interactText.SetActive(true);
         }
     }
 }
