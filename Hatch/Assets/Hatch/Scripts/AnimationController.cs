@@ -83,7 +83,7 @@ namespace Spine.Unity.Examples
             while (true)
             {
                 int count = 0;
-                if (isFinished)
+                if (isTriggered && lastState == isTriggered)
                 {
                     foreach (var animation in animationOutroList)
                     {
@@ -93,7 +93,7 @@ namespace Spine.Unity.Examples
                         count++;
                     }
                 }
-                else if(isTriggered)
+                else if(isTriggered && lastState != isTriggered)
                 {
                     foreach (var animation in animationTriggeredList)
                     {
@@ -106,6 +106,7 @@ namespace Spine.Unity.Examples
                     {
                         isFinished = true;
                     }
+                    lastState = isTriggered;
                 }
                 else if (!isTriggered && lastState != isTriggered)
                 {
@@ -120,6 +121,7 @@ namespace Spine.Unity.Examples
                     {
                         isFinished = true;
                     }
+                    lastState = isTriggered;
                 }
                 else
                 {
@@ -131,6 +133,7 @@ namespace Spine.Unity.Examples
                         count++;
                     }
                 }
+                yield return new WaitForSeconds(.1f);
             }
         }
     }
