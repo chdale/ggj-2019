@@ -28,7 +28,7 @@ public class CameraController : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-        if (!dialogueActive && WithinBounds() && scene.name != "ConsoleExterior")
+        if (!dialogueActive && WithinBounds() && !scene.name.Contains("Console"))
         {
             Vector3 transition = Vector3.Lerp(transform.position, player.transform.position, 5.0f * Time.deltaTime);
             transform.position = new Vector3(transition.x, transform.position.y, -10f);
