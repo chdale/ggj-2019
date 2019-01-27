@@ -55,15 +55,16 @@ public class DialogueManager : MonoBehaviour {
 	IEnumerator TypeSentence (string sentence, float speed, [CanBeNull] AudioSource clip)
 	{
 		dialogueText.text = "";
-		foreach (char letter in sentence.ToCharArray())
-		{
-			dialogueText.text += letter;
-		    if (clip != null)
-		    {
-		        clip.Play();
-		    }
-			yield return new WaitForSeconds(speed);
-		}
+	    for (int i = 0; i < sentence.Length; i++)
+	    {
+	        dialogueText.text += sentence[i];
+	        if (i % 2 == 0 && clip != null)
+	        {
+	            clip.Play();
+	        }
+
+	        yield return new WaitForSeconds(speed);
+        }
 	}
 
 	public void EndDialogue()

@@ -1507,6 +1507,11 @@ Prefab:
       propertyPath: timeToLoad
       value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 114592476028987124, guid: 077a3732934578a46a95581eeeb38f24,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 077a3732934578a46a95581eeeb38f24, type: 2}
   m_IsPrefabParent: 0
