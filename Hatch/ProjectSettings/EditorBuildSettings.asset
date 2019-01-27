@@ -23,3 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Hatch/Scenes/ConsoleExterior2.unity
     guid: d4b8435fd9a18094381f6d1a05394e9e
+  - enabled: 1
+    path: Assets/Hatch/Scenes/MainCarInterior.unity
+    guid: 725195e0c9e719642b80d78a35bb5499
