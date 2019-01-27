@@ -928,7 +928,7 @@ Prefab:
         type: 2}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1552970521}
+      objectReference: {fileID: 306627569}
     - target: {fileID: 114943238527566776, guid: a12fc64d03fe77247a876be250710f51,
         type: 2}
       propertyPath: portraitList.Array.data[0]
@@ -955,6 +955,60 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a12fc64d03fe77247a876be250710f51, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &672358630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 672358631}
+  - component: {fileID: 672358632}
+  m_Layer: 0
+  m_Name: PaulWall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &672358631
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 672358630}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -37.89, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1248641733}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &672358632
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 672358630}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.016612053}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 10.203512}
+  m_EdgeRadius: 0
 --- !u!1 &691333599
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,6 +1067,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueTargetClass: {fileID: 11400000, guid: 1928c19f1199a38459e3e9e61be1625f,
     type: 2}
+  manager: {fileID: 1690454501}
   isActivated: 0
 --- !u!4 &691333602
 Transform:
@@ -1099,6 +1154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueTargetClass: {fileID: 0}
+  manager: {fileID: 1690454501}
   AnimationObject: {fileID: 1457976745}
   DialogueTrigger: {fileID: 691333599}
 --- !u!212 &861023202 stripped
@@ -1475,6 +1531,7 @@ Transform:
   - {fileID: 891682803}
   - {fileID: 625838533}
   - {fileID: 517315858}
+  - {fileID: 672358631}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1483,11 +1540,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1385707779899190, guid: cfaf20ccf59fc5a4eb65841129a449ed,
     type: 2}
   m_PrefabInternal: {fileID: 201680258}
---- !u!1 &1552970521 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1676681941041968, guid: 56d57ee7c1d1ae84d8044b35d5b57264,
-    type: 2}
-  m_PrefabInternal: {fileID: 126731538}
 --- !u!1 &1690454500
 GameObject:
   m_ObjectHideFlags: 0

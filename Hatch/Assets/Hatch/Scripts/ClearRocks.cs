@@ -9,6 +9,11 @@ public class ClearRocks : InteractEvent
     public GameObject AnimationObject;
     public GameObject DialogueTrigger;
 
+    private void Awake()
+    {
+        Subscribe();
+    }
+
     public override void TriggerEvent()
     {
         AnimationObject.GetComponent<AnimationController>().TriggerAnimationsToggle();
