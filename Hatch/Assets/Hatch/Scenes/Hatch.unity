@@ -1716,6 +1716,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1789891056}
+  - component: {fileID: 1925176304}
   - component: {fileID: 1789891057}
   m_Layer: 0
   m_Name: LoadConsoleExternal
@@ -1737,12 +1738,12 @@ Transform:
   m_Father: {fileID: 1690454504}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1925176303
+--- !u!114 &1789891057
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1925176301}
+  m_GameObject: {fileID: 1789891055}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 902024f523b05d1498153b70bc86bbf6, type: 3}

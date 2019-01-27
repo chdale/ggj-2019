@@ -790,7 +790,7 @@ Transform:
   m_LocalScale: {x: 3.1146572, y: 4.3215837, z: 3.114655}
   m_Children: []
   m_Father: {fileID: 2097543556}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &788899308
 MonoBehaviour:
@@ -1211,6 +1211,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1965641824}
   - component: {fileID: 1965641825}
+  - component: {fileID: 1965641826}
   m_Layer: 0
   m_Name: LoadExternalHatch
   m_TagString: Event
@@ -1258,6 +1259,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3962383, y: 16.49732}
   m_EdgeRadius: 0
+--- !u!114 &1965641826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1965641823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 902024f523b05d1498153b70bc86bbf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueTargetClass: {fileID: 0}
+  manager: {fileID: 2097543553}
+  LoadScene: 1
 --- !u!1001 &2048062002
 Prefab:
   m_ObjectHideFlags: 0
@@ -1385,6 +1400,7 @@ Transform:
   - {fileID: 584601892}
   - {fileID: 1965641824}
   - {fileID: 955866664}
+  - {fileID: 788899307}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
