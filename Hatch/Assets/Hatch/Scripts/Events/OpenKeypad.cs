@@ -10,6 +10,7 @@ namespace Assets.Hatch.Scripts.Events
         private void Awake()
         {
             gameController = GameObject.Find("GameController").GetComponent<GameController>();
+            Subscribe();
         }
 
         public override void TriggerEvent()

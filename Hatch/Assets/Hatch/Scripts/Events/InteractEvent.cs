@@ -13,9 +13,13 @@ public class InteractEvent : MonoBehaviour, IEnteredEvent
     private Platformer2DUserControl user;
     private bool interactable = false;
 
-    private void Start()
+    private void Awake()
     {
         user = manager.player.GetComponent<Platformer2DUserControl>();
+    }
+
+    protected void Subscribe()
+    {
         GameController.Interact += ConditionallyTriggerEvent;
     }
 
