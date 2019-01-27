@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Hatch/Scenes/ConsoleInterior.unity
     guid: f9c559cc02f6d9b4a9fbda875c3e8c24
+  - enabled: 1
+    path: Assets/Hatch/Scenes/Hatch2.unity
+    guid: 72419e49348de01449757b882d97a1e8

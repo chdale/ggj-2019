@@ -1,20 +1,20 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SceneFader : MonoBehaviour
 {
     private Animator m_Animator;
     public AudioSource sceneLoad;
+    public float timeToLoad;
+
 	// Use this for initialization
 	void Start ()
 	{
 	    m_Animator = gameObject.GetComponent<Animator>();
-	    StartCoroutine(BeginScene(20f));
+        Invoke("BeginScene", timeToLoad);
 	}
 
-    IEnumerator BeginScene(float delay)
+    public void BeginScene()
     {
-        yield return new WaitForSeconds(delay);
         m_Animator.SetTrigger("fade");
         sceneLoad.Play();
     }
