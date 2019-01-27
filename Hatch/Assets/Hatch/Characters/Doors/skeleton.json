@@ -1,0 +1,135 @@
+{
+"skeleton": { "hash": "7tVES8wyBQ0s9+/mDIrgiFaoZbo", "spine": "3.7.87", "width": 369, "height": 462, "images": "../doors/", "audio": "" },
+"bones": [
+	{ "name": "root" },
+	{ "name": "left_door", "parent": "root", "length": 196.02, "rotation": 179.12, "x": -5, "y": -2.5 },
+	{ "name": "right_door", "parent": "root", "length": 195, "x": 1, "y": -1.5 }
+],
+"slots": [
+	{ "name": "right_door", "bone": "right_door", "attachment": "right_door" },
+	{ "name": "left_door", "bone": "left_door", "attachment": "left_door" }
+],
+"skins": {
+	"default": {
+		"left_door": {
+			"left_door": {
+				"type": "mesh",
+				"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ 1, 1, -5.94, -4.09, 1, 1, 1, 180.04, -1.24, 1, 1, 1, 187.1, -462.19, 1, 1, 1, 1.12, -465.04, 1 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 186,
+				"height": 461
+			}
+		},
+		"right_door": {
+			"right_door": {
+				"type": "mesh",
+				"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ 1, 2, 183, 2, 1, 1, 2, -1, 2, 1, 1, 2, -1, 464, 1, 1, 2, 183, 464, 1 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 184,
+				"height": 462
+			}
+		}
+	}
+},
+"animations": {
+	"doors_close": {
+		"bones": {
+			"left_door": {
+				"rotate": [
+					{ "time": 0, "angle": 1.18 },
+					{ "time": 0.1333, "angle": 0.45 },
+					{ "time": 1.3, "angle": -0.11 },
+					{ "time": 1.6333, "angle": -0.61 }
+				],
+				"translate": [
+					{ "time": 0, "x": -111, "y": 0 },
+					{ "time": 0.1333, "x": -108, "y": 0 },
+					{ "time": 0.4, "x": -101.69, "y": 0 },
+					{ "time": 1.3, "x": -30.09, "y": 0 },
+					{ "time": 1.6333, "x": -16.6, "y": 0 },
+					{ "time": 1.8333, "x": 0, "y": 0 }
+				]
+			},
+			"right_door": {
+				"rotate": [
+					{ "time": 0, "angle": -1.32 },
+					{ "time": 0.1333, "angle": -0.51 },
+					{ "time": 1.3, "angle": 0.32 },
+					{ "time": 1.6333, "angle": -0.24 }
+				],
+				"translate": [
+					{ "time": 0, "x": 109, "y": 0 },
+					{ "time": 0.1333, "x": 102, "y": 0 },
+					{ "time": 0.4, "x": 97.43, "y": 0 },
+					{ "time": 1.3, "x": 31.91, "y": 0 },
+					{ "time": 1.6333, "x": 19.4, "y": 0 },
+					{ "time": 1.8333, "x": 0, "y": 0 }
+				]
+			}
+		}
+	},
+	"doors_closed": {},
+	"doors_open": {
+		"bones": {
+			"left_door": {
+				"rotate": [
+					{ "time": 0.0667, "angle": -0.61 },
+					{ "time": 0.5, "angle": -0.11 },
+					{ "time": 2, "angle": 0.45 },
+					{ "time": 2.1667, "angle": 1.18 }
+				],
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0 },
+					{ "time": 0.0667, "x": -16.6, "y": 0 },
+					{ "time": 0.5, "x": -30.09, "y": 0 },
+					{ "time": 1.6667, "x": -101.69, "y": 0 },
+					{ "time": 2, "x": -108, "y": 0 },
+					{ "time": 2.1667, "x": -111, "y": 0 }
+				]
+			},
+			"right_door": {
+				"rotate": [
+					{ "time": 0.0667, "angle": -0.24 },
+					{ "time": 0.5, "angle": 0.32 },
+					{ "time": 2, "angle": -0.51 },
+					{ "time": 2.1667, "angle": -1.32 }
+				],
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0 },
+					{ "time": 0.0667, "x": 19.4, "y": 0 },
+					{ "time": 0.5, "x": 31.91, "y": 0 },
+					{ "time": 1.6667, "x": 97.43, "y": 0 },
+					{ "time": 2, "x": 102, "y": 0 },
+					{ "time": 2.1667, "x": 109, "y": 0 }
+				]
+			}
+		}
+	},
+	"doors_opened": {
+		"bones": {
+			"left_door": {
+				"rotate": [
+					{ "time": 0, "angle": 1.18 }
+				],
+				"translate": [
+					{ "time": 0, "x": -111, "y": 0 }
+				]
+			},
+			"right_door": {
+				"rotate": [
+					{ "time": 0, "angle": -1.32 }
+				],
+				"translate": [
+					{ "time": 0, "x": 109, "y": 0 }
+				]
+			}
+		}
+	}
+}
+}

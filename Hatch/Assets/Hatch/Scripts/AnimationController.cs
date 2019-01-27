@@ -40,15 +40,18 @@ namespace Spine.Unity.Examples
         #region Inspector
         // [SpineAnimation] attribute allows an Inspector dropdown of Spine animation names coming form SkeletonAnimation.
         [SpineAnimation]
-        public string[] animationList;
+        public string[] animationListIntro;
         [SpineAnimation]
         public string[] animationTriggeredList;
+        [SpineAnimation]
+        public string[] animationRelaxedList;
         [SpineAnimation]
         public string[] animationOutroList;
         public float[] animationLength;
         public bool isTriggered = false;
         public bool isFinished = false;
         public bool isToggleable;
+        public bool lastState;
         #endregion
 
         SkeletonAnimation skeletonAnimation;
@@ -70,6 +73,7 @@ namespace Spine.Unity.Examples
 
         public void TriggerAnimationsToggle()
         {
+            lastState = isTriggered;
             isTriggered = !isTriggered;
         }
 
@@ -103,9 +107,23 @@ namespace Spine.Unity.Examples
                         isFinished = true;
                     }
                 }
+                else if (!isTriggered && lastState != isTriggered)
+                {
+                    foreach (var animation in animationRelaxedList)
+                    {
+
+                        spineAnimationState.SetAnimation(0, animation, false);
+                        yield return new WaitForSeconds(animationLength[count]);
+                        count++;
+                    }
+                    if (!isToggleable)
+                    {
+                        isFinished = true;
+                    }
+                }
                 else
                 {
-                    foreach (var animation in animationList)
+                    foreach (var animation in animationListIntro)
                     {
 
                         spineAnimationState.SetAnimation(0, animation, true);
