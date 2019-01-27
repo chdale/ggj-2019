@@ -40,12 +40,16 @@ public class CameraController : MonoBehaviour {
 
     private void BeginDialogue()
     {
-        dialogueTargetObject = GameObject.Find(dialogueTarget.dialogueTargetName.GetDescription());
+        dialogueTargetObject = GameObject.Find(dialogueTarget.dialogueTargetName.ToString());
         dialogueActive = true;
         dialogue.SetActive(true);
         m_camera.orthographicSize = 7.0f;
         transform.position = new Vector3(MidPointBetween(player, dialogueTargetObject), -4.0f, -10f);
-        dialogueTargetObject.GetComponent<FacePlayer>().FaceAndUnfacePlayer(player);
+        FacePlayer faceScript = dialogueTargetObject.GetComponent<FacePlayer>();
+        if (faceScript != null)
+        {
+            faceScript.FaceAndUnfacePlayer(player);
+        }
     }
 
     private void EndDialogue()
@@ -53,8 +57,12 @@ public class CameraController : MonoBehaviour {
         dialogueActive = false;
         dialogue.SetActive(false);
         m_camera.orthographicSize = 10.0f;
-        transform.position = new Vector3(player.transform.position.x, 0.0f, -10f);
-        dialogueTargetObject.GetComponent<FacePlayer>().FaceAndUnfacePlayer(player);
+        transform.position = new Vector3(PostDialogueCameraPosition(), 0.0f, -10f);
+        FacePlayer faceScript = dialogueTargetObject.GetComponent<FacePlayer>();
+        if (faceScript != null)
+        {
+            faceScript.FaceAndUnfacePlayer(player);
+        }
     }
 
     private float MidPointBetween(GameObject player, GameObject target)
@@ -65,5 +73,21 @@ public class CameraController : MonoBehaviour {
     private bool WithinBounds()
     {
         return player.transform.position.x > cameraLeftLimit && player.transform.position.x < cameraRightLimit;
+    }
+
+    private float PostDialogueCameraPosition()
+    {
+        if (player.transform.position.x < cameraLeftLimit)
+        {
+            return cameraLeftLimit;
+        }
+        else if (player.transform.position.x > cameraRightLimit)
+        {
+            return cameraRightLimit;
+        }
+        else
+        {
+            return player.transform.position.x;
+        }
     }
 }
