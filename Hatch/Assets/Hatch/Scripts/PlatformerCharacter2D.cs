@@ -26,6 +26,7 @@ namespace UnityStandardAssets._2D
         private bool canGrab = true; // Determines where or not you can grab a ledge for climbing
         private Transform ledgeTransform; // The transform for the ledge you are grabbing
         private bool isHanging; //Determines whether or not you are hanging from a ledge
+        public bool noMoveyMrMan = false;
 
         private void Awake()
         {
@@ -36,6 +37,10 @@ namespace UnityStandardAssets._2D
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
             GameEventManager.OnEntered += EnableInteractText;
             GameEventManager.OnExited += DisableInteractText;
+            GameController.CancelDialogue += EnableInteractText;
+            GameController.CancelDialogue += ExitDialogue;
+            InteractEvent.StartDialogue += DisableInteractText;
+            InteractEvent.StartDialogue += EnterDialogue;
         }
 
         private void FixedUpdate()
@@ -59,7 +64,7 @@ namespace UnityStandardAssets._2D
 
         public void Move(float move, bool crouch, bool jump)
         {
-            if (!m_Rigidbody2D.isKinematic)
+            if (!m_Rigidbody2D.isKinematic && !noMoveyMrMan)
             {// If crouching, check to see if the character can stand up
                 if (!crouch /*&& m_Anim.GetBool("Crouch")*/)
                 {
@@ -178,6 +183,16 @@ namespace UnityStandardAssets._2D
             }
         }
 
+        private void EnterDialogue()
+        {
+            noMoveyMrMan = true;
+        }
+
+        private void ExitDialogue()
+        {
+            noMoveyMrMan = false;
+        }
+
         private void EnableInteractText()
         {
             transform.GetChild(0).gameObject.SetActive(true);
@@ -188,6 +203,7 @@ namespace UnityStandardAssets._2D
         {
             transform.GetChild(0).gameObject.SetActive(false);
         }
+
         public bool IsGrounded()
         {
             return m_Grounded;
