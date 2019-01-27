@@ -9,6 +9,6 @@ public enum DialogueTarget
     Player,
     [Description("Medic")]
     Medic,
-    [Description("Ex...?-Engineer")]
+    [Description("Ex-Engineer")]
     Engineer
 }

@@ -45,10 +45,13 @@ public class CameraController : MonoBehaviour {
         dialogue.SetActive(true);
         m_camera.orthographicSize = 7.0f;
         transform.position = new Vector3(MidPointBetween(player, dialogueTargetObject), -4.0f, -10f);
-        FacePlayer faceScript = dialogueTargetObject.GetComponent<FacePlayer>();
-        if (faceScript != null)
+        if (dialogueTargetObject != null)
         {
-            faceScript.FaceAndUnfacePlayer(player);
+            FacePlayer faceScript = dialogueTargetObject.GetComponent<FacePlayer>();
+            if (faceScript != null)
+            {
+                faceScript.FaceAndUnfacePlayer(player);
+            }
         }
     }
 
@@ -58,10 +61,13 @@ public class CameraController : MonoBehaviour {
         dialogue.SetActive(false);
         m_camera.orthographicSize = 10.0f;
         transform.position = new Vector3(PostDialogueCameraPosition(), 0.0f, -10f);
-        FacePlayer faceScript = dialogueTargetObject.GetComponent<FacePlayer>();
-        if (faceScript != null)
+        if (dialogueTargetObject != null)
         {
-            faceScript.FaceAndUnfacePlayer(player);
+            FacePlayer faceScript = dialogueTargetObject.GetComponent<FacePlayer>();
+            if (faceScript != null)
+            {
+                faceScript.FaceAndUnfacePlayer(player);
+            }
         }
     }
 
