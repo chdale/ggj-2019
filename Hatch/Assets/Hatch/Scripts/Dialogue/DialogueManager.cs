@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -48,17 +49,22 @@ public class DialogueManager : MonoBehaviour {
         nameText.text = dialogue.Speaker.GetDescription();
 
 		StopAllCoroutines();
-		StartCoroutine(TypeSentence(dialogue.Text, dialogue.Speed));
+		StartCoroutine(TypeSentence(dialogue.Text, dialogue.Speed, dialogue.Sound));
 	}
 
-	IEnumerator TypeSentence (string sentence, float speed)
+	IEnumerator TypeSentence (string sentence, float speed, [CanBeNull] AudioSource clip)
 	{
 		dialogueText.text = "";
-		foreach (char letter in sentence.ToCharArray())
-		{
-			dialogueText.text += letter;
-			yield return new WaitForSeconds(speed);
-		}
+	    for (int i = 0; i < sentence.Length; i++)
+	    {
+	        dialogueText.text += sentence[i];
+	        if (i % 2 == 0 && clip != null)
+	        {
+	            clip.Play();
+	        }
+
+	        yield return new WaitForSeconds(speed);
+        }
 	}
 
 	public void EndDialogue()

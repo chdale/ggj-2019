@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace UnityStandardAssets._2D
 {
@@ -47,13 +48,19 @@ namespace UnityStandardAssets._2D
 
         private void Awake()
         {
-            gameController = GameObject.Find("GameController").GetComponent<GameController>();
+            Subscribe(SceneManager.GetActiveScene(), LoadSceneMode.Single);
             m_Character = GetComponent<PlatformerCharacter2D>();
-            GameEventManager.OnEntered += SetInteractTextActive;
-            GameEventManager.OnExited += SetInteractTextInactive;
             interactText = transform.GetChild(0).gameObject;
+            SceneManager.sceneLoaded += Subscribe;
 
             AnimationAwake();
+        }
+
+        private void Subscribe(Scene scene, LoadSceneMode mode)
+        {
+            gameController = GameObject.Find("GameController").GetComponent<GameController>();
+            GameEventManager.OnEntered += SetInteractTextActive;
+            GameEventManager.OnExited += SetInteractTextInactive;
         }
 
         private void AnimationAwake()

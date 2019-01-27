@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace UnityStandardAssets._2D
 {
@@ -35,16 +36,8 @@ namespace UnityStandardAssets._2D
             m_CeilingCheck = transform.Find("CeilingCheck");
             //m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
-            GameEventManager.OnEntered += EnableInteractText;
-            GameEventManager.OnExited += DisableInteractText;
-            GameController.CancelDialogue += EnableInteractText;
-            GameController.CancelDialogue += ExitDialogue;
-            GameController.EndDialogue += EnableInteractText;
-            GameController.EndDialogue += ExitDialogue;
-            InteractEvent.StartDialogue += DisableInteractText;
-            InteractEvent.StartDialogue += EnterDialogue;
-            GameController.FinishKeypad += DisableInteractText;
-            GameController.CancelJump += DelayMovement;
+            Subscribe(SceneManager.GetActiveScene(), LoadSceneMode.Single);
+            SceneManager.sceneLoaded += Subscribe;
         }
 
         private void FixedUpdate()
@@ -65,6 +58,19 @@ namespace UnityStandardAssets._2D
             //m_Anim.SetFloat("vSpeed", m_Rigidbody2D.velocity.y);
         }
 
+        private void Subscribe(Scene scene, LoadSceneMode mode)
+        {
+            GameEventManager.OnEntered += EnableInteractText;
+            GameEventManager.OnExited += DisableInteractText;
+            GameController.CancelDialogue += EnableInteractText;
+            GameController.CancelDialogue += ExitDialogue;
+            GameController.EndDialogue += EnableInteractText;
+            GameController.EndDialogue += ExitDialogue;
+            InteractEvent.StartDialogue += DisableInteractText;
+            InteractEvent.StartDialogue += EnterDialogue;
+            GameController.FinishKeypad += DisableInteractText;
+            GameController.CancelJump += DelayMovement;
+        }
 
         public void Move(float move, bool crouch, bool jump)
         {
