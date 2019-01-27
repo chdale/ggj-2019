@@ -40,15 +40,18 @@ namespace Spine.Unity.Examples
         #region Inspector
         // [SpineAnimation] attribute allows an Inspector dropdown of Spine animation names coming form SkeletonAnimation.
         [SpineAnimation]
-        public string[] animationList;
+        public string[] animationListIntro;
         [SpineAnimation]
         public string[] animationTriggeredList;
+        [SpineAnimation]
+        public string[] animationRelaxedList;
         [SpineAnimation]
         public string[] animationOutroList;
         public float[] animationLength;
         public bool isTriggered = false;
         public bool isFinished = false;
         public bool isToggleable;
+        public bool lastState;
         #endregion
 
         SkeletonAnimation skeletonAnimation;
@@ -68,9 +71,10 @@ namespace Spine.Unity.Examples
             StartCoroutine(DoDemoRoutine());
         }
 
-        public void TriggerAnimationsToggle()
+        public void TriggerAnimationsToggle(bool state = true)
         {
-            isTriggered = !isTriggered;
+            lastState = isTriggered;
+            isTriggered = state;
         }
 
         /// This is an infinitely repeating Unity Coroutine. Read the Unity documentation on Coroutines to learn more.
@@ -79,7 +83,7 @@ namespace Spine.Unity.Examples
             while (true)
             {
                 int count = 0;
-                if (isFinished)
+                if (isTriggered && lastState == isTriggered)
                 {
                     foreach (var animation in animationOutroList)
                     {
@@ -89,7 +93,7 @@ namespace Spine.Unity.Examples
                         count++;
                     }
                 }
-                else if(isTriggered)
+                else if(isTriggered && lastState != isTriggered)
                 {
                     foreach (var animation in animationTriggeredList)
                     {
@@ -98,14 +102,22 @@ namespace Spine.Unity.Examples
                         yield return new WaitForSeconds(animationLength[count]);
                         count++;
                     }
-                    if (!isToggleable)
+                    lastState = isTriggered;
+                }
+                else if (!isTriggered && lastState != isTriggered)
+                {
+                    foreach (var animation in animationRelaxedList)
                     {
-                        isFinished = true;
+
+                        spineAnimationState.SetAnimation(0, animation, false);
+                        yield return new WaitForSeconds(animationLength[count]);
+                        count++;
                     }
+                    lastState = isTriggered;
                 }
                 else
                 {
-                    foreach (var animation in animationList)
+                    foreach (var animation in animationListIntro)
                     {
 
                         spineAnimationState.SetAnimation(0, animation, true);
@@ -113,6 +125,7 @@ namespace Spine.Unity.Examples
                         count++;
                     }
                 }
+                yield return new WaitForSeconds(.1f);
             }
         }
     }

@@ -9,6 +9,8 @@ public class GameController : MonoBehaviour
     public static event InteractAction Interact;
     public delegate void CancelDialogueAction();
     public static event CancelDialogueAction CancelDialogue;
+    public delegate void FinishKeypadAction();
+    public static event FinishKeypadAction FinishKeypad;
     public delegate void EndDialogueAction();
     public static event EndDialogueAction EndDialogue;
     public delegate void NextDialogueAction();
@@ -16,28 +18,51 @@ public class GameController : MonoBehaviour
     public delegate void CancelJumpAction();
     public static event CancelJumpAction CancelJump;
 
-    internal void InteractEvent()
+    public void InteractEvent()
     {
-        Interact();
+        if (Interact != null)
+        {
+            Interact();
+        }
     }
 
     internal void EscapeFunctionsEvent()
     {
-        CancelDialogue();
+        if (CancelDialogue != null)
+        {
+            CancelDialogue();
+        }
+    }
+
+    internal void FinishKeypadEvent()
+    {
+        if (FinishKeypad != null)
+        {
+            FinishKeypad();
+        }
     }
 
     internal void EndDialogueEvent()
     {
-        EndDialogue();
+        if (EndDialogue != null)
+        {
+            EndDialogue();
+        }
     }
 
     internal void NextDialogueEvent()
     {
-        NextDialogue();
+        if (NextDialogue != null)
+        {
+            NextDialogue();
+        }
     }
 
     internal void CancelJumpEvent()
     {
-        CancelJump();
+        if (CancelJump != null)
+        {
+            CancelJump();
+        }
     }
 }

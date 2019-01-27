@@ -4,5 +4,5 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "Data", menuName = "Inventory/List")]
 public class DialogueTargetClass : ScriptableObject {
-    public DialogueTarget dialogueTargetName = DialogueTarget.You;
+    public DialogueTarget dialogueTargetName = DialogueTarget.Player;
 }

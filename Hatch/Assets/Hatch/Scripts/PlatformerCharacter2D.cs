@@ -43,6 +43,7 @@ namespace UnityStandardAssets._2D
             GameController.EndDialogue += ExitDialogue;
             InteractEvent.StartDialogue += DisableInteractText;
             InteractEvent.StartDialogue += EnterDialogue;
+            GameController.FinishKeypad += DisableInteractText;
             GameController.CancelJump += DelayMovement;
         }
 
