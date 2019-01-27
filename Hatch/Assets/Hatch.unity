@@ -292,6 +292,11 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 114574804167729980, guid: cfaf20ccf59fc5a4eb65841129a449ed,
+        type: 2}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 889603258}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cfaf20ccf59fc5a4eb65841129a449ed, type: 2}
   m_IsPrefabParent: 0
@@ -404,6 +409,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a12fc64d03fe77247a876be250710f51, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &889603258 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114943238527566776, guid: a12fc64d03fe77247a876be250710f51,
+    type: 2}
+  m_PrefabInternal: {fileID: 653096231}
+  m_Script: {fileID: 11500000, guid: 03bde36ad73b66749b54347399712de0, type: 3}
 --- !u!1 &1157084990
 GameObject:
   m_ObjectHideFlags: 0
