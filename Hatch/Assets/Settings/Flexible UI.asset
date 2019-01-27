@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Name: Flexible UI
   m_EditorClassIdentifier: 
   buttonColorBlock:
-    m_NormalColor: {r: 0, g: 0, b: 0, a: 0}
-    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 0, g: 0, b: 0, a: 0}
     m_DisabledColor: {r: 0, g: 0, b: 0, a: 0}
     m_ColorMultiplier: 0
     m_FadeDuration: 0
-  imageColor: {r: 0.23529413, g: 0.25882354, b: 0.25882354, a: 1}
+  imageColor: {r: 1, g: 1, b: 1, a: 1}
   sliderColorBlock:
     m_NormalColor: {r: 0.23529413, g: 0.25882354, b: 0.25882354, a: 1}
     m_HighlightedColor: {r: 0.2784314, g: 0.2784314, b: 0.2784314, a: 1}
