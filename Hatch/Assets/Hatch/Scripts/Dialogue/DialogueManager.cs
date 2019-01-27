@@ -1,6 +1,8 @@
 using Assets.Hatch.Scripts.Dialogue;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,8 +12,10 @@ public class DialogueManager : MonoBehaviour {
 	public Text dialogueText;
     public float speed;
     public Emotions feels;
+    public SpriteRenderer portrait;
 
 	public Animator animator;
+    public List<Sprite> portraitList;
 
 	//private Queue<DialogueSentence> sentences;
     private GameController gameController;
@@ -31,6 +35,15 @@ public class DialogueManager : MonoBehaviour {
 
 	public void DisplayNextSentence (DialogueObject dialogue)
 	{
+        Sprite image = portraitList.FirstOrDefault(x => x.name.Equals(string.Format("{0}_{1}.png", dialogue.Speaker.GetDescription(), dialogue.Feels), StringComparison.InvariantCultureIgnoreCase));
+        if (image != null)
+        {
+            portrait.sprite = image;
+        }
+        else
+        {
+            portrait.sprite = portraitList.FirstOrDefault();
+        }
         nameText.text = dialogue.Speaker.ToString();
 
 		StopAllCoroutines();
