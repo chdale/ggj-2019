@@ -9,6 +9,8 @@ public class GameController : MonoBehaviour
     public static event InteractAction Interact;
     public delegate void CancelDialogueAction();
     public static event CancelDialogueAction CancelDialogue;
+    public delegate void FinishKeypadAction();
+    public static event FinishKeypadAction FinishKeypad;
 
     internal void InteractEvent()
     {
@@ -18,5 +20,10 @@ public class GameController : MonoBehaviour
     internal void EscapeFunctionsEvent()
     {
         CancelDialogue();
+    }
+
+    internal void FinishKeypadEvent()
+    {
+        FinishKeypad();
     }
 }

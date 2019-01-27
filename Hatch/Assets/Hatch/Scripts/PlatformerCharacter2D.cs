@@ -41,6 +41,7 @@ namespace UnityStandardAssets._2D
             GameController.CancelDialogue += ExitDialogue;
             InteractEvent.StartDialogue += DisableInteractText;
             InteractEvent.StartDialogue += EnterDialogue;
+            GameController.FinishKeypad += DisableInteractText;
         }
 
         private void FixedUpdate()

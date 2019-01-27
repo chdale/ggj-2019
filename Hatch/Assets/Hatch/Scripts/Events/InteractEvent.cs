@@ -9,13 +9,12 @@ public class InteractEvent : MonoBehaviour, IEnteredEvent
     public static event StartDialogueAction StartDialogue;
     public DialogueTargetClass dialogueTargetClass;
 
-    private GameEventManager manager;
+    public GameEventManager manager;
     private Platformer2DUserControl user;
     private bool interactable = false;
 
     private void Start()
     {
-        manager = transform.parent.GetComponent<GameEventManager>();
         user = manager.player.GetComponent<Platformer2DUserControl>();
         GameController.Interact += ConditionallyTriggerEvent;
     }
