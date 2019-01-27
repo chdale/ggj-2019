@@ -17,13 +17,15 @@ public class MedicRescue : MonoBehaviour {
         objectiveDialogue = new DialogueObject[]
         {
             new DialogueObject(DialogueTarget.Medic, "OH MAN, THAT REALLY SMARTS!", .1f, Emotions.Angry),
-            new DialogueObject(DialogueTarget.Medic, "I guess it's a good thing I went to med school after my daughter was born huh?", .04f, Emotions.Idle),
-            new DialogueObject(DialogueTarget.You, "Yeah, I guess..", .1f, Emotions.Idle),
-            new DialogueObject(DialogueTarget.Medic, "Well I really appreciate it, I can't let my baby lose her daddy that easily!", .04f, Emotions.Idle)
+            new DialogueObject(DialogueTarget.Medic, "I guess that's what my time in med school was for, huh?", .04f, Emotions.Idle),
+            new DialogueObject(DialogueTarget.Player, "Yeah, I guess..", .1f, Emotions.Idle),
+            new DialogueObject(DialogueTarget.Medic, "No need to let me ramble on...", .1f, Emotions.Idle),
+            new DialogueObject(DialogueTarget.Medic, "We need to regroup in the train to figure out how to get out of here!", .04f, Emotions.Idle)
         };
         InteractEvent.StartDialogue += StartDialogue;
         GameController.NextDialogue += NextDialogue;
-	}
+        GameController.CancelDialogue += EndDialogue;
+    }
 
     private void StartDialogue()
     {
@@ -48,10 +50,10 @@ public class MedicRescue : MonoBehaviour {
         {
             if (!GameStates.States[GameStates.MEDIC])
             {
-                if (conversationCount > 2)
+                if (conversationCount > 3)
                 {
                     GameStates.States[GameStates.MEDIC] = true;
-                    manager.EndDialogue();
+                    EndDialogue();
                 }
                 else
                 {
@@ -59,6 +61,15 @@ public class MedicRescue : MonoBehaviour {
                     manager.DisplayNextSentence(objectiveDialogue[conversationCount]);
                 }
             }
+        }
+    }
+
+    private void EndDialogue()
+    {
+        if (conversationCount > 3)
+        {
+            GameStates.States[GameStates.MEDIC] = true;
+            manager.EndDialogue();
         }
     }
 }
