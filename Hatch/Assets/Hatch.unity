@@ -122,11 +122,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4966650043833390, guid: 56d57ee7c1d1ae84d8044b35d5b57264, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.87
+      value: -8.55
       objectReference: {fileID: 0}
     - target: {fileID: 4966650043833390, guid: 56d57ee7c1d1ae84d8044b35d5b57264, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.98
+      value: -1.94
       objectReference: {fileID: 0}
     - target: {fileID: 4966650043833390, guid: 56d57ee7c1d1ae84d8044b35d5b57264, type: 2}
       propertyPath: m_LocalPosition.z
@@ -191,6 +191,31 @@ Prefab:
         type: 2}
       propertyPath: m_SortingLayerID
       value: 799184983
+      objectReference: {fileID: 0}
+    - target: {fileID: 114266049069873952, guid: 56d57ee7c1d1ae84d8044b35d5b57264,
+        type: 2}
+      propertyPath: climbAnimationName
+      value: climb
+      objectReference: {fileID: 0}
+    - target: {fileID: 114266049069873952, guid: 56d57ee7c1d1ae84d8044b35d5b57264,
+        type: 2}
+      propertyPath: hangAnimationName
+      value: hang
+      objectReference: {fileID: 0}
+    - target: {fileID: 114266049069873952, guid: 56d57ee7c1d1ae84d8044b35d5b57264,
+        type: 2}
+      propertyPath: hangIdleAnimationName
+      value: hang_idle
+      objectReference: {fileID: 0}
+    - target: {fileID: 114266049069873952, guid: 56d57ee7c1d1ae84d8044b35d5b57264,
+        type: 2}
+      propertyPath: hurtIdleAnimationName
+      value: hurt_idle
+      objectReference: {fileID: 0}
+    - target: {fileID: 114266049069873952, guid: 56d57ee7c1d1ae84d8044b35d5b57264,
+        type: 2}
+      propertyPath: hurtStandAnimationName
+      value: hurt_stand
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 212522532282759204, guid: 56d57ee7c1d1ae84d8044b35d5b57264, type: 2}
@@ -432,7 +457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1e1c4a34bdef854794a2be76fb7fc3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 306627569}
+  player: {fileID: 1552970521}
 --- !u!1 &889603257
 GameObject:
   m_ObjectHideFlags: 0
