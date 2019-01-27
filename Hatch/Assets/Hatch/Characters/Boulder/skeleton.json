@@ -1,0 +1,55 @@
+{
+"skeleton": { "hash": "FnB5AZSLyMn7H87qgGZrY9yY97k", "spine": "3.7.87", "width": 177.77, "height": 190.07, "images": "../boulder/", "audio": "" },
+"bones": [
+	{ "name": "root" },
+	{ "name": "bone", "parent": "root", "length": 199, "rotation": 89.71, "x": 4.9, "y": 60.25 }
+],
+"slots": [
+	{ "name": "boulder", "bone": "bone", "attachment": "boulder" }
+],
+"skins": {
+	"default": {
+		"boulder": {
+			"boulder": { "x": 0.5, "rotation": -28.41, "width": 151, "height": 120 }
+		}
+	}
+},
+"animations": {
+	"rock_move": {
+		"bones": {
+			"bone": {
+				"rotate": [
+					{ "time": 0, "angle": 0 },
+					{ "time": 0.1667, "angle": 12.13 },
+					{ "time": 0.3333, "angle": 31.78 },
+					{ "time": 1, "angle": 125.48 },
+					{ "time": 1.3333, "angle": 178.45 },
+					{ "time": 1.5, "angle": -173.72 }
+				],
+				"translate": [
+					{ "time": 0, "x": 0, "y": 6.12 },
+					{ "time": 0.1667, "x": -22.95, "y": 0 },
+					{ "time": 0.3333, "x": -50.1, "y": 0 },
+					{ "time": 0.6333, "x": -129.99, "y": -5.94 },
+					{ "time": 1, "x": -227.63, "y": -6.12 },
+					{ "time": 1.3333, "x": -281.52, "y": 7.34 },
+					{ "time": 1.5, "x": -288.86, "y": 6.12 }
+				]
+			}
+		}
+	},
+	"rock_start": {},
+	"rock_stop": {
+		"bones": {
+			"bone": {
+				"rotate": [
+					{ "time": 0, "angle": -173.72 }
+				],
+				"translate": [
+					{ "time": 0, "x": -288.86, "y": 6.12 }
+				]
+			}
+		}
+	}
+}
+}
