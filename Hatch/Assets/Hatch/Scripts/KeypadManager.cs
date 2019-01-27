@@ -11,6 +11,7 @@ public class KeypadManager : MonoBehaviour
     public int maxKeys = 5;
     private string _input;
     private OpenKeypad openKeypad;
+    private AudioSource buttonPress;
 
     //public OpenKeypad openKeypad;
 
@@ -20,6 +21,7 @@ public class KeypadManager : MonoBehaviour
         displayText.text = string.Empty;
         _input = string.Empty;
         openKeypad = GameObject.Find("OpenKeypad").GetComponent<OpenKeypad>();
+        buttonPress = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -94,6 +96,7 @@ public class KeypadManager : MonoBehaviour
     private void UpdateInput(string keyEntered)
     {
         ToggleButtonUI(keyEntered);
+        buttonPress.Play();
         displayText.text += keyEntered;
         _input += keyEntered;
         Invoke("KeyEntered", .2f);
