@@ -1,6 +1,7 @@
 using Spine.Unity;
 using System;
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 namespace UnityStandardAssets._2D
@@ -51,6 +52,7 @@ namespace UnityStandardAssets._2D
             GameEventManager.OnEntered += SetInteractTextActive;
             GameEventManager.OnExited += SetInteractTextInactive;
             interactText = transform.GetChild(0).gameObject;
+
             AnimationAwake();
         }
 
@@ -74,6 +76,7 @@ namespace UnityStandardAssets._2D
                 if (m_Character.IsHanging())
                 {
                     climbStart = Time.time;
+                    
                 }
                 m_Character.ClimbLedge();
                 
@@ -108,6 +111,7 @@ namespace UnityStandardAssets._2D
             else if (Input.GetKey(KeyCode.RightArrow))
             {
                 h = 1.0f;
+                
             }
             else
             {
