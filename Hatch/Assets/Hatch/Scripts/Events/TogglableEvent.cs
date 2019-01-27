@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets._2D;
 
-public class ToggleableEvent : MonoBehaviour, ITogglableEvent
+public class TogglableEvent : MonoBehaviour, ITogglableEvent
 {
 
     public BoxCollider2D Trigger;

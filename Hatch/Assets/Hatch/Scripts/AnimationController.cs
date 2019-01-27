@@ -71,10 +71,10 @@ namespace Spine.Unity.Examples
             StartCoroutine(DoDemoRoutine());
         }
 
-        public void TriggerAnimationsToggle()
+        public void TriggerAnimationsToggle(bool state = true)
         {
             lastState = isTriggered;
-            isTriggered = !isTriggered;
+            isTriggered = state;
         }
 
         /// This is an infinitely repeating Unity Coroutine. Read the Unity documentation on Coroutines to learn more.
@@ -102,10 +102,6 @@ namespace Spine.Unity.Examples
                         yield return new WaitForSeconds(animationLength[count]);
                         count++;
                     }
-                    if (!isToggleable)
-                    {
-                        isFinished = true;
-                    }
                     lastState = isTriggered;
                 }
                 else if (!isTriggered && lastState != isTriggered)
@@ -116,10 +112,6 @@ namespace Spine.Unity.Examples
                         spineAnimationState.SetAnimation(0, animation, false);
                         yield return new WaitForSeconds(animationLength[count]);
                         count++;
-                    }
-                    if (!isToggleable)
-                    {
-                        isFinished = true;
                     }
                     lastState = isTriggered;
                 }
