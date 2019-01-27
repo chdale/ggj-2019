@@ -955,11 +955,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a12fc64d03fe77247a876be250710f51, type: 2}
   m_IsPrefabParent: 0
---- !u!212 &861023202 stripped
-SpriteRenderer:
-  m_PrefabParentObject: {fileID: 212021445619152658, guid: a12fc64d03fe77247a876be250710f51,
-    type: 2}
-  m_PrefabInternal: {fileID: 653096231}
 --- !u!1 &691333599
 GameObject:
   m_ObjectHideFlags: 0
@@ -1106,6 +1101,11 @@ MonoBehaviour:
   dialogueTargetClass: {fileID: 0}
   AnimationObject: {fileID: 1457976745}
   DialogueTrigger: {fileID: 691333599}
+--- !u!212 &861023202 stripped
+SpriteRenderer:
+  m_PrefabParentObject: {fileID: 212021445619152658, guid: a12fc64d03fe77247a876be250710f51,
+    type: 2}
+  m_PrefabInternal: {fileID: 653096231}
 --- !u!114 &889603258 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114943238527566776, guid: a12fc64d03fe77247a876be250710f51,
@@ -1353,11 +1353,11 @@ MonoBehaviour:
   animationOutroList:
   - hatch_opened
   animationLength:
-  - 3
-  - 3
-  - 3
-  - 3
-  - 3
+  - 1
+  - 4
+  - 4
+  - 4
+  - 1
   isTriggered: 0
   isFinished: 0
   isToggleable: 1

@@ -271,11 +271,11 @@ MonoBehaviour:
   animationOutroList:
   - doors_opened
   animationLength:
-  - 3
-  - 3
-  - 3
-  - 3
-  - 3
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
   isTriggered: 0
   isFinished: 0
   isToggleable: 1
