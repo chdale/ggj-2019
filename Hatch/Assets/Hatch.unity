@@ -923,6 +923,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueTargetClass: {fileID: 11400000, guid: 1928c19f1199a38459e3e9e61be1625f,
     type: 2}
+  isActivated: 0
 --- !u!1 &1157084990
 GameObject:
   m_ObjectHideFlags: 0
@@ -1024,29 +1025,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1331842333
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1281345616}
-  - component: {fileID: 1281345618}
-  - component: {fileID: 1281345617}
-  m_Layer: 0
-  m_Name: Name
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!224 &1281345616
 RectTransform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1281345615}
+  m_GameObject: {fileID: 1331842333}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1655998, y: 0.23368378, z: 1}
@@ -1064,7 +1048,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1281345615}
+  m_GameObject: {fileID: 1331842333}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -1097,7 +1081,24 @@ CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1281345615}
+  m_GameObject: {fileID: 1331842333}
+--- !u!1 &1331842333
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1281345616}
+  - component: {fileID: 1281345618}
+  - component: {fileID: 1281345617}
+  m_Layer: 0
+  m_Name: Name
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1338967993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1189,6 +1190,7 @@ GameObject:
   - component: {fileID: 1457976748}
   - component: {fileID: 1457976747}
   - component: {fileID: 1457976746}
+  - component: {fileID: 1457976752}
   m_Layer: 0
   m_Name: MedicPlaceholder
   m_TagString: Untagged
@@ -1325,7 +1327,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b02bbe15f3463428174f4930c957f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  medicRescued: 0
 --- !u!1 &1542412475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1562,7 +1563,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1776775112
 MonoBehaviour:
   m_ObjectHideFlags: 0
