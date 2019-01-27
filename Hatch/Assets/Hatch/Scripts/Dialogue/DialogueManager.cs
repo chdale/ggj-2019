@@ -8,58 +8,50 @@ public class DialogueManager : MonoBehaviour {
 
 	public Text nameText;
 	public Text dialogueText;
+    public float speed;
+    public Emotions feels;
 
 	public Animator animator;
 
-	private Queue<DialogueSentence> sentences;
+	//private Queue<DialogueSentence> sentences;
+    private GameController gameController;
 
 	// Use this for initialization
 	void Start () {
-		sentences = new Queue<DialogueSentence>();
+		//sentences = new Queue<DialogueSentence>();
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
 	}
 
-	public void StartDialogue (Dialogue dialogue)
+	public void StartDialogue (DialogueObject dialogue)
 	{
 		animator.SetBool("IsOpen", true);
 
-		nameText.text = dialogue.name;
-
-		sentences.Clear();
-
-		foreach (DialogueSentence sentence in dialogue.sentences)
-		{
-			sentences.Enqueue(sentence);
-		}
-
-		DisplayNextSentence();
+		DisplayNextSentence(dialogue);
 	}
 
-	public void DisplayNextSentence ()
+	public void DisplayNextSentence (DialogueObject dialogue)
 	{
-		if (sentences.Count == 0)
-		{
-			EndDialogue();
-			return;
-		}
+        nameText.text = dialogue.Speaker.ToString();
 
-        DialogueSentence sentence = sentences.Dequeue();
 		StopAllCoroutines();
-		StartCoroutine(TypeSentence(sentence.Text));
+		StartCoroutine(TypeSentence(dialogue.Text, dialogue.Speed));
 	}
 
-	IEnumerator TypeSentence (string sentence)
+	IEnumerator TypeSentence (string sentence, float speed)
 	{
 		dialogueText.text = "";
 		foreach (char letter in sentence.ToCharArray())
 		{
 			dialogueText.text += letter;
-			yield return null;
+			yield return new WaitForSeconds(speed);
 		}
 	}
 
-	void EndDialogue()
+	public void EndDialogue()
 	{
 		animator.SetBool("IsOpen", false);
+        gameController.CancelJumpEvent();
+        gameController.EndDialogueEvent();
 	}
 
 }

@@ -5,8 +5,8 @@ using UnityEngine;
 
 public enum DialogueTarget
 {
-    [Description("")]
-    None,
+    [Description("Player")]
+    You,
     [Description("MedicPlaceholder")]
     Medic
 }

@@ -9,6 +9,12 @@ public class GameController : MonoBehaviour
     public static event InteractAction Interact;
     public delegate void CancelDialogueAction();
     public static event CancelDialogueAction CancelDialogue;
+    public delegate void EndDialogueAction();
+    public static event EndDialogueAction EndDialogue;
+    public delegate void NextDialogueAction();
+    public static event NextDialogueAction NextDialogue;
+    public delegate void CancelJumpAction();
+    public static event CancelJumpAction CancelJump;
 
     internal void InteractEvent()
     {
@@ -18,5 +24,20 @@ public class GameController : MonoBehaviour
     internal void EscapeFunctionsEvent()
     {
         CancelDialogue();
+    }
+
+    internal void EndDialogueEvent()
+    {
+        EndDialogue();
+    }
+
+    internal void NextDialogueEvent()
+    {
+        NextDialogue();
+    }
+
+    internal void CancelJumpEvent()
+    {
+        CancelJump();
     }
 }

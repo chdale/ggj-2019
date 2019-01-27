@@ -14,9 +14,10 @@ public class CameraController : MonoBehaviour {
     private void Start()
     {
         m_camera = GetComponent<Camera>();
-        dialogue = transform.GetChild(0).gameObject;
+        dialogue = transform.GetChild(0).GetChild(0).gameObject;
         InteractEvent.StartDialogue += BeginDialogue;
         GameController.CancelDialogue += EndDialogue;
+        GameController.EndDialogue += EndDialogue;
     }
 
     // Update is called once per frame
