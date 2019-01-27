@@ -31,6 +31,8 @@ public class GameController : MonoBehaviour
     internal void FinishKeypadEvent()
     {
         FinishKeypad();
+    }
+
     internal void EndDialogueEvent()
     {
         EndDialogue();
