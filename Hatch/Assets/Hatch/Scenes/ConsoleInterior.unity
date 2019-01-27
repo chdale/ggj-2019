@@ -413,7 +413,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 665834214}
-  - {fileID: 1067177602}
   - {fileID: 1636862265}
   - {fileID: 221266869}
   m_Father: {fileID: 0}
@@ -743,7 +742,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1393079613542228, guid: 077a3732934578a46a95581eeeb38f24, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 077a3732934578a46a95581eeeb38f24, type: 2}
@@ -1523,22 +1522,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 1081376426}
---- !u!1 &1568520095 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1285194698239834, guid: 3a70664ff3a0e194393da69fca032544,
-    type: 2}
-  m_PrefabInternal: {fileID: 1568520091}
---- !u!114 &1568520096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1568520095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89087a92ddeeaa1439110f539f88c980, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1636862264
 GameObject:
   m_ObjectHideFlags: 0
@@ -1602,11 +1585,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1636862264}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 537e9c759202347448075440613e122b, type: 3}
+  m_Script: {fileID: 11500000, guid: 902024f523b05d1498153b70bc86bbf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueTargetClass: {fileID: 0}
   manager: {fileID: 415442333}
+  LoadScene: 5
 --- !u!212 &1994085290 stripped
 SpriteRenderer:
   m_PrefabParentObject: {fileID: 212021445619152658, guid: a12fc64d03fe77247a876be250710f51,

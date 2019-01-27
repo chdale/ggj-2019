@@ -16,11 +16,11 @@ public class Deadgineer : MonoBehaviour
     void Start()
     {
         deadgineerEvent = GameObject.Find("DeadgineerDialogue").GetComponent<DeadgineerDialogue>();
-        completedDialogue = new DialogueObject(DialogueTarget.Engineer, "...", 1.0f, Emotions.Idle);
+        completedDialogue = new DialogueObject(DialogueTarget.Engineer, "...", 1.0f, Emotions.Idle, null);
         objectiveDialogue = new DialogueObject[]
         {
-            new DialogueObject(DialogueTarget.Player, "...", 0.5f, Emotions.Idle),
-            new DialogueObject(DialogueTarget.Engineer, "...", 1.0f, Emotions.Idle)/*,
+            new DialogueObject(DialogueTarget.Player, "...", 0.5f, Emotions.Idle, null),
+            new DialogueObject(DialogueTarget.Engineer, "...", 1.0f, Emotions.Idle, null)/*,
             new DialogueObject(DialogueTarget.You, "Huh, looks like he has some sort of key card on him.", .1f, Emotions.Idle)*/
         };
         InteractEvent.StartDialogue += StartDialogue;
