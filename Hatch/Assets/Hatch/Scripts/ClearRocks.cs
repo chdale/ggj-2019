@@ -7,6 +7,7 @@ public class ClearRocks : InteractEvent
 {
 
     public GameObject AnimationObject;
+    public GameObject AnimationObject2;
     public GameObject DialogueTrigger;
 
     private void Awake()
@@ -16,7 +17,7 @@ public class ClearRocks : InteractEvent
 
     public override void TriggerEvent()
     {
-        AnimationObject.GetComponent<AnimationController>().TriggerAnimationsToggle();
+        //AnimationObject2.GetComponent<AnimationController>().TriggerAnimationsToggle();
         GetComponent<BoxCollider2D>().enabled = false;
         StartCoroutine(EnableDialogue());
     }
@@ -25,6 +26,9 @@ public class ClearRocks : InteractEvent
     {
         while (true)
         {
+            AnimationObject2.GetComponent<AnimationController>().TriggerAnimationsToggle();
+            yield return new WaitForSeconds(1);
+            AnimationObject.GetComponent<AnimationController>().TriggerAnimationsToggle();
             yield return new WaitForSeconds(3);
             DialogueTrigger.GetComponent<BoxCollider2D>().enabled = true;
         }
