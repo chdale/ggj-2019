@@ -1,6 +1,8 @@
 using Assets.Hatch.Scripts.Dialogue;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,58 +10,61 @@ public class DialogueManager : MonoBehaviour {
 
 	public Text nameText;
 	public Text dialogueText;
+    public float speed;
+    public Emotions feels;
+    public SpriteRenderer portrait;
 
 	public Animator animator;
+    public List<Sprite> portraitList;
 
-	private Queue<DialogueSentence> sentences;
+	//private Queue<DialogueSentence> sentences;
+    private GameController gameController;
 
 	// Use this for initialization
 	void Start () {
-		sentences = new Queue<DialogueSentence>();
+		//sentences = new Queue<DialogueSentence>();
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
 	}
 
-	public void StartDialogue (Dialogue dialogue)
+	public void StartDialogue (DialogueObject dialogue)
 	{
 		animator.SetBool("IsOpen", true);
 
-		nameText.text = dialogue.name;
-
-		sentences.Clear();
-
-		foreach (DialogueSentence sentence in dialogue.sentences)
-		{
-			sentences.Enqueue(sentence);
-		}
-
-		DisplayNextSentence();
+		DisplayNextSentence(dialogue);
 	}
 
-	public void DisplayNextSentence ()
+	public void DisplayNextSentence (DialogueObject dialogue)
 	{
-		if (sentences.Count == 0)
-		{
-			EndDialogue();
-			return;
-		}
+        Sprite image = portraitList.FirstOrDefault(x => x.name.Equals(string.Format("{0}_{1}.png", dialogue.Speaker.GetDescription(), dialogue.Feels), StringComparison.InvariantCultureIgnoreCase));
+        if (image != null)
+        {
+            portrait.sprite = image;
+        }
+        else
+        {
+            portrait.sprite = portraitList.FirstOrDefault();
+        }
+        nameText.text = dialogue.Speaker.ToString();
 
-        DialogueSentence sentence = sentences.Dequeue();
 		StopAllCoroutines();
-		StartCoroutine(TypeSentence(sentence.Text));
+		StartCoroutine(TypeSentence(dialogue.Text, dialogue.Speed));
 	}
 
-	IEnumerator TypeSentence (string sentence)
+	IEnumerator TypeSentence (string sentence, float speed)
 	{
 		dialogueText.text = "";
 		foreach (char letter in sentence.ToCharArray())
 		{
 			dialogueText.text += letter;
-			yield return null;
+			yield return new WaitForSeconds(speed);
 		}
 	}
 
-	void EndDialogue()
+	public void EndDialogue()
 	{
 		animator.SetBool("IsOpen", false);
+        gameController.CancelJumpEvent();
+        gameController.EndDialogueEvent();
 	}
 
 }

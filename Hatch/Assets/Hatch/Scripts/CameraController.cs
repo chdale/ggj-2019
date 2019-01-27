@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraController : MonoBehaviour {
     public GameObject player;
@@ -10,19 +11,24 @@ public class CameraController : MonoBehaviour {
     private GameObject dialogue;
     private bool dialogueActive;
     private GameObject dialogueTargetObject;
+    private float cameraLeftLimit = -20.5f;
+    private float cameraRightLimit = 20.5f;
+    private Scene scene;
 
     private void Start()
     {
+        scene = SceneManager.GetActiveScene();
         m_camera = GetComponent<Camera>();
-        dialogue = transform.GetChild(0).gameObject;
+        dialogue = transform.GetChild(0).GetChild(0).gameObject;
         InteractEvent.StartDialogue += BeginDialogue;
         GameController.CancelDialogue += EndDialogue;
+        GameController.EndDialogue += EndDialogue;
     }
 
     // Update is called once per frame
     void Update ()
     {
-        if (!dialogueActive)
+        if (!dialogueActive && WithinBounds() && scene.name != "ConsoleExterior")
         {
             Vector3 transition = Vector3.Lerp(transform.position, player.transform.position, 5.0f * Time.deltaTime);
             transform.position = new Vector3(transition.x, transform.position.y, -10f);
@@ -51,5 +57,10 @@ public class CameraController : MonoBehaviour {
     private float MidPointBetween(GameObject player, GameObject target)
     {
         return (player.transform.position.x + target.transform.position.x) / 2;
+    }
+
+    private bool WithinBounds()
+    {
+        return player.transform.position.x > cameraLeftLimit && player.transform.position.x < cameraRightLimit;
     }
 }

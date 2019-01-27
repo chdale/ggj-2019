@@ -39,9 +39,12 @@ namespace UnityStandardAssets._2D
             GameEventManager.OnExited += DisableInteractText;
             GameController.CancelDialogue += EnableInteractText;
             GameController.CancelDialogue += ExitDialogue;
+            GameController.EndDialogue += EnableInteractText;
+            GameController.EndDialogue += ExitDialogue;
             InteractEvent.StartDialogue += DisableInteractText;
             InteractEvent.StartDialogue += EnterDialogue;
             GameController.FinishKeypad += DisableInteractText;
+            GameController.CancelJump += DelayMovement;
         }
 
         private void FixedUpdate()
@@ -205,10 +208,23 @@ namespace UnityStandardAssets._2D
             transform.GetChild(0).gameObject.SetActive(false);
         }
 
+        private void DelayMovement()
+        {
+            StartCoroutine(DelayMovementRoutine());
+        }
+
+        private IEnumerator DelayMovementRoutine()
+        {
+            noMoveyMrMan = true;
+            yield return new WaitForSeconds(.1f);
+            noMoveyMrMan = false;
+        }
+
         public bool IsGrounded()
         {
             return m_Grounded;
         }
+
         public bool IsHanging()
         {
             return isHanging;
