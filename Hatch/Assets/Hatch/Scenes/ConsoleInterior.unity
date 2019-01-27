@@ -818,7 +818,37 @@ Prefab:
     - target: {fileID: 224505453215493640, guid: 4b57317992dbb4b4ab255dfa0577db5b,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 244
+      value: 246
+      objectReference: {fileID: 0}
+    - target: {fileID: 223566850337856476, guid: 4b57317992dbb4b4ab255dfa0577db5b,
+        type: 2}
+      propertyPath: m_PixelPerfect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 223566850337856476, guid: 4b57317992dbb4b4ab255dfa0577db5b,
+        type: 2}
+      propertyPath: m_OverridePixelPerfect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224018331802261830, guid: 4b57317992dbb4b4ab255dfa0577db5b,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224647954095954442, guid: 4b57317992dbb4b4ab255dfa0577db5b,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 223566850337856476, guid: 4b57317992dbb4b4ab255dfa0577db5b,
+        type: 2}
+      propertyPath: m_OverrideSorting
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 223566850337856476, guid: 4b57317992dbb4b4ab255dfa0577db5b,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4b57317992dbb4b4ab255dfa0577db5b, type: 2}
