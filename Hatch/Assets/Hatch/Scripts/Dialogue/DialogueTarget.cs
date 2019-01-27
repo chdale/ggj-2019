@@ -7,6 +7,6 @@ public enum DialogueTarget
 {
     [Description("Player")]
     You,
-    [Description("MedicPlaceholder")]
+    [Description("Medic")]
     Medic
 }
