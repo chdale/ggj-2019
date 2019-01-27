@@ -11,6 +11,7 @@ public class CameraController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        transform.position = new Vector3(player.transform.position.x, transform.position.y, -10f);
+        Vector3 transition = Vector3.Lerp(transform.position, player.transform.position, 5.0f * Time.deltaTime);
+        transform.position = new Vector3(transition.x, transform.position.y, -10f);
     }
 }

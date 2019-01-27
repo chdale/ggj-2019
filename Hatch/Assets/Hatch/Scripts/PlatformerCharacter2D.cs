@@ -13,7 +13,7 @@ namespace UnityStandardAssets._2D
         [SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
         [SerializeField] private float grabDelayTime = .2f;                 // The amount of seconds after releasing a ledge before you can grab again
         [SerializeField] private float characterHeightDistance = 1.088f;    // Character distance above ground
-        [SerializeField] private float climbAnimationDelay = 2.0f;          // The amount of time for the character to climb a ledge
+        [SerializeField] private float climbAnimationDelay = 2.5f;          // The amount of time for the character to climb a ledge
 
         private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
         const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
@@ -126,13 +126,21 @@ namespace UnityStandardAssets._2D
             }
         }
 
+        public void ClimbCorrection()
+        {
+            transform.position = new Vector2(ledgeTransform.position.x, ledgeTransform.position.y + characterHeightDistance);
+            m_Rigidbody2D.isKinematic = false;
+        }
+
         private IEnumerator BeginClimb(Transform ledge)
         {
             isHanging = false;
             canGrab = false;
+            float prevGrav = m_Rigidbody2D.gravityScale;
+            m_Rigidbody2D.isKinematic = true;
+            m_Rigidbody2D.gravityScale = 0;
             yield return new WaitForSeconds(climbAnimationDelay);
-            transform.position = new Vector2(ledgeTransform.position.x, ledgeTransform.position.y + characterHeightDistance);
-            m_Rigidbody2D.isKinematic = false;
+            m_Rigidbody2D.gravityScale = prevGrav;
             canGrab = true;
         }
 
@@ -173,6 +181,7 @@ namespace UnityStandardAssets._2D
         private void EnableInteractText()
         {
             transform.GetChild(0).gameObject.SetActive(true);
+
         }
 
         private void DisableInteractText()
@@ -182,6 +191,10 @@ namespace UnityStandardAssets._2D
         public bool IsGrounded()
         {
             return m_Grounded;
+        }
+        public bool IsHanging()
+        {
+            return isHanging;
         }
     }
 }

@@ -23,11 +23,25 @@ namespace UnityStandardAssets._2D
         public string walkAnimationName;
         [SpineAnimation]
         public string jumpAnimationName;
+        [SpineAnimation]
+        public string climbAnimationName;
+        [SpineAnimation]
+        public string hangAnimationName;
+        [SpineAnimation]
+        public string hangIdleAnimationName;
+        [SpineAnimation]
+        public string hurtIdleAnimationName;
+        [SpineAnimation]
+        public string hurtStandAnimationName;
 
         public SkeletonAnimation skeletonAnimation;
         public Spine.AnimationState spineAnimationState;
         public Spine.Skeleton skeleton;
         private string currentAnimationState = "idle";
+        private float climbDuration = 2.5f;
+        private float climbStart = -2.5f;
+        private bool isClimbing = false;
+
         private GameObject interactText;
 
 
@@ -57,7 +71,12 @@ namespace UnityStandardAssets._2D
             }
             if (Input.GetKey(KeyCode.UpArrow))
             {
+                if (m_Character.IsHanging())
+                {
+                    climbStart = Time.time;
+                }
                 m_Character.ClimbLedge();
+                
             }
             if (Input.GetKey(KeyCode.DownArrow))
             {
@@ -95,7 +114,15 @@ namespace UnityStandardAssets._2D
 
         void AnimationUpdate()
         {
-            if (!m_Character.IsGrounded())
+            if (climbStart + climbDuration > Time.time)
+            {
+                SetAnimationState(0, climbAnimationName, false);
+            }
+            else if (m_Character.IsHanging())
+            {
+                SetAnimationState(0, hangIdleAnimationName, true);
+            }
+            else if(!m_Character.IsGrounded())
             {
                 SetAnimationState(0, jumpAnimationName, true);
             }
@@ -113,6 +140,10 @@ namespace UnityStandardAssets._2D
         {
             if (currentAnimationState != animationName)
             {
+                if (currentAnimationState == climbAnimationName)
+                {
+                    m_Character.ClimbCorrection();
+                }
                 skeletonAnimation = GameObject.Find("PlayerAnim").GetComponent<SkeletonAnimation>();
                 spineAnimationState = skeletonAnimation.AnimationState;
                 spineAnimationState.SetAnimation(0, animationName, true);
