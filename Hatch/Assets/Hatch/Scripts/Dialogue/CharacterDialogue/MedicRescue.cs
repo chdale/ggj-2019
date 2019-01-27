@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MedicRescue : MonoBehaviour {
-    
-    private DialogueManager manager;
+    public DialogueManager manager;
     private DialogueObject[] objectiveDialogue;
     private DialogueObject completedDialogue;
     private int conversationCount;
@@ -13,7 +12,6 @@ public class MedicRescue : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        manager = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
         medicEvent = GameObject.Find("MedicRescueDialogue").GetComponent<MedicRescueDialogueEvent>();
         completedDialogue = new DialogueObject(DialogueTarget.Medic, "Thanks again, see you back at the train!", .04f, Emotions.Idle);
         objectiveDialogue = new DialogueObject[]
