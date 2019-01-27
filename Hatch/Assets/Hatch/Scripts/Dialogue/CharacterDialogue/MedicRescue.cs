@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MedicRescue : MonoBehaviour {
-
-    public bool medicRescued = false;
+    
     private DialogueManager manager;
     private DialogueObject[] objectiveDialogue;
     private DialogueObject completedDialogue;
