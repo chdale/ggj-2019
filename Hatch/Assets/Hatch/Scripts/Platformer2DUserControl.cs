@@ -8,12 +8,11 @@ namespace UnityStandardAssets._2D
     [RequireComponent(typeof(PlatformerCharacter2D))]
     public class Platformer2DUserControl : MonoBehaviour
     {
+        private GameController gameController;
         private PlatformerCharacter2D m_Character;
         private bool m_Jump;
         private float h;
         private bool ableToJump;
-        public delegate void InteractAction();
-        public static event InteractAction Interact;
 
         // Animation
 
@@ -33,6 +32,7 @@ namespace UnityStandardAssets._2D
 
         private void Awake()
         {
+            gameController = GameObject.Find("GameController").GetComponent<GameController>();
             m_Character = GetComponent<PlatformerCharacter2D>();
             GameEventManager.OnEntered += SetInteractTextActive;
             GameEventManager.OnExited += SetInteractTextInactive;
@@ -65,7 +65,11 @@ namespace UnityStandardAssets._2D
             }
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Interact();
+                gameController.InteractEvent();
+            }
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                gameController.EscapeFunctionsEvent();
             }
         }
 
@@ -99,7 +103,7 @@ namespace UnityStandardAssets._2D
             {
                 SetAnimationState(0, jumpAnimationName, true);
             }
-            else if (Math.Abs(h) > 0)
+            else if (Math.Abs(h) > 0 && !m_Character.noMoveyMrMan)
             {
                 SetAnimationState(0, walkAnimationName, true);
             }

@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets._2D;
 
-public class InteractEvent : MonoBehaviour, IEnteredEvent {
+public class InteractEvent : MonoBehaviour, IEnteredEvent
+{
+    public delegate void StartDialogueAction();
+    public static event StartDialogueAction StartDialogue;
+    public DialogueTargetClass dialogueTargetClass;
+
     private GameEventManager manager;
     private Platformer2DUserControl user;
     private bool interactable = false;
@@ -12,12 +17,12 @@ public class InteractEvent : MonoBehaviour, IEnteredEvent {
     {
         manager = transform.parent.GetComponent<GameEventManager>();
         user = manager.player.GetComponent<Platformer2DUserControl>();
-        Platformer2DUserControl.Interact += ConditionallyTriggerEvent;
+        GameController.Interact += ConditionallyTriggerEvent;
     }
 
     public virtual void TriggerEvent()
     {
-        throw new System.NotImplementedException();
+        StartDialogue();
     }
 
     private void ConditionallyTriggerEvent()
