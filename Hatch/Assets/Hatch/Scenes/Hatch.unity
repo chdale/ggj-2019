@@ -318,6 +318,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114943238527566776, guid: a12fc64d03fe77247a876be250710f51,
+        type: 2}
+      propertyPath: portraitList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4403601333086066, guid: a12fc64d03fe77247a876be250710f51, type: 2}
       propertyPath: m_LocalPosition.x
       value: -15.47
@@ -355,9 +360,37 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1552970521}
+    - target: {fileID: 114943238527566776, guid: a12fc64d03fe77247a876be250710f51,
+        type: 2}
+      propertyPath: portraitList.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0978fd86a9061a24995aa4abc840568a,
+        type: 3}
+    - target: {fileID: 114943238527566776, guid: a12fc64d03fe77247a876be250710f51,
+        type: 2}
+      propertyPath: portraitList.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9d81e77c9aa8b394e8363e12a89dd8bb,
+        type: 3}
+    - target: {fileID: 114943238527566776, guid: a12fc64d03fe77247a876be250710f51,
+        type: 2}
+      propertyPath: portraitList.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: a99794f7daa63c049ae67e34c71d89a0,
+        type: 3}
+    - target: {fileID: 114943238527566776, guid: a12fc64d03fe77247a876be250710f51,
+        type: 2}
+      propertyPath: portrait
+      value: 
+      objectReference: {fileID: 861023202}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a12fc64d03fe77247a876be250710f51, type: 2}
   m_IsPrefabParent: 0
+--- !u!212 &861023202 stripped
+SpriteRenderer:
+  m_PrefabParentObject: {fileID: 212021445619152658, guid: a12fc64d03fe77247a876be250710f51,
+    type: 2}
+  m_PrefabInternal: {fileID: 653096231}
 --- !u!114 &889603258 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114943238527566776, guid: a12fc64d03fe77247a876be250710f51,

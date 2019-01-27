@@ -35,7 +35,7 @@ public class DialogueManager : MonoBehaviour {
 
 	public void DisplayNextSentence (DialogueObject dialogue)
 	{
-        Sprite image = portraitList.FirstOrDefault(x => x.name.Equals(string.Format("{0}_{1}.png", dialogue.Speaker.GetDescription(), dialogue.Feels), StringComparison.InvariantCultureIgnoreCase));
+        Sprite image = portraitList.FirstOrDefault(x => x.name.Equals(string.Format("{0}_{1}", dialogue.Speaker.GetDescription(), dialogue.Feels), StringComparison.InvariantCultureIgnoreCase));
         if (image != null)
         {
             portrait.sprite = image;
@@ -44,6 +44,7 @@ public class DialogueManager : MonoBehaviour {
         {
             portrait.sprite = portraitList.FirstOrDefault();
         }
+
         nameText.text = dialogue.Speaker.ToString();
 
 		StopAllCoroutines();
