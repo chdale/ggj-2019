@@ -385,6 +385,11 @@ Prefab:
       propertyPath: animationTriggeredList.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114454477476132740, guid: c3fe39e4f6df5384c83fa48bc7c0d6bf,
+        type: 2}
+      propertyPath: animationTriggeredList.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4843700918214010, guid: c3fe39e4f6df5384c83fa48bc7c0d6bf, type: 2}
       propertyPath: m_LocalPosition.x
       value: 9.218097
@@ -533,7 +538,7 @@ Prefab:
     - target: {fileID: 61055872066859750, guid: c3fe39e4f6df5384c83fa48bc7c0d6bf,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114923990651128560, guid: c3fe39e4f6df5384c83fa48bc7c0d6bf,
         type: 2}
@@ -541,6 +546,20 @@ Prefab:
       value: 
       objectReference: {fileID: 11400000, guid: 1928c19f1199a38459e3e9e61be1625f,
         type: 2}
+    - target: {fileID: 1130794288959308, guid: c3fe39e4f6df5384c83fa48bc7c0d6bf, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114454477476132740, guid: c3fe39e4f6df5384c83fa48bc7c0d6bf,
+        type: 2}
+      propertyPath: animationTriggeredList.Array.data[0]
+      value: rock_move
+      objectReference: {fileID: 0}
+    - target: {fileID: 114454477476132740, guid: c3fe39e4f6df5384c83fa48bc7c0d6bf,
+        type: 2}
+      propertyPath: isTriggered
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114021416750805160, guid: c3fe39e4f6df5384c83fa48bc7c0d6bf, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: c3fe39e4f6df5384c83fa48bc7c0d6bf, type: 2}
