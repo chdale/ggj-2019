@@ -48,15 +48,14 @@ namespace UnityStandardAssets._2D
 
         private void Awake()
         {
-            Subscribe(SceneManager.GetActiveScene(), LoadSceneMode.Single);
+            Subscribe();
             m_Character = GetComponent<PlatformerCharacter2D>();
             interactText = transform.GetChild(0).gameObject;
-            SceneManager.sceneLoaded += Subscribe;
 
             AnimationAwake();
         }
 
-        private void Subscribe(Scene scene, LoadSceneMode mode)
+        private void Subscribe()
         {
             gameController = GameObject.Find("GameController").GetComponent<GameController>();
             GameEventManager.OnEntered += SetInteractTextActive;
@@ -145,7 +144,7 @@ namespace UnityStandardAssets._2D
             {
                 SetAnimationState(0, jumpAnimationName, true);
             }
-            else if (Math.Abs(h) > 0 && !m_Character.noMoveyMrMan)
+            else if (Math.Abs(h) > 0 && !m_Character.preventMovement)
             {
                 SetAnimationState(0, walkAnimationName, true);
             }

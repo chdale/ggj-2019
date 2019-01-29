@@ -9,12 +9,25 @@ public class InteractEvent : MonoBehaviour, IEnteredEvent
     public static event StartDialogueAction StartDialogue;
     public DialogueTargetClass dialogueTargetClass;
 
-    public GameEventManager manager;
+    //Determines if the event is upon entrance
+    public bool enterEvent = false;
+
+    //Level Requirement Items
+    public Vector2 newPlayerPosition;
+    public Vector3 newCameraPosition;
+    public Level level;
+    public bool dynamicCameraHorizontal = false;
+    public float cameraLeftThreshold;
+    public float cameraRightThreshold;
+    public float cameraSize = 10.0f;
+
+    private GameEventManager manager;
     private Platformer2DUserControl user;
     private bool interactable = false;
 
     private void Awake()
     {
+        manager = transform.parent.GetComponent<GameEventManager>();
         user = manager.player.GetComponent<Platformer2DUserControl>();
     }
 
@@ -40,8 +53,22 @@ public class InteractEvent : MonoBehaviour, IEnteredEvent
     {
         if (collision.gameObject.tag == "Player")
         {
-            interactable = true;
-            manager.EnteredEvent();
+            if (!enterEvent)
+            {
+                interactable = true;
+                if (manager != null)
+                {
+                    manager.EnteredEvent();
+                }
+                else
+                {
+                    manager = transform.parent.GetComponent<GameEventManager>();
+                }
+            }
+            else
+            {
+                TriggerEvent();
+            }
         }
     }
 
@@ -50,7 +77,14 @@ public class InteractEvent : MonoBehaviour, IEnteredEvent
         if (collision.gameObject.tag == "Player")
         {
             interactable = false;
-            manager.ExitedEvent();
+            if (manager != null)
+            {
+                manager.ExitedEvent();
+            }
+            else
+            {
+                manager = transform.parent.GetComponent<GameEventManager>();
+            }
         }
     }
 }

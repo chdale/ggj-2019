@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class DoorsTrigger : TogglableEvent
 {
-
-    public GameObject AnimationObject;
-
     public override void EnterEvent()
     {
         AnimationObject.GetComponent<AnimationController>().TriggerAnimationsToggle(true);

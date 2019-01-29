@@ -10,11 +10,17 @@ public class GameEventManager : MonoBehaviour {
 
     public void EnteredEvent()
     {
-        OnEntered();
+        if (OnEntered != null)
+        {
+            OnEntered();
+        }
     }
 
     public void ExitedEvent()
     {
-        OnExited();
+        if (OnExited != null)
+        {
+            OnExited();
+        }
     }
 }
