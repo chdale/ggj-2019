@@ -56,14 +56,14 @@ public class MedicRescue : MonoBehaviour {
         {
             if (!GameStates.States[GameStates.MEDIC])
             {
-                if (conversationCount > 3)
+                conversationCount++;
+                if (conversationCount > 4)
                 {
                     GameStates.States[GameStates.MEDIC] = true;
                     EndDialogue();
                 }
                 else
                 {
-                    conversationCount++;
                     manager.DisplayNextSentence(objectiveDialogue[conversationCount]);
                 }
             }
@@ -75,6 +75,7 @@ public class MedicRescue : MonoBehaviour {
         if (conversationCount > 3)
         {
             GameStates.States[GameStates.MEDIC] = true;
+            medicEvent.isActivated = false;
             manager.EndDialogue();
         }
     }

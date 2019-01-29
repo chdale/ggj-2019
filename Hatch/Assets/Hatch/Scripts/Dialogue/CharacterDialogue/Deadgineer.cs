@@ -51,6 +51,7 @@ public class Deadgineer : MonoBehaviour
         {
             //if (!GameStates.States[GameStates.CARD])
             //{
+                conversationCount++;
                 if (conversationCount > 1 /*2*/)
                 {
                     //GameStates.States[GameStates.CARD] = true;
@@ -58,7 +59,6 @@ public class Deadgineer : MonoBehaviour
                 }
                 else
                 {
-                    conversationCount++;
                     manager.DisplayNextSentence(objectiveDialogue[conversationCount]);
                 }
             //}
@@ -70,6 +70,7 @@ public class Deadgineer : MonoBehaviour
         if (conversationCount > 1 /*2*/)
         {
             //GameStates.States[GameStates.CARD] = true;
+            deadgineerEvent.isActivated = false;
             manager.EndDialogue();
         }
     }
