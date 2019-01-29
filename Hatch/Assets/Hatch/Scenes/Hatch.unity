@@ -365,6 +365,11 @@ Prefab:
       propertyPath: animationLength.Array.size
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114454477476132740, guid: c3fe39e4f6df5384c83fa48bc7c0d6bf,
+        type: 2}
+      propertyPath: animationLength.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 114864541154724586, guid: c3fe39e4f6df5384c83fa48bc7c0d6bf,
         type: 2}
       propertyPath: animationListIntro.Array.size
@@ -375,7 +380,22 @@ Prefab:
       propertyPath: animationOutroList.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114454477476132740, guid: c3fe39e4f6df5384c83fa48bc7c0d6bf,
+        type: 2}
+      propertyPath: animationListIntro.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114454477476132740, guid: c3fe39e4f6df5384c83fa48bc7c0d6bf,
+        type: 2}
+      propertyPath: animationOutroList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 114864541154724586, guid: c3fe39e4f6df5384c83fa48bc7c0d6bf,
+        type: 2}
+      propertyPath: animationRelaxedList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114454477476132740, guid: c3fe39e4f6df5384c83fa48bc7c0d6bf,
         type: 2}
       propertyPath: animationRelaxedList.Array.size
       value: 1
@@ -388,7 +408,7 @@ Prefab:
     - target: {fileID: 114454477476132740, guid: c3fe39e4f6df5384c83fa48bc7c0d6bf,
         type: 2}
       propertyPath: animationTriggeredList.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4843700918214010, guid: c3fe39e4f6df5384c83fa48bc7c0d6bf, type: 2}
       propertyPath: m_LocalPosition.x
@@ -559,6 +579,46 @@ Prefab:
         type: 2}
       propertyPath: isTriggered
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114454477476132740, guid: c3fe39e4f6df5384c83fa48bc7c0d6bf,
+        type: 2}
+      propertyPath: animationLength.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114454477476132740, guid: c3fe39e4f6df5384c83fa48bc7c0d6bf,
+        type: 2}
+      propertyPath: animationLength.Array.data[1]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114454477476132740, guid: c3fe39e4f6df5384c83fa48bc7c0d6bf,
+        type: 2}
+      propertyPath: animationLength.Array.data[2]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114454477476132740, guid: c3fe39e4f6df5384c83fa48bc7c0d6bf,
+        type: 2}
+      propertyPath: animationLength.Array.data[3]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114454477476132740, guid: c3fe39e4f6df5384c83fa48bc7c0d6bf,
+        type: 2}
+      propertyPath: animationLength.Array.data[4]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114454477476132740, guid: c3fe39e4f6df5384c83fa48bc7c0d6bf,
+        type: 2}
+      propertyPath: animationListIntro.Array.data[0]
+      value: rock_start
+      objectReference: {fileID: 0}
+    - target: {fileID: 114454477476132740, guid: c3fe39e4f6df5384c83fa48bc7c0d6bf,
+        type: 2}
+      propertyPath: animationRelaxedList.Array.data[0]
+      value: rock_stop
+      objectReference: {fileID: 0}
+    - target: {fileID: 114454477476132740, guid: c3fe39e4f6df5384c83fa48bc7c0d6bf,
+        type: 2}
+      propertyPath: animationOutroList.Array.data[0]
+      value: rock_stop
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114021416750805160, guid: c3fe39e4f6df5384c83fa48bc7c0d6bf, type: 2}
