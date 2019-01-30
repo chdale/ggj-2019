@@ -5,16 +5,19 @@ namespace Assets.Hatch.Scripts.Events
     public class OpenKeypad : InteractEvent
     {
         public GameObject Keypad;
-        public GameController gameController;
+
+        public delegate void StartKeypadAction();
+        public static event StartKeypadAction StartKeypad;
 
         private void Awake()
         {
-            gameController = GameObject.Find("GameController").GetComponent<GameController>();
             Subscribe();
         }
 
         public override void TriggerEvent()
         {
+            gameController.StopCharacter();
+            gameController.InteractInactiveEvent();
             Keypad.SetActive(true);
         }
 

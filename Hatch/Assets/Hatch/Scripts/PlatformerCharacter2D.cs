@@ -61,14 +61,12 @@ namespace UnityStandardAssets._2D
         {
             GameEventManager.OnEntered += EnableInteractText;
             GameEventManager.OnExited += DisableInteractText;
-            GameController.CancelDialogue += EnableInteractText;
-            GameController.CancelDialogue += ExitDialogue;
-            GameController.EndDialogue += EnableInteractText;
-            GameController.EndDialogue += ExitDialogue;
-            InteractEvent.StartDialogue += DisableInteractText;
-            InteractEvent.StartDialogue += EnterDialogue;
+            GameController.InteractActive += EnableInteractText;
+            GameController.InteractInactive += DisableInteractText;
             GameController.FinishKeypad += DisableInteractText;
             GameController.CancelJump += DelayMovement;
+            GameController.StopPlayer += StopMovement;
+            GameController.StartPlayer += StartMovement;
         }
 
         public void Move(float move, bool crouch, bool jump)
@@ -192,16 +190,6 @@ namespace UnityStandardAssets._2D
             }
         }
 
-        private void EnterDialogue()
-        {
-            preventMovement = true;
-        }
-
-        private void ExitDialogue()
-        {
-            preventMovement = false;
-        }
-
         private void EnableInteractText()
         {
             transform.GetChild(0).gameObject.SetActive(true);
@@ -222,6 +210,16 @@ namespace UnityStandardAssets._2D
         {
             preventMovement = true;
             yield return new WaitForSeconds(.1f);
+            preventMovement = false;
+        }
+
+        private void StopMovement()
+        {
+            preventMovement = true;
+        }
+
+        private void StartMovement()
+        {
             preventMovement = false;
         }
 

@@ -27,7 +27,7 @@ public class MedicRescue : MonoBehaviour {
             new DialogueObject(DialogueTarget.Medic, "No need to let me ramble on...", .1f, Emotions.Idle, talkClip),
             new DialogueObject(DialogueTarget.Medic, "We need to regroup in the train to figure out how to get out of here!", .04f, Emotions.Idle, talkClip)
         };
-        InteractEvent.StartDialogue += StartDialogue;
+        GameController.StartDialogue += StartDialogue;
         GameController.NextDialogue += NextDialogue;
         GameController.CancelDialogue += EndDialogue;
 	    
@@ -67,16 +67,16 @@ public class MedicRescue : MonoBehaviour {
                     manager.DisplayNextSentence(objectiveDialogue[conversationCount]);
                 }
             }
+            else
+            {
+                EndDialogue();
+            }
         }
     }
 
     private void EndDialogue()
     {
-        if (conversationCount > 3)
-        {
-            GameStates.States[GameStates.MEDIC] = true;
-            medicEvent.isActivated = false;
-            manager.EndDialogue();
-        }
+        medicEvent.isActivated = false;
+        manager.EndDialogue();
     }
 }

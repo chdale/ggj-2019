@@ -23,7 +23,7 @@ public class Deadgineer : MonoBehaviour
             new DialogueObject(DialogueTarget.Engineer, "...", 1.0f, Emotions.Idle, null)/*,
             new DialogueObject(DialogueTarget.You, "Huh, looks like he has some sort of key card on him.", .1f, Emotions.Idle)*/
         };
-        InteractEvent.StartDialogue += StartDialogue;
+        GameController.StartDialogue += StartDialogue;
         GameController.NextDialogue += NextDialogue;
         GameController.CancelDialogue += EndDialogue;
     }

@@ -28,7 +28,7 @@ public class CameraController : MonoBehaviour {
         level = Level.Hatch;
         m_camera = GetComponent<Camera>();
         dialogue = transform.GetChild(0).GetChild(0).gameObject;
-        InteractEvent.StartDialogue += BeginDialogue;
+        GameController.StartDialogue += BeginDialogue;
         GameController.CancelDialogue += EndDialogue;
         GameController.EndDialogue += EndDialogue;
     }
@@ -91,7 +91,14 @@ public class CameraController : MonoBehaviour {
             dialogueActive = false;
             dialogue.SetActive(false);
             m_camera.orthographicSize = savedSize;
-            transform.position = defaultCameraPosition != default(Vector3) ? defaultCameraPosition : new Vector3(PostDialogueCameraPosition(), 0, -10);
+            if (dynamicCameraHorizontal)
+            {
+                transform.position = new Vector3(PostDialogueCameraPosition(), 0, -10);
+            }
+            else
+            {
+                transform.position = defaultCameraPosition;
+            }
             FacePlayer faceScript = dialogueTargetObject.GetComponent<FacePlayer>();
             if (faceScript != null)
             {
