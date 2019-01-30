@@ -1,3 +1,4 @@
 # Hatch
 
-At the moment, the best functioning branch is `scene-fixed`, so I would recommend Build & Run on that branch for the best experience (a lot of the audio is missing from it though)
+## To Play
+Download the project and go to the `ggj-2019/Builds` folder and run `Hatch.exe`
