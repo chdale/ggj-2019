@@ -16,6 +16,7 @@ public class InteractEvent : MonoBehaviour, IEnteredEvent
     public Vector2 newPlayerPosition;
     public Vector3 newCameraPosition;
     public Level level;
+    public AudioSource levelMusic;
     public bool dynamicCameraHorizontal = false;
     public float cameraLeftThreshold;
     public float cameraRightThreshold;
