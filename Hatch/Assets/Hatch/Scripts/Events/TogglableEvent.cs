@@ -5,9 +5,11 @@ using UnityStandardAssets._2D;
 
 public class TogglableEvent : MonoBehaviour, ITogglableEvent
 {
-
-    public BoxCollider2D Trigger;
+    public GameObject AnimationObject;
     public bool IsTriggered;
+
+    private BoxCollider2D Trigger;
+
     private void Start()
     {
         Trigger = GetComponent<BoxCollider2D>();

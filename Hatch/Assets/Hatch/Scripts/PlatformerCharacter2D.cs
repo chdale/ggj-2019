@@ -27,17 +27,16 @@ namespace UnityStandardAssets._2D
         private bool canGrab = true; // Determines where or not you can grab a ledge for climbing
         private Transform ledgeTransform; // The transform for the ledge you are grabbing
         private bool isHanging; //Determines whether or not you are hanging from a ledge
-        public bool noMoveyMrMan = false;
+        public bool preventMovement = false;
 
         private void Awake()
         {
+            Subscribe();
             // Setting up references.
             m_GroundCheck = transform.Find("GroundCheck");
             m_CeilingCheck = transform.Find("CeilingCheck");
             //m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
-            Subscribe(SceneManager.GetActiveScene(), LoadSceneMode.Single);
-            SceneManager.sceneLoaded += Subscribe;
         }
 
         private void FixedUpdate()
@@ -58,7 +57,7 @@ namespace UnityStandardAssets._2D
             //m_Anim.SetFloat("vSpeed", m_Rigidbody2D.velocity.y);
         }
 
-        private void Subscribe(Scene scene, LoadSceneMode mode)
+        private void Subscribe()
         {
             GameEventManager.OnEntered += EnableInteractText;
             GameEventManager.OnExited += DisableInteractText;
@@ -74,7 +73,7 @@ namespace UnityStandardAssets._2D
 
         public void Move(float move, bool crouch, bool jump)
         {
-            if (!m_Rigidbody2D.isKinematic && !noMoveyMrMan)
+            if (!m_Rigidbody2D.isKinematic && !preventMovement)
             {// If crouching, check to see if the character can stand up
                 if (!crouch /*&& m_Anim.GetBool("Crouch")*/)
                 {
@@ -195,12 +194,12 @@ namespace UnityStandardAssets._2D
 
         private void EnterDialogue()
         {
-            noMoveyMrMan = true;
+            preventMovement = true;
         }
 
         private void ExitDialogue()
         {
-            noMoveyMrMan = false;
+            preventMovement = false;
         }
 
         private void EnableInteractText()
@@ -221,9 +220,9 @@ namespace UnityStandardAssets._2D
 
         private IEnumerator DelayMovementRoutine()
         {
-            noMoveyMrMan = true;
+            preventMovement = true;
             yield return new WaitForSeconds(.1f);
-            noMoveyMrMan = false;
+            preventMovement = false;
         }
 
         public bool IsGrounded()

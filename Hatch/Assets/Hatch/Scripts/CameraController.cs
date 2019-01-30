@@ -7,18 +7,25 @@ using UnityEngine.SceneManagement;
 public class CameraController : MonoBehaviour {
     public GameObject player;
     public DialogueTargetClass dialogueTarget;
-    
+
+    private Vector3 defaultCameraPosition;
+    private bool dynamicCameraHorizontal;
     private Camera m_camera;
     private GameObject dialogue;
     private bool dialogueActive;
     private GameObject dialogueTargetObject;
-    private float cameraLeftLimit = -20.5f;
-    private float cameraRightLimit = 20.5f;
-    private Scene scene;
+    private float cameraLeftLimit;
+    private float cameraRightLimit;
+    private Level level;
+    private float savedSize;
 
     private void Start()
     {
-        scene = SceneManager.GetActiveScene();
+        dynamicCameraHorizontal = true;
+        cameraLeftLimit = -20.5f;
+        cameraRightLimit = 20.5f;
+        savedSize = 10.0f;
+        level = Level.Hatch;
         m_camera = GetComponent<Camera>();
         dialogue = transform.GetChild(0).GetChild(0).gameObject;
         InteractEvent.StartDialogue += BeginDialogue;
@@ -31,7 +38,7 @@ public class CameraController : MonoBehaviour {
     {
         if (!dialogueActive && WithinBounds())
         {
-            if (!scene.name.Contains("Console") && !scene.name.Equals("MainCarInterior", StringComparison.InvariantCultureIgnoreCase))
+            if (dynamicCameraHorizontal)
             {
                 Vector3 transition = Vector3.Lerp(transform.position, player.transform.position, 5.0f * Time.deltaTime);
                 transform.position = new Vector3(transition.x, transform.position.y, -10f);
@@ -39,30 +46,57 @@ public class CameraController : MonoBehaviour {
         }
     }
 
+    public void LoadLevel(LevelRequirement levelRequirement)
+    {
+        player.transform.position = levelRequirement.playerPosition;
+        defaultCameraPosition = levelRequirement.defaultCameraPosition;
+        transform.position = defaultCameraPosition;
+        level = levelRequirement.level;
+        dynamicCameraHorizontal = levelRequirement.dynamicCameraHorizontal;
+
+        if (dynamicCameraHorizontal)
+        {
+            cameraLeftLimit = levelRequirement.cameraLeftThreshold;
+            cameraRightLimit = levelRequirement.cameraRightThreshold;
+        }
+        savedSize = levelRequirement.cameraSize;
+        m_camera.orthographicSize = savedSize;
+    }
+
     private void BeginDialogue()
     {
-        dialogueTargetObject = GameObject.Find(dialogueTarget.dialogueTargetName.ToString());
-        dialogueActive = true;
-        dialogue.SetActive(true);
-        m_camera.orthographicSize = 7.0f;
-        transform.position = new Vector3(MidPointBetween(player, dialogueTargetObject), -4.0f, -10f);
-        FacePlayer faceScript = dialogueTargetObject.GetComponent<FacePlayer>();
-        if (faceScript != null)
+        if (!dialogueActive)
         {
-            faceScript.FaceAndUnfacePlayer(player);
+            dialogueTargetObject = GameObject.Find(dialogueTarget.dialogueTargetName.ToString());
+            dialogueActive = true;
+            dialogue.SetActive(true);
+            if (dynamicCameraHorizontal)
+            {
+                m_camera.orthographicSize = 5.0f;
+            }
+            float dialogueCameraPosition = defaultCameraPosition.y - (savedSize * (2.0f / 5.0f));
+            transform.position = new Vector3(MidPointBetween(player, dialogueTargetObject), dialogueCameraPosition, -10f);
+            FacePlayer faceScript = dialogueTargetObject.GetComponent<FacePlayer>();
+            if (faceScript != null)
+            {
+                faceScript.FaceAndUnfacePlayer(player);
+            }
         }
     }
 
     private void EndDialogue()
     {
-        dialogueActive = false;
-        dialogue.SetActive(false);
-        m_camera.orthographicSize = 10.0f;
-        transform.position = new Vector3(PostDialogueCameraPosition(), 0.0f, -10f);
-        FacePlayer faceScript = dialogueTargetObject.GetComponent<FacePlayer>();
-        if (faceScript != null)
+        if (dialogueActive)
         {
-            faceScript.FaceAndUnfacePlayer(player);
+            dialogueActive = false;
+            dialogue.SetActive(false);
+            m_camera.orthographicSize = savedSize;
+            transform.position = defaultCameraPosition != default(Vector3) ? defaultCameraPosition : new Vector3(PostDialogueCameraPosition(), 0, -10);
+            FacePlayer faceScript = dialogueTargetObject.GetComponent<FacePlayer>();
+            if (faceScript != null)
+            {
+                faceScript.FaceAndUnfacePlayer(player);
+            }
         }
     }
 
