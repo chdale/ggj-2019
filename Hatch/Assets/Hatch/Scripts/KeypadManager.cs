@@ -9,19 +9,24 @@ public class KeypadManager : MonoBehaviour
     public Text displayText;
     public string keyCode = "12345";
     public int maxKeys = 5;
+
     private string _input;
     private OpenKeypad openKeypad;
     private AudioSource buttonPress;
+    private GameObject numPad;
+    private bool keypadActive;
 
     //public OpenKeypad openKeypad;
 
     void Start()
     {
-        displayText = this.GetComponentInChildren<Text>();
+        numPad = transform.GetChild(0).GetChild(0).GetChild(2).gameObject;
+        displayText = transform.GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetComponentInChildren<Text>();
         displayText.text = string.Empty;
         _input = string.Empty;
         openKeypad = GameObject.Find("OpenKeypad").GetComponent<OpenKeypad>();
         buttonPress = GetComponent<AudioSource>();
+        GameController.FinishKeypad += DeactivateKeypad;
     }
 
     // Update is called once per frame
@@ -120,12 +125,17 @@ public class KeypadManager : MonoBehaviour
 
     private void ToggleButtonUI(string keyEntered)
     {
-        var numberCanvas = GetComponentInChildren<Canvas>();
-        var numbers = numberCanvas.GetComponentsInChildren<Button>();
-        var selectedButton = numbers.First(x => x.name.Equals(keyEntered));
+        var numbers = numPad.GetComponentsInChildren<Button>();
+        var selectedButton = numbers.First(x => x.name.Contains(keyEntered));
         var sprite = selectedButton.image.sprite;
         selectedButton.image.sprite = selectedButton.spriteState.pressedSprite;
         StartCoroutine(SwapSprite(sprite, selectedButton, .1f));
+    }
+
+    private void DeactivateKeypad()
+    {
+        Clear();
+        transform.gameObject.SetActive(false);
     }
 
     IEnumerator SwapSprite(Sprite sprite, Button button, float time)

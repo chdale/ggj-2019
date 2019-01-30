@@ -5,8 +5,6 @@ using UnityStandardAssets._2D;
 
 public class InteractEvent : MonoBehaviour, IEnteredEvent
 {
-    public delegate void StartDialogueAction();
-    public static event StartDialogueAction StartDialogue;
     public DialogueTargetClass dialogueTargetClass;
 
     //Determines if the event is upon entrance
@@ -21,6 +19,7 @@ public class InteractEvent : MonoBehaviour, IEnteredEvent
     public float cameraLeftThreshold;
     public float cameraRightThreshold;
     public float cameraSize = 10.0f;
+    public GameController gameController;
 
     private GameEventManager manager;
     private Platformer2DUserControl user;
@@ -28,6 +27,7 @@ public class InteractEvent : MonoBehaviour, IEnteredEvent
 
     private void Awake()
     {
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
         manager = transform.parent.GetComponent<GameEventManager>();
         user = manager.player.GetComponent<Platformer2DUserControl>();
     }
@@ -39,7 +39,7 @@ public class InteractEvent : MonoBehaviour, IEnteredEvent
 
     public virtual void TriggerEvent()
     {
-        StartDialogue();
+        gameController.StartDialogueEvent();
     }
 
     private void ConditionallyTriggerEvent()
