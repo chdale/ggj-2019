@@ -7,35 +7,39 @@ using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogueManager : MonoBehaviour {
+public class DialogueManager : MonoBehaviour
+{
 
-	public Text nameText;
-	public Text dialogueText;
+    public Text nameText;
+    public Text dialogueText;
     public float speed;
     public Emotions feels;
     public SpriteRenderer portrait;
 
-	public Animator animator;
+    public Animator animator;
     public List<Sprite> portraitList;
 
-	//private Queue<DialogueSentence> sentences;
+    public bool typeSentenceActive = false;
+
+    //private Queue<DialogueSentence> sentences;
     private GameController gameController;
 
-	// Use this for initialization
-	void Start () {
-		//sentences = new Queue<DialogueSentence>();
+    // Use this for initialization
+    void Start()
+    {
+        //sentences = new Queue<DialogueSentence>();
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
-	}
+    }
 
-	public void StartDialogue (DialogueObject dialogue)
-	{
-		animator.SetBool("IsOpen", true);
+    public void StartDialogue(DialogueObject dialogue)
+    {
+        animator.SetBool("IsOpen", true);
 
-		DisplayNextSentence(dialogue);
-	}
+        DisplayNextSentence(dialogue);
+    }
 
-	public void DisplayNextSentence (DialogueObject dialogue)
-	{
+    public void DisplayNextSentence(DialogueObject dialogue)
+    {
         Sprite image = portraitList.FirstOrDefault(x => x.name.Equals(string.Format("{0}_{1}", dialogue.Speaker.ToString(), dialogue.Feels), StringComparison.InvariantCultureIgnoreCase));
         if (image != null)
         {
@@ -48,30 +52,38 @@ public class DialogueManager : MonoBehaviour {
 
         nameText.text = dialogue.Speaker.GetDescription();
 
-		StopAllCoroutines();
-		StartCoroutine(TypeSentence(dialogue.Text, dialogue.Speed, dialogue.Sound));
-	}
+        StopAllCoroutines();
+        StartCoroutine(TypeSentence(dialogue.Text, dialogue.Speed, dialogue.Sound));
+    }
 
-	IEnumerator TypeSentence (string sentence, float speed, [CanBeNull] AudioSource clip)
-	{
-		dialogueText.text = "";
-	    for (int i = 0; i < sentence.Length; i++)
-	    {
-	        dialogueText.text += sentence[i];
-	        if (i % 2 == 0 && clip != null)
-	        {
-	            clip.Play();
-	        }
+    IEnumerator TypeSentence(string sentence, float speed, [CanBeNull] AudioSource clip)
+    {
+        typeSentenceActive = true;
+        dialogueText.text = "";
+        for (int i = 0; i < sentence.Length; i++)
+        {
+            dialogueText.text += sentence[i];
+            if (i % 2 == 0 && clip != null)
+            {
+                clip.Play();
+            }
 
-	        yield return new WaitForSeconds(speed);
+            yield return new WaitForSeconds(speed);
         }
-	}
+        typeSentenceActive = false;
+    }
 
-	public void EndDialogue()
-	{
-		animator.SetBool("IsOpen", false);
+    public void FinishSentence(DialogueObject dialogue)
+    {
+        StopAllCoroutines();
+        dialogueText.text = dialogue.Text;
+        typeSentenceActive = false;
+    }
+
+    public void EndDialogue()
+    {
+        animator.SetBool("IsOpen", false);
         gameController.CancelJumpEvent();
         gameController.EndDialogueEvent();
-	}
-
+    }
 }
