@@ -6,22 +6,23 @@ public class Deadgineer : MonoBehaviour
 {
     public DialogueManager manager;
     private DialogueObject[] objectiveDialogue;
-    private DialogueObject completedDialogue;
+    private DialogueObject[] completedDialogue;
     private int conversationCount;
     private DeadgineerDialogue deadgineerEvent;
     private bool conversationEnsues = false;
-    //private int conversationCount;
 
     // Use this for initialization
     void Start()
     {
         deadgineerEvent = GameObject.Find("DeadgineerDialogue").GetComponent<DeadgineerDialogue>();
-        completedDialogue = new DialogueObject(DialogueTarget.Engineer, "...", 1.0f, Emotions.Idle, null);
+        completedDialogue = new DialogueObject[]
+        {
+            new DialogueObject(DialogueTarget.Engineer, "...", 1.0f, Emotions.Idle, null)
+        };
         objectiveDialogue = new DialogueObject[]
         {
             new DialogueObject(DialogueTarget.Player, "...", 0.5f, Emotions.Idle, null),
-            new DialogueObject(DialogueTarget.Engineer, "...", 1.0f, Emotions.Idle, null)/*,
-            new DialogueObject(DialogueTarget.You, "Huh, looks like he has some sort of key card on him.", .1f, Emotions.Idle)*/
+            new DialogueObject(DialogueTarget.Engineer, "...", 1.0f, Emotions.Idle, null)
         };
         GameController.StartDialogue += StartDialogue;
         GameController.NextDialogue += NextDialogue;
@@ -34,14 +35,7 @@ public class Deadgineer : MonoBehaviour
         {
             conversationEnsues = true;
             conversationCount = 0;
-            //if (!GameStates.States[GameStates.CARD])
-            //{
-                manager.StartDialogue(objectiveDialogue[0]);
-            //}
-            //else
-            //{
-            //    manager.StartDialogue(completedDialogue);
-            //}
+            manager.StartDialogue(objectiveDialogue[0]);
         }
     }
 
@@ -49,27 +43,29 @@ public class Deadgineer : MonoBehaviour
     {
         if (conversationEnsues)
         {
-            //if (!GameStates.States[GameStates.CARD])
-            //{
+            if (manager.typeSentenceActive)
+            {
+                manager.FinishSentence(objectiveDialogue[conversationCount]);
+            }
+            else
+            {
                 conversationCount++;
-                if (conversationCount > 1 /*2*/)
+                if (conversationCount > 1)
                 {
-                    //GameStates.States[GameStates.CARD] = true;
                     EndDialogue();
                 }
                 else
                 {
                     manager.DisplayNextSentence(objectiveDialogue[conversationCount]);
                 }
-            //}
+            }
         }
     }
 
     private void EndDialogue()
     {
-        if (conversationCount > 1 /*2*/)
+        if (conversationCount > 1)
         {
-            //GameStates.States[GameStates.CARD] = true;
             deadgineerEvent.isActivated = false;
             manager.EndDialogue();
         }
