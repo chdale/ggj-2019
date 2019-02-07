@@ -152,25 +152,20 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114813516755404002, guid: a12fc64d03fe77247a876be250710f51,
-        type: 2}
-      propertyPath: sceneLoad
-      value: 
-      objectReference: {fileID: 1007624105}
     - target: {fileID: 114873234545724454, guid: a12fc64d03fe77247a876be250710f51,
         type: 2}
       propertyPath: player
       value: 
       objectReference: {fileID: 523363279}
+    - target: {fileID: 114813516755404002, guid: a12fc64d03fe77247a876be250710f51,
+        type: 2}
+      propertyPath: sceneLoad
+      value: 
+      objectReference: {fileID: 1007624105}
     - target: {fileID: 224217597278920576, guid: a12fc64d03fe77247a876be250710f51,
         type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 20893238041156502, guid: a12fc64d03fe77247a876be250710f51,
-        type: 2}
-      propertyPath: orthographic size
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1375627854047308, guid: a12fc64d03fe77247a876be250710f51, type: 2}
       propertyPath: m_IsActive
@@ -502,6 +497,11 @@ Prefab:
         type: 2}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 82757310004043502, guid: 50daa5fd091847646ad3e1a3fc2b6ca8,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50daa5fd091847646ad3e1a3fc2b6ca8, type: 2}

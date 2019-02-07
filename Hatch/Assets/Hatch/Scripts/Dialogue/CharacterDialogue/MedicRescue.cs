@@ -3,22 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets._2D;
 
-public class MedicRescue : MonoBehaviour {
+public class MedicRescue : MonoBehaviour
+{
     public DialogueManager manager;
     private DialogueObject[] objectiveDialogue;
-    private DialogueObject completedDialogue;
+    private DialogueObject[] completedDialogue;
     private int conversationCount;
     private MedicRescueDialogueEvent medicEvent;
     private bool conversationEnsues = false;
     private AudioSource talkClip;
     private AudioSource playerClip;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         medicEvent = GameObject.Find("MedicRescueDialogue").GetComponent<MedicRescueDialogueEvent>();
-	    talkClip = gameObject.GetComponent<AudioSource>();
-	    playerClip = GameObject.Find("Player_Wireframe").GetComponentInChildren<AudioSource>();
-        completedDialogue = new DialogueObject(DialogueTarget.Medic, "Thanks again, see you back at the train!", .04f, Emotions.Idle, talkClip);
+        talkClip = gameObject.GetComponent<AudioSource>();
+        playerClip = GameObject.Find("Player_Wireframe").GetComponentInChildren<AudioSource>();
+        completedDialogue = new DialogueObject[]
+        {
+            new DialogueObject(DialogueTarget.Medic, "Thanks again, see you back at the train!", .04f, Emotions.Idle, talkClip)
+        };
         objectiveDialogue = new DialogueObject[]
         {
             new DialogueObject(DialogueTarget.Medic, "OH MAN, THAT REALLY SMARTS!", .1f, Emotions.Angry, talkClip),
@@ -30,8 +35,8 @@ public class MedicRescue : MonoBehaviour {
         GameController.StartDialogue += StartDialogue;
         GameController.NextDialogue += NextDialogue;
         GameController.CancelDialogue += EndDialogue;
-	    
-	}
+
+    }
 
     private void StartDialogue()
     {
@@ -45,7 +50,7 @@ public class MedicRescue : MonoBehaviour {
             }
             else
             {
-                manager.StartDialogue(completedDialogue);
+                manager.StartDialogue(completedDialogue[0]);
             }
         }
     }
@@ -54,22 +59,36 @@ public class MedicRescue : MonoBehaviour {
     {
         if (conversationEnsues)
         {
-            if (!GameStates.States[GameStates.MEDIC])
+            if (manager.typeSentenceActive)
             {
-                conversationCount++;
-                if (conversationCount > 4)
-                {
-                    GameStates.States[GameStates.MEDIC] = true;
-                    EndDialogue();
-                }
-                else
-                {
-                    manager.DisplayNextSentence(objectiveDialogue[conversationCount]);
-                }
+                manager.FinishSentence(objectiveDialogue[conversationCount]);
             }
             else
             {
-                EndDialogue();
+                conversationCount++;
+                if (!GameStates.States[GameStates.MEDIC])
+                {
+                    if (conversationCount > 4)
+                    {
+                        GameStates.States[GameStates.MEDIC] = true;
+                        EndDialogue();
+                    }
+                    else
+                    {
+                        manager.DisplayNextSentence(objectiveDialogue[conversationCount]);
+                    }
+                }
+                else
+                {
+                    if (conversationCount > 0)
+                    {
+                        EndDialogue();
+                    }
+                    else
+                    {
+                        manager.DisplayNextSentence(completedDialogue[conversationCount]);
+                    }
+                }
             }
         }
     }
