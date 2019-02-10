@@ -64,3 +64,6 @@ TagManager:
   - name: UI Text
     uniqueID: 799184983
     locked: 0
+  - name: PhotoLayer
+    uniqueID: 2453355523
+    locked: 0
