@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    public Dictionary<string, bool> gameStates;
+
     public delegate void InteractAction();
     public static event InteractAction Interact;
     public static event InteractAction InteractActive;
@@ -25,6 +27,17 @@ public class GameController : MonoBehaviour
     public static event StartPlayerAction StartPlayer;
     public delegate void StartDialogueAction();
     public static event StartDialogueAction StartDialogue;
+    public delegate void CancelPhotoAction();
+    public static event CancelPhotoAction CancelPhoto;
+    public delegate void ClearFogWallAction(GameObject fogWall);
+    public static event ClearFogWallAction ClearFogWall;
+
+    public bool isPhotoActive = false;
+
+    private void Start()
+    {
+        gameStates = GameStates.States;
+    }
 
     public void StopCharacter()
     {
@@ -69,7 +82,16 @@ public class GameController : MonoBehaviour
     internal void EscapeFunctionsEvent()
     {
         CancelDialogue();
+        CancelPhotoEvent();
         FinishKeypadEvent();
+    }
+
+    public void ClearFogWallEvent(GameObject fogWall)
+    {
+        if (ClearFogWall != null)
+        {
+            ClearFogWall(fogWall);
+        }
     }
 
     internal void CancelDialogueEvent()
@@ -79,6 +101,14 @@ public class GameController : MonoBehaviour
             CancelDialogue();
             InteractActiveEvent();
             StartCharacter();
+        }
+    }
+
+    public void CancelPhotoEvent()
+    {
+        if (CancelPhoto != null && isPhotoActive)
+        {
+            CancelPhoto();
         }
     }
 

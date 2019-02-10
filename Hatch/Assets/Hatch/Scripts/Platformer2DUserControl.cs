@@ -94,6 +94,7 @@ namespace UnityStandardAssets._2D
             if (Input.GetKeyDown(KeyCode.E))
             {
                 gameController.InteractEvent();
+                gameController.CancelPhotoEvent();
             }
             if (Input.GetKeyDown(KeyCode.Escape))
             {

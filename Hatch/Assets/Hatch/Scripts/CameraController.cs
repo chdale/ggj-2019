@@ -8,6 +8,7 @@ public class CameraController : MonoBehaviour {
     public GameObject player;
     public DialogueTargetClass dialogueTarget;
 
+    private GameController gameController;
     private Vector3 defaultCameraPosition;
     private bool dynamicCameraHorizontal;
     private Camera m_camera;
@@ -18,9 +19,16 @@ public class CameraController : MonoBehaviour {
     private float cameraRightLimit;
     private Level level;
     private float savedSize;
+    private bool disableStandardCameraControls = false;
+    private float lerpDuration = 1.5f;
+
+    private Vector3 fogWallLerpStartingPosition;
+    private float fogWallFadeDuration = 3.0f;
+    private GameObject fogWall;
 
     private void Start()
     {
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
         dynamicCameraHorizontal = true;
         cameraLeftLimit = -20.5f;
         cameraRightLimit = 20.5f;
@@ -31,17 +39,28 @@ public class CameraController : MonoBehaviour {
         GameController.StartDialogue += BeginDialogue;
         GameController.CancelDialogue += EndDialogue;
         GameController.EndDialogue += EndDialogue;
+        GameController.ClearFogWall += ClearFogWall;
     }
 
     // Update is called once per frame
     void Update ()
     {
-        if (!dialogueActive && WithinBounds())
+        if (!disableStandardCameraControls)
         {
-            if (dynamicCameraHorizontal)
+            if (!dialogueActive && WithinBounds())
             {
-                Vector3 transition = Vector3.Lerp(transform.position, player.transform.position, 5.0f * Time.deltaTime);
-                transform.position = new Vector3(transition.x, transform.position.y, -10f);
+                if (dynamicCameraHorizontal)
+                {
+                    Vector3 transition = Vector3.Lerp(transform.position, player.transform.position, 5.0f * Time.deltaTime);
+                    transform.position = new Vector3(transition.x, transform.position.y, -10f);
+                }
+            }
+        }
+        else
+        {
+            if (transform.position.x == fogWall.transform.position.x && transform.position.y == fogWall.transform.position.y)
+            {
+                StartCoroutine(FogWallCoroutine(player, lerpDuration));
             }
         }
     }
@@ -93,7 +112,7 @@ public class CameraController : MonoBehaviour {
             m_camera.orthographicSize = savedSize;
             if (dynamicCameraHorizontal)
             {
-                transform.position = new Vector3(PostDialogueCameraPosition(), 0, -10);
+                transform.position = new Vector3(PostEventCameraPosition(), 0, -10);
             }
             else
             {
@@ -117,7 +136,7 @@ public class CameraController : MonoBehaviour {
         return player.transform.position.x > cameraLeftLimit && player.transform.position.x < cameraRightLimit;
     }
 
-    private float PostDialogueCameraPosition()
+    private float PostEventCameraPosition()
     {
         if (player.transform.position.x < cameraLeftLimit)
         {
@@ -130,6 +149,49 @@ public class CameraController : MonoBehaviour {
         else
         {
             return player.transform.position.x;
+        }
+    }
+
+    private void ClearFogWall(GameObject target)
+    {
+        disableStandardCameraControls = true;
+        fogWall = target;
+        fogWallLerpStartingPosition = transform.position;
+        StartCoroutine(FogWallCoroutine(target, lerpDuration));
+    }
+
+    private IEnumerator FogWallCoroutine(GameObject target, float lerpDuration)
+    {
+        float targetPositionX;
+        float targetPositionY;
+        if (target == player)
+        {
+            targetPositionX = fogWallLerpStartingPosition.x;
+            targetPositionY = fogWallLerpStartingPosition.y;
+            yield return new WaitForSeconds(fogWallFadeDuration);
+        }
+        else
+        {
+            targetPositionX = target.transform.position.x;
+            targetPositionY = target.transform.position.y;
+        }
+
+        float currentDuration = 0.0f;
+        Vector3 startingPosition = transform.position;
+        while (currentDuration < 1.0f)
+        {
+            currentDuration += Time.deltaTime * (Time.timeScale / lerpDuration);
+            transform.position = Vector3.Lerp(startingPosition, new Vector3 (targetPositionX, targetPositionY, -10.0f), currentDuration);
+            yield return 0;
+        }
+
+        if (target == player)
+        {
+            disableStandardCameraControls = false;
+            if (transform.position.x == targetPositionX && transform.position.y == targetPositionY)
+            {
+                gameController.StartCharacter();
+            }
         }
     }
 }
