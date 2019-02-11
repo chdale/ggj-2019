@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21e56b72a436e5b4e8cd552d89317b08, type: 3}
+  m_Name: SpineAudioSettings
+  m_EditorClassIdentifier: 
+  skeletonAnimation: {fileID: 114230667065107110, guid: ca2c4f6bf7fc4c54aa167dbc5851fbb8,
+    type: 2}
+  _spineAudioSet:
+    reorderableList:
+      canAdd: 1
+      canRemove: 1
+      draggable: 1
+      expandable: 1
+      multipleSelection: 1
+      isExpanded: 1
+      label:
+        m_Text: Keys
+        m_Image: {fileID: 0}
+        m_Tooltip: 
+      headerHeight: 18
+      footerHeight: 13
+      slideEasing: 0.15
+      verticalSpacing: 2
+      showDefaultBackground: 1
+      elementDisplayType: 0
+      elementNameProperty: 
+      elementNameOverride: 
+      elementIcon: {fileID: 0}
+    reqReferences: {fileID: 0}
+    isExpanded: 1
+    _keyValues:
+    - spineEvent: 
+    - spineEvent: 
+    - spineEvent: 
+    _keys:
+    - spineEvent: footstep
+    - spineEvent: climb
+    - spineEvent: jump
+    _values:
+    - {fileID: 8300000, guid: 71bb024e04f2037409cd95359a705712, type: 3}
+    - {fileID: 8300000, guid: 243c09100abe66545b616328da1e9cd6, type: 3}
+    - {fileID: 8300000, guid: 2a0a42346db08634fa371aa4400901c2, type: 3}

@@ -701,7 +701,7 @@
 			}
 		},
 		"events": [
-			{ "time": 0.2, "name": "jump" },
+			{ "time": 0, "name": "jump" },
 			{ "time": 1.2333, "name": "footstep" }
 		]
 	},
