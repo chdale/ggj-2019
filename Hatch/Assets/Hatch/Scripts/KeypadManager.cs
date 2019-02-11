@@ -11,7 +11,7 @@ public class KeypadManager : MonoBehaviour
     public int maxKeys = 5;
 
     private string _input;
-    private OpenKeypad openKeypad;
+    private OpenModal openKeypad;
     private AudioSource buttonPress;
     private GameObject numPad;
     private bool keypadActive;
@@ -24,9 +24,9 @@ public class KeypadManager : MonoBehaviour
         displayText = transform.GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetComponentInChildren<Text>();
         displayText.text = string.Empty;
         _input = string.Empty;
-        openKeypad = GameObject.Find("OpenKeypad").GetComponent<OpenKeypad>();
+        openKeypad = GameObject.Find("OpenKeypad").GetComponent<OpenModal>();
         buttonPress = GetComponent<AudioSource>();
-        GameController.FinishKeypad += DeactivateKeypad;
+        GameController.FinishModal += DeactivateKeypad;
     }
 
     // Update is called once per frame

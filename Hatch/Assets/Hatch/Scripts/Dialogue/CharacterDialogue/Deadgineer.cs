@@ -8,13 +8,13 @@ public class Deadgineer : MonoBehaviour
     private DialogueObject[] objectiveDialogue;
     private DialogueObject[] completedDialogue;
     private int conversationCount;
-    private DeadgineerDialogue deadgineerEvent;
+    private DialogueEvent deadgineerEvent;
     private bool conversationEnsues = false;
 
     // Use this for initialization
     void Start()
     {
-        deadgineerEvent = GameObject.Find("DeadgineerDialogue").GetComponent<DeadgineerDialogue>();
+        deadgineerEvent = GameObject.Find("DeadgineerDialogue").GetComponent<DialogueEvent>();
         completedDialogue = new DialogueObject[]
         {
             new DialogueObject(DialogueTarget.Engineer, "...", 1.0f, Emotions.Idle, null)
@@ -29,7 +29,7 @@ public class Deadgineer : MonoBehaviour
         GameController.CancelDialogue += EndDialogue;
     }
 
-    private void StartDialogue()
+    private void StartDialogue(DialogueTarget dialogueTarget)
     {
         if (deadgineerEvent.isActivated)
         {
@@ -41,7 +41,7 @@ public class Deadgineer : MonoBehaviour
 
     private void NextDialogue()
     {
-        if (conversationEnsues)
+        if (deadgineerEvent.isActivated && conversationEnsues)
         {
             if (manager.typeSentenceActive)
             {
