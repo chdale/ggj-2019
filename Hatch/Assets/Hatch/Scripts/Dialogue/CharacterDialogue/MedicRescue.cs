@@ -9,7 +9,7 @@ public class MedicRescue : MonoBehaviour
     private DialogueObject[] objectiveDialogue;
     private DialogueObject[] completedDialogue;
     private int conversationCount;
-    private MedicRescueDialogueEvent medicEvent;
+    private DialogueEvent medicEvent;
     private bool conversationEnsues = false;
     private AudioSource talkClip;
     private AudioSource playerClip;
@@ -17,7 +17,7 @@ public class MedicRescue : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        medicEvent = GameObject.Find("MedicRescueDialogue").GetComponent<MedicRescueDialogueEvent>();
+        medicEvent = GameObject.Find("MedicRescueDialogue").GetComponent<DialogueEvent>();
         talkClip = gameObject.GetComponent<AudioSource>();
         playerClip = GameObject.Find("Player_Wireframe").GetComponentInChildren<AudioSource>();
         completedDialogue = new DialogueObject[]
@@ -38,7 +38,7 @@ public class MedicRescue : MonoBehaviour
 
     }
 
-    private void StartDialogue()
+    private void StartDialogue(DialogueTarget dialogueTarget)
     {
         if (medicEvent.isActivated)
         {
@@ -57,11 +57,18 @@ public class MedicRescue : MonoBehaviour
 
     private void NextDialogue()
     {
-        if (conversationEnsues)
+        if (medicEvent.isActivated && conversationEnsues)
         {
             if (manager.typeSentenceActive)
             {
-                manager.FinishSentence(objectiveDialogue[conversationCount]);
+                if (!GameStates.States[GameStates.MEDIC])
+                {
+                    manager.FinishSentence(objectiveDialogue[conversationCount]);
+                }
+                else
+                {
+                    manager.FinishSentence(completedDialogue[conversationCount]);
+                }
             }
             else
             {

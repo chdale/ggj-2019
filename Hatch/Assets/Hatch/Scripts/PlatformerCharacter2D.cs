@@ -63,7 +63,7 @@ namespace UnityStandardAssets._2D
             GameEventManager.OnExited += DisableInteractText;
             GameController.InteractActive += EnableInteractText;
             GameController.InteractInactive += DisableInteractText;
-            GameController.FinishKeypad += DisableInteractText;
+            GameController.FinishModal += DisableInteractText;
             GameController.CancelJump += DelayMovement;
             GameController.StopPlayer += StopMovement;
             GameController.StartPlayer += StartMovement;
