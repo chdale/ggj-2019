@@ -5,7 +5,7 @@ using UnityEngine;
 public class DialogueEvent : TriggeredEvent
 {
     public bool isActivated = false;
-    public DialogueTarget dialogueTarget;
+    public GameObject dialogueTarget;
     private GameController gameController;
 
     private void Awake()

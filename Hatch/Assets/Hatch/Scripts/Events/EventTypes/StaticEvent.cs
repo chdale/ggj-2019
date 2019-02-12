@@ -9,7 +9,7 @@ public static class StaticEvent
         Camera.main.GetComponent<CameraController>().LoadLevel(levelReq);
     }
 
-    public static void StartDialogue(DialogueTarget dialogueTarget = DialogueTarget.Player)
+    public static void StartDialogue(GameObject dialogueTarget = null)
     {
         GameObject.Find("GameController").GetComponent<GameController>().StartDialogueEvent(dialogueTarget);
     }

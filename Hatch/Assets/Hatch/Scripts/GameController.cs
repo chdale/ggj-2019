@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
     public static event StopPlayerAction StopPlayer;
     public delegate void StartPlayerAction();
     public static event StartPlayerAction StartPlayer;
-    public delegate void StartDialogueAction(DialogueTarget dialogueTarget);
+    public delegate void StartDialogueAction(GameObject dialogueTarget);
     public static event StartDialogueAction StartDialogue;
     public delegate void CancelPhotoAction();
     public static event CancelPhotoAction CancelPhoto;
@@ -146,7 +146,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void StartDialogueEvent(DialogueTarget dialogueTarget)
+    public void StartDialogueEvent(GameObject dialogueTarget)
     {
         if (StartDialogue != null)
         {
