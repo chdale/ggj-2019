@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 4653146286802088}
   - component: {fileID: 114396552178709784}
   - component: {fileID: 61150138081966022}
-  - component: {fileID: 114756354421386172}
+  - component: {fileID: 114295362979132422}
   m_Layer: 0
   m_Name: ClearRocks
   m_TagString: Untagged
@@ -160,8 +160,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4785567957840454}
   - component: {fileID: 61582696375769404}
-  - component: {fileID: 114880422802164764}
-  - component: {fileID: 114502213189909156}
+  - component: {fileID: 114388789838015726}
+  - component: {fileID: 114082911341828282}
   m_Layer: 0
   m_Name: LoadHatchInternal
   m_TagString: Untagged
@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 4997794069295794}
   - component: {fileID: 114339854350801126}
   - component: {fileID: 61363858568033692}
-  - component: {fileID: 114727121711266642}
+  - component: {fileID: 114918568658725454}
   m_Layer: 0
   m_Name: MedicRescueDialogue
   m_TagString: Event
@@ -360,7 +360,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4407310884140622}
   - component: {fileID: 61543233577481608}
-  - component: {fileID: 114090845330835022}
+  - component: {fileID: 114594714770109490}
   m_Layer: 0
   m_Name: LoadConsoleExternal
   m_TagString: Untagged
@@ -1397,8 +1397,7 @@ AudioSource:
   m_GameObject: {fileID: 1058116050420570}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243269797553075308, guid: f061345c18e409a4f81233cfa38f26d6,
-    type: 2}
+  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 09c4a0ebad77be34badc9d514678e4a8, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1478,9 +1477,9 @@ AudioSource:
   m_GameObject: {fileID: 1586718661628450}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243129466008385338, guid: f061345c18e409a4f81233cfa38f26d6,
+  OutputAudioMixerGroup: {fileID: 243129466008385338, guid: ae45bab46163c11439b75f80e95a969f,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: ca43253e195e88d4798851c992175ed2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3edaacfeae3fe6c4f9f242e56f819da3, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1559,9 +1558,9 @@ AudioSource:
   m_GameObject: {fileID: 1690273420811982}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243129466008385338, guid: f061345c18e409a4f81233cfa38f26d6,
+  OutputAudioMixerGroup: {fileID: 243129466008385338, guid: ae45bab46163c11439b75f80e95a969f,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: cafaadc42bcaedd4fb41263baeebeeb8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3edaacfeae3fe6c4f9f242e56f819da3, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1640,9 +1639,9 @@ AudioSource:
   m_GameObject: {fileID: 1130789070537128}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243129466008385338, guid: f061345c18e409a4f81233cfa38f26d6,
+  OutputAudioMixerGroup: {fileID: 243129466008385338, guid: ae45bab46163c11439b75f80e95a969f,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: ee97074d7e0c6fc41a06703fd8d70f9b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d0873854a6b525549a4a93545cc775eb, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1713,27 +1712,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114090845330835022
+--- !u!114 &114082911341828282
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1909726244451316}
+  m_GameObject: {fileID: 1422144718155106}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a895ffe4f779d4fa6a0423d86dda0a, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e7f69f0d7529fd4481ca7e1f9992587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactable: 0
-  oneTimeOnlyEvent: 0
-  newPlayerPosition: {x: 48.13, y: -4.7}
-  newCameraPosition: {x: 63.8, y: 0, z: -10}
-  level: 2
-  levelMusic: {fileID: 0}
-  dynamicCameraHorizontal: 0
-  cameraLeftThreshold: 0
-  cameraRightThreshold: 0
-  cameraSize: 10
 --- !u!114 &114267690893956488
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1752,6 +1741,22 @@ MonoBehaviour:
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
+--- !u!114 &114295362979132422
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1254249650401754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b1e847487316934fab3fe827ed08c1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: 1
+  oneTimeOnlyEvent: 0
+  AnimationObject: {fileID: 1593978001056650}
+  AnimationObject2: {fileID: 0}
+  DialogueTrigger: {fileID: 1888304666349980}
 --- !u!114 &114298656512017914
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1838,6 +1843,27 @@ MonoBehaviour:
   oneTimeOnlyEvent: 0
   isActivated: 0
   dialogueTarget: 1
+--- !u!114 &114388789838015726
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1422144718155106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26e9614ba10f92a40b030496fb24a004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: 1
+  oneTimeOnlyEvent: 0
+  newPlayerPosition: {x: 2.19, y: -22.8}
+  newCameraPosition: {x: 2.17, y: -21.73, z: -10}
+  level: 1
+  levelMusic: {fileID: 82912229326912878}
+  dynamicCameraHorizontal: 0
+  cameraLeftThreshold: 0
+  cameraRightThreshold: 0
+  cameraSize: 5
 --- !u!114 &114396552178709784
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1882,17 +1908,27 @@ MonoBehaviour:
   isToggleable: 0
   lastState: 0
   isDualStateTransition: 1
---- !u!114 &114502213189909156
+--- !u!114 &114594714770109490
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1422144718155106}
+  m_GameObject: {fileID: 1909726244451316}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bf472a5b7ecddd478572ad6ce0f95e7, type: 3}
+  m_Script: {fileID: 11500000, guid: 26e9614ba10f92a40b030496fb24a004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactable: 0
+  oneTimeOnlyEvent: 0
+  newPlayerPosition: {x: 48.13, y: -4.7}
+  newCameraPosition: {x: 63.8, y: 0, z: -10}
+  level: 2
+  levelMusic: {fileID: 0}
+  dynamicCameraHorizontal: 0
+  cameraLeftThreshold: 0
+  cameraRightThreshold: 0
+  cameraSize: 10
 --- !u!114 &114627311593365250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2004,28 +2040,6 @@ MonoBehaviour:
   _animationName: rock_start
   loop: 1
   timeScale: 1
---- !u!114 &114727121711266642
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1888304666349980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bf472a5b7ecddd478572ad6ce0f95e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114756354421386172
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1254249650401754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bf472a5b7ecddd478572ad6ce0f95e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114772967006019436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2053,27 +2067,21 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
---- !u!114 &114880422802164764
+--- !u!114 &114918568658725454
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1422144718155106}
+  m_GameObject: {fileID: 1888304666349980}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a895ffe4f779d4fa6a0423d86dda0a, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ab2379a370b4a44d830204a3f9a8101, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 1
   oneTimeOnlyEvent: 0
-  newPlayerPosition: {x: 2.19, y: -22.8}
-  newCameraPosition: {x: 2.17, y: -21.73, z: -10}
-  level: 1
-  levelMusic: {fileID: 0}
-  dynamicCameraHorizontal: 0
-  cameraLeftThreshold: 0
-  cameraRightThreshold: 0
-  cameraSize: 5
+  isActivated: 0
+  dialogueTarget: 1
 --- !u!212 &212019760790431022
 SpriteRenderer:
   m_ObjectHideFlags: 1

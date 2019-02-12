@@ -20,8 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4864172286830288}
   - component: {fileID: 61703554498171162}
-  - component: {fileID: 114672847342560598}
-  - component: {fileID: 114610704468707252}
+  - component: {fileID: 114185367288724792}
+  - component: {fileID: 114418926605225806}
   m_Layer: 0
   m_Name: LoadConsoleInterior
   m_TagString: Event
@@ -71,8 +71,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4550398683468176}
   - component: {fileID: 61075167120009958}
-  - component: {fileID: 114185227287964374}
-  - component: {fileID: 114544054789439598}
+  - component: {fileID: 114244587233688728}
+  - component: {fileID: 114554984767483892}
   m_Layer: 0
   m_Name: Photo1Pickup
   m_TagString: Untagged
@@ -123,7 +123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4283730661225210}
   - component: {fileID: 61094822466683524}
-  - component: {fileID: 114333489065543430}
+  - component: {fileID: 114604521879841874}
   m_Layer: 0
   m_Name: LoadHatch
   m_TagString: Event
@@ -856,22 +856,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
---- !u!114 &114185227287964374
+--- !u!114 &114185367288724792
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1153875162826368}
+  m_GameObject: {fileID: 1017184931663044}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cca6b308dc8620842b8f8712b561d920, type: 3}
+  m_Script: {fileID: 11500000, guid: 26e9614ba10f92a40b030496fb24a004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 1
-  oneTimeOnlyEvent: 1
-  photo: {fileID: 0}
-  fogWall: {fileID: 0}
-  overworldPhoto: {fileID: 1213172066737824}
+  oneTimeOnlyEvent: 0
+  newPlayerPosition: {x: 62.24, y: -23.07}
+  newCameraPosition: {x: 62.26, y: -22, z: -10}
+  level: 3
+  levelMusic: {fileID: 0}
+  dynamicCameraHorizontal: 0
+  cameraLeftThreshold: 0
+  cameraRightThreshold: 0
+  cameraSize: 5
 --- !u!114 &114202953430931714
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -883,6 +888,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89087a92ddeeaa1439110f539f88c980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114244587233688728
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1153875162826368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ea4af0a7cf15774e9fda043519ff479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: 1
+  oneTimeOnlyEvent: 1
+  isActive: 0
+  modal: {fileID: 0}
 --- !u!114 &114253561712887350
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -913,27 +933,6 @@ MonoBehaviour:
   isToggleable: 1
   lastState: 0
   isDualStateTransition: 1
---- !u!114 &114333489065543430
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1285476635779032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a895ffe4f779d4fa6a0423d86dda0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactable: 0
-  oneTimeOnlyEvent: 0
-  newPlayerPosition: {x: 35.98, y: -3.37}
-  newCameraPosition: {x: 20.5, y: 0, z: -10}
-  level: 0
-  levelMusic: {fileID: 0}
-  dynamicCameraHorizontal: 1
-  cameraLeftThreshold: -20.5
-  cameraRightThreshold: 20.5
-  cameraSize: 10
 --- !u!114 &114412898635993794
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -948,6 +947,17 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
+--- !u!114 &114418926605225806
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1017184931663044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e7f69f0d7529fd4481ca7e1f9992587, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114465414727120516
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -966,7 +976,7 @@ MonoBehaviour:
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
---- !u!114 &114544054789439598
+--- !u!114 &114554984767483892
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -974,20 +984,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 1153875162826368}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bf472a5b7ecddd478572ad6ce0f95e7, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e7f69f0d7529fd4481ca7e1f9992587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114610704468707252
+--- !u!114 &114604521879841874
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1017184931663044}
+  m_GameObject: {fileID: 1285476635779032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bf472a5b7ecddd478572ad6ce0f95e7, type: 3}
+  m_Script: {fileID: 11500000, guid: 26e9614ba10f92a40b030496fb24a004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactable: 0
+  oneTimeOnlyEvent: 0
+  newPlayerPosition: {x: 35.98, y: -3.37}
+  newCameraPosition: {x: 20.5, y: 0, z: -10}
+  level: 0
+  levelMusic: {fileID: 0}
+  dynamicCameraHorizontal: 1
+  cameraLeftThreshold: -20.5
+  cameraRightThreshold: 20.5
+  cameraSize: 10
 --- !u!114 &114652005367334836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -999,27 +1019,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30a7a43cc038efe40af94614e8515f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114672847342560598
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1017184931663044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a895ffe4f779d4fa6a0423d86dda0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactable: 1
-  oneTimeOnlyEvent: 0
-  newPlayerPosition: {x: 62.24, y: -23.07}
-  newCameraPosition: {x: 62.26, y: -22, z: -10}
-  level: 3
-  levelMusic: {fileID: 0}
-  dynamicCameraHorizontal: 0
-  cameraLeftThreshold: 0
-  cameraRightThreshold: 0
-  cameraSize: 5
 --- !u!114 &114796467958207334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1215,7 +1214,7 @@ SpriteRenderer:
   m_SortingLayerID: -1114980757
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9e599b77abb216141a9f87567cbb8ab2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f1aeb3e437265e44882aa414f249f1ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
