@@ -1439,6 +1439,16 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 33244444450588846, guid: 50daa5fd091847646ad3e1a3fc2b6ca8,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 33529894267023504, guid: 50daa5fd091847646ad3e1a3fc2b6ca8,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50daa5fd091847646ad3e1a3fc2b6ca8, type: 2}
   m_IsPrefabParent: 0
@@ -1752,7 +1762,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4031083317075472, guid: ab05014fbafcef14bb2259fa4cf0db99, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ab05014fbafcef14bb2259fa4cf0db99, type: 2}
@@ -5420,7 +5430,7 @@ Transform:
   - {fileID: 234497755}
   - {fileID: 782537387}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1499709620
 MonoBehaviour:
@@ -6624,7 +6634,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4147896108361054, guid: 56d57ee7c1d1ae84d8044b35d5b57264, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 33285931867400582, guid: 56d57ee7c1d1ae84d8044b35d5b57264,
         type: 2}
@@ -7006,7 +7016,7 @@ Transform:
   - {fileID: 1119843642}
   - {fileID: 651053749}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1949163536
 AudioSource:
