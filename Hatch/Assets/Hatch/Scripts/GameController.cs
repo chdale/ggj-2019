@@ -13,8 +13,8 @@ public class GameController : MonoBehaviour
     public static event InteractAction InteractInactive;
     public delegate void CancelDialogueAction();
     public static event CancelDialogueAction CancelDialogue;
-    public delegate void FinishKeypadAction();
-    public static event FinishKeypadAction FinishKeypad;
+    public delegate void FinishModalAction();
+    public static event FinishModalAction FinishModal;
     public delegate void EndDialogueAction();
     public static event EndDialogueAction EndDialogue;
     public delegate void NextDialogueAction();
@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
     public static event StopPlayerAction StopPlayer;
     public delegate void StartPlayerAction();
     public static event StartPlayerAction StartPlayer;
-    public delegate void StartDialogueAction();
+    public delegate void StartDialogueAction(GameObject dialogueTarget);
     public static event StartDialogueAction StartDialogue;
     public delegate void CancelPhotoAction();
     public static event CancelPhotoAction CancelPhoto;
@@ -83,7 +83,7 @@ public class GameController : MonoBehaviour
     {
         CancelDialogue();
         CancelPhotoEvent();
-        FinishKeypadEvent();
+        FinishModalEvent();
     }
 
     public void ClearFogWallEvent(GameObject fogWall)
@@ -112,11 +112,11 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void FinishKeypadEvent()
+    public void FinishModalEvent()
     {
-        if (FinishKeypad != null)
+        if (FinishModal != null)
         {
-            FinishKeypad();
+            FinishModal();
             StartCharacter();
         }
     }
@@ -146,11 +146,11 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void StartDialogueEvent()
+    public void StartDialogueEvent(GameObject dialogueTarget)
     {
         if (StartDialogue != null)
         {
-            StartDialogue();
+            StartDialogue(dialogueTarget);
             InteractInactiveEvent();
             StopCharacter();
         }

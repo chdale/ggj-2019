@@ -2,18 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PhotoPickup : InteractEvent {
+public class PhotoPickup : TriggeredEvent {
 
     public GameObject photo;
     public GameObject fogWall;
     public GameObject overworldPhoto;
-    private PhotoManager photoManager;
 
-	// Use this for initialization
-	void Start () {
+    private PhotoManager photoManager;
+    private GameController gameController;
+
+    // Use this for initialization
+    void Start()
+    {
         Subscribe();
+    }
+
+    private void Subscribe()
+    {
+        GameController.Interact += ConditionallyTriggerEvent;
         photoManager = GameObject.Find("PhotoManager").GetComponent<PhotoManager>();
-	}
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
+    }
 
     public override void TriggerEvent()
     {
@@ -21,6 +30,6 @@ public class PhotoPickup : InteractEvent {
         gameController.StopCharacter();
         gameController.InteractInactiveEvent();
         photoManager.FadePhotoIn(photo, fogWall);
-        GetComponent<BoxCollider2D>().enabled = false;
+        base.TriggerEvent();
     }
 }

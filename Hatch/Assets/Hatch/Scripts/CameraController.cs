@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class CameraController : MonoBehaviour {
     public GameObject player;
-    public DialogueTargetClass dialogueTarget;
+    public GameObject dialogueTarget;
 
     private GameController gameController;
     private Vector3 defaultCameraPosition;
@@ -14,7 +14,6 @@ public class CameraController : MonoBehaviour {
     private Camera m_camera;
     private GameObject dialogue;
     private bool dialogueActive;
-    private GameObject dialogueTargetObject;
     private float cameraLeftLimit;
     private float cameraRightLimit;
     private Level level;
@@ -82,11 +81,10 @@ public class CameraController : MonoBehaviour {
         m_camera.orthographicSize = savedSize;
     }
 
-    private void BeginDialogue()
+    private void BeginDialogue(GameObject dialogueTarget)
     {
         if (!dialogueActive)
         {
-            dialogueTargetObject = GameObject.Find(dialogueTarget.dialogueTargetName.ToString());
             dialogueActive = true;
             dialogue.SetActive(true);
             if (dynamicCameraHorizontal)
@@ -94,11 +92,14 @@ public class CameraController : MonoBehaviour {
                 m_camera.orthographicSize = 5.0f;
             }
             float dialogueCameraPosition = defaultCameraPosition.y - (savedSize * (2.0f / 5.0f));
-            transform.position = new Vector3(MidPointBetween(player, dialogueTargetObject), dialogueCameraPosition, -10f);
-            FacePlayer faceScript = dialogueTargetObject.GetComponent<FacePlayer>();
-            if (faceScript != null)
+            if (dialogueTarget != null)
             {
-                faceScript.FaceAndUnfacePlayer(player);
+                transform.position = new Vector3(MidPointBetween(player, dialogueTarget), dialogueCameraPosition, -10f);
+                FacePlayer faceScript = dialogueTarget.GetComponent<FacePlayer>();
+                if (faceScript != null)
+                {
+                    faceScript.FaceAndUnfacePlayer(player);
+                }
             }
         }
     }
@@ -118,11 +119,17 @@ public class CameraController : MonoBehaviour {
             {
                 transform.position = defaultCameraPosition;
             }
-            FacePlayer faceScript = dialogueTargetObject.GetComponent<FacePlayer>();
-            if (faceScript != null)
+
+            if (dialogueTarget != null)
             {
-                faceScript.FaceAndUnfacePlayer(player);
+                FacePlayer faceScript = dialogueTarget.GetComponent<FacePlayer>();
+                if (faceScript != null)
+                {
+                    faceScript.FaceAndUnfacePlayer(player);
+                }
             }
+
+            dialogueTarget = null;
         }
     }
 
