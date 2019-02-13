@@ -38,7 +38,7 @@ public class MedicRescue : MonoBehaviour
 
     }
 
-    private void StartDialogue(DialogueTarget dialogueTarget)
+    private void StartDialogue(GameObject dialogueTarget)
     {
         if (medicEvent.isActivated)
         {
