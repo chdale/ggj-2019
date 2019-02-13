@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class StaticEvent
+public class StaticEvent
 {
     public static void LoadLevel(LevelRequirement levelReq)
     {

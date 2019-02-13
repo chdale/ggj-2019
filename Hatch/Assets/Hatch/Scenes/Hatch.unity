@@ -537,6 +537,15 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 523363279}
+    - target: {fileID: 224652997226990384, guid: a12fc64d03fe77247a876be250710f51,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894691771767290, guid: a12fc64d03fe77247a876be250710f51, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a12fc64d03fe77247a876be250710f51, type: 2}
   m_IsPrefabParent: 0
