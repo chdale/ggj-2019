@@ -23,6 +23,10 @@ public class SceneFader : MonoBehaviour
         m_Animator.SetTrigger("fade");
         sceneLoad.Play();
     }
+    public void SetTrigger(string trigger)
+    {
+        m_Animator.SetTrigger(trigger);
+    }
 
     IEnumerator StopPlayerDuration()
     {

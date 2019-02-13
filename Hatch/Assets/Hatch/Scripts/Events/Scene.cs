@@ -11,8 +11,14 @@ namespace Assets.Hatch.Scripts.Events
 {
     public class Scene : MonoBehaviour
     {
+        public enum EVENT { SubwayCarFlashStart, SubwayCarFlashEnd };
         public SceneEventDictionary SceneEvents;
-        public enum EVENT { TrainFlash };
+        private static Dictionary<EVENT, Action> eventTable = new Dictionary<EVENT, Action>();
+
+        public void Awake()
+        {
+            InitScene();
+        }
 
         public virtual void InitScene()
         {
@@ -27,8 +33,7 @@ namespace Assets.Hatch.Scripts.Events
             }
         }
 
-        private static Dictionary<EVENT, Action> eventTable
-             = new Dictionary<EVENT, Action>();
+
 
         // Adds a delegate to get called for a specific event
         public static void AddHandler(EVENT evnt, Action action)
@@ -63,7 +68,7 @@ namespace Assets.Hatch.Scripts.Events
                 var attrs = method.GetCustomAttributes(false);
                 if (attrs.Any(x => ((Attribute)x).Match(type)))
                 {
-                    var action = (Action)Delegate.CreateDelegate(typeof(Action), method);
+                    var action = (Action)Delegate.CreateDelegate(typeof(Action), scene, method);
                     var names = Enum.GetNames(typeof(EVENT));
                     var name = names.Where(x => x.ToLower() == method.Name.ToLower()).FirstOrDefault();;
                     EVENT eventEnum;
@@ -83,6 +88,26 @@ namespace Assets.Hatch.Scripts.Events
                 }
             }
             return result;
+        }
+        public static void LoadLevel(LevelRequirement levelReq)
+        {
+            Camera.main.GetComponent<CameraController>().LoadLevel(levelReq);
+        }
+
+        public static void SetCamera(LevelRequirement levelReq)
+        {
+            Camera.main.GetComponent<CameraController>().LoadLevel(levelReq);
+        }
+
+        public static void StartDialogue(GameObject dialogueTarget = null)
+        {
+            GameObject.Find("GameController").GetComponent<GameController>().StartDialogueEvent(dialogueTarget);
+        }
+        public static void SetFader(string trigger)
+        {
+            var camController = Camera.main.GetComponent<CameraController>();
+            var fader = camController.GetSceneFader();
+            fader.SetTrigger(trigger);
         }
 
     }

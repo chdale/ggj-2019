@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class CameraController : MonoBehaviour {
     public GameObject player;
     public GameObject dialogueTarget;
+    public GameObject sceneFader;
 
     private GameController gameController;
     private Vector3 defaultCameraPosition;
@@ -79,6 +80,27 @@ public class CameraController : MonoBehaviour {
         }
         savedSize = levelRequirement.cameraSize;
         m_camera.orthographicSize = savedSize;
+    }
+
+    public void SetCamera(LevelRequirement levelRequirement)
+    {
+        //player.transform.position = levelRequirement.playerPosition;
+        defaultCameraPosition = levelRequirement.defaultCameraPosition;
+        transform.position = defaultCameraPosition;
+        //level = levelRequirement.level;
+        //dynamicCameraHorizontal = levelRequirement.dynamicCameraHorizontal;
+
+        //if (dynamicCameraHorizontal)
+        //{
+        //    cameraLeftLimit = levelRequirement.cameraLeftThreshold;
+        //    cameraRightLimit = levelRequirement.cameraRightThreshold;
+        //}
+        savedSize = levelRequirement.cameraSize;
+        m_camera.orthographicSize = savedSize;
+    }
+    public SceneFader GetSceneFader()
+    {
+        return sceneFader.GetComponent<SceneFader>();
     }
 
     private void BeginDialogue(GameObject dialogueTarget)
