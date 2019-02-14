@@ -18,7 +18,9 @@ namespace Assets.Hatch.Scripts.Events
             SubwayCarFlashEnd,
             MysteryManSceneStart,
             MysteryManEnter,
-            MysteryManDialogue,
+            MysteryManDialogue1,
+            MysteryManDialogue2,
+            MysteryManWave,
             MysteryManExit,
             MysteryManSceneEnd
         };

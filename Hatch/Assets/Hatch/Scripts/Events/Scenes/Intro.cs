@@ -12,6 +12,13 @@ namespace Assets.Hatch.Scripts.Events.Scenes
         public GameObject SubwayFlashPos;
         public GameObject MysteryManPos;
         public GameObject MysteryManCamPos;
+        public GameObject MysteryMan;
+        public GameObject Medic;
+        public GameObject MysteryManIntroDialogueObject;
+
+        private CharacterAnimationController MysteryManController;
+        private CharacterAnimationController MedicController;
+        private MysteryManIntro MysteryManIntroDialogue;
 
         public override void InitScene()
         {
@@ -19,6 +26,9 @@ namespace Assets.Hatch.Scripts.Events.Scenes
             {
                 AddHandler(sceneEvent.Key, sceneEvent.Value);
             }
+            MysteryManController = MysteryMan.GetComponent<CharacterAnimationController>();
+            MedicController = Medic.GetComponent<CharacterAnimationController>();
+            MysteryManIntroDialogue = MysteryManIntroDialogueObject.GetComponent<MysteryManIntro>();
         }
         [SceneEvent]
         public void StartGame()
@@ -55,16 +65,30 @@ namespace Assets.Hatch.Scripts.Events.Scenes
         public void MysteryManEnter()
         {
             SetFader("haze");
+            MysteryMan.transform.position = MysteryManPos.transform.position;
+            MysteryManController.Walk(2, new Vector3() { x = 1, y = 0, z = 0 });
         }
         [SceneEvent]
-        public void MysteryManDialogue()
+        public void MysteryManDialogue1()
         {
-
+            MysteryManIntroDialogue.StartDialogue(MysteryMan);
+        }
+        [SceneEvent]
+        public void MysteryManDialogue2()
+        {
+            MysteryManIntroDialogue.NextDialogue();
+        }
+        [SceneEvent]
+        public void MysteryManWave()
+        {
+            MysteryManController.Wave();
         }
         [SceneEvent]
         public void MysteryManExit()
         {
             SetFader("fadeSlowBlinkClose");
+            var mysteryMan = MysteryMan.GetComponent<CharacterAnimationController>();
+            MysteryManController.Walk(2, new Vector3() { x = -1, y = 0, z = 0 });
         }
         [SceneEvent]
         public void MysteryManSceneEnd()

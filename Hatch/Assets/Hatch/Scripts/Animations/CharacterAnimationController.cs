@@ -1,4 +1,5 @@
 ﻿using Spine.Unity;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,26 +15,94 @@ public class CharacterAnimationController : MonoBehaviour {
     public Spine.AnimationState spineAnimationState;
     public Spine.Skeleton skeleton;
     private string currentAnimationState = "idle";
+    private Vector3 characterDirection;
+    private float animationTime = 0;
+    private float animationTimeCounter = 0;
+    private float walkSpeed = 0.035f;
+    private bool m_FacingRight = true;
 
     private void Awake()
     {
-        skeletonAnimation = GameObject.Find("PlayerAnim").GetComponent<SkeletonAnimation>();
+        skeletonAnimation = GetComponent<SkeletonAnimation>();
         spineAnimationState = skeletonAnimation.AnimationState;
         skeleton = skeletonAnimation.Skeleton;
     }
 
 
     void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        characterDirection = new Vector3() { x = 1, y = 0, z = 0 };
+    }
 
-    public void Walk()
+    // Update is called once per frame
+    void Update () {
+        if (characterDirection.x > 0 && !m_FacingRight)
+        {
+            Flip();
+        }
+        else if (characterDirection.x < 0 && m_FacingRight)
+        {
+            Flip();
+        }
+    }
+
+    public void Wave()
     {
+        spineAnimationState = skeletonAnimation.AnimationState;
+        spineAnimationState.SetAnimation(0, "wave", false);
 
+    }
+
+    public void Walk(float duration = 1, Vector3 direction = new Vector3())
+    {
+        if (Math.Abs(direction.x) < 0)
+        {
+            characterDirection = new Vector3() { x = 1, y = 0, z = 0 };
+        } else
+        {
+            characterDirection = direction;
+        }
+        animationTimeCounter = 0;
+        animationTime = duration;
+        spineAnimationState = skeletonAnimation.AnimationState;
+        Debug.Log("walk");
+        spineAnimationState.SetAnimation(0, "walk", true);
+        this.StartCoroutine(Walking());
+        this.StartCoroutine(Idle(duration));
+    }
+    public IEnumerator Walking()
+    {
+        while (animationTime  > animationTimeCounter)
+        {
+            this.transform.position += (this.characterDirection * walkSpeed);
+            animationTimeCounter += Time.deltaTime;
+            yield return null;
+        }
+        Debug.Log("walk end");
+        animationTimeCounter = 0;
+        animationTime = 0;
+        yield break;
+    }
+    public IEnumerator Idle(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        spineAnimationState = skeletonAnimation.AnimationState;
+        spineAnimationState.SetAnimation(0, "idle", false);
+        yield break;
+    }
+    private void Flip()
+    {
+        // Switch the way the player is labelled as facing.
+        m_FacingRight = !m_FacingRight;
+
+        // Multiply the player's x local scale by -1.
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
+    }
+
+    private IEnumerator ExecuteAfterTime(Action theDelegate, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        theDelegate();
     }
 }
