@@ -11,7 +11,17 @@ namespace Assets.Hatch.Scripts.Events
 {
     public class Scene : MonoBehaviour
     {
-        public enum EVENT { SubwayCarFlashStart, SubwayCarFlashEnd };
+        public enum EVENT
+        {
+            StartGame,
+            SubwayCarFlashStart,
+            SubwayCarFlashEnd,
+            MysteryManSceneStart,
+            MysteryManEnter,
+            MysteryManDialogue,
+            MysteryManExit,
+            MysteryManSceneEnd
+        };
         public SceneEventDictionary SceneEvents;
         private static Dictionary<EVENT, Action> eventTable = new Dictionary<EVENT, Action>();
 

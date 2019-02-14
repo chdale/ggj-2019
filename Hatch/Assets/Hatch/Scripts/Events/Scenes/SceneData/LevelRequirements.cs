@@ -9,7 +9,8 @@ namespace Assets.Hatch.Scripts.Events.Scenes.SceneData
     {
         public static Dictionary<string, LevelRequirement> PresetLevelRequirements = new Dictionary<string, LevelRequirement>()
         {
-            { "SubwayCarFlash", new LevelRequirement(new UnityEngine.Vector2(), new UnityEngine.Vector3(), Level.Hatch, 4) }
+            { "SubwayCarFlash", new LevelRequirement(new UnityEngine.Vector2(), new UnityEngine.Vector3(), Level.Hatch, 4) },
+            { "MysteryManIntro", new LevelRequirement(new UnityEngine.Vector2(), new UnityEngine.Vector3(), Level.Hatch, 4) }
         };
     }
 }

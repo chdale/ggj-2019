@@ -10,6 +10,8 @@ namespace Assets.Hatch.Scripts.Events.Scenes
     public class Intro : Scene
     {
         public GameObject SubwayFlashPos;
+        public GameObject MysteryManPos;
+        public GameObject MysteryManCamPos;
 
         public override void InitScene()
         {
@@ -17,6 +19,11 @@ namespace Assets.Hatch.Scripts.Events.Scenes
             {
                 AddHandler(sceneEvent.Key, sceneEvent.Value);
             }
+        }
+        [SceneEvent]
+        public void StartGame()
+        {
+            SetFader("closed");
         }
         [SceneEvent]
         public void SubwayCarFlashStart()
@@ -31,8 +38,38 @@ namespace Assets.Hatch.Scripts.Events.Scenes
         public void SubwayCarFlashEnd()
         {
             Console.WriteLine("SubwayCarFlashEnd");
-            SetFader("reset");
+            SetFader("opened");
             SetFader("fadeFastClose");
+        }
+        [SceneEvent]
+        public void MysteryManSceneStart()
+        {
+            var mysteryManLR = LevelRequirements.PresetLevelRequirements["MysteryManIntro"];
+            mysteryManLR.defaultCameraPosition = MysteryManCamPos.transform.position;
+            SetCamera(mysteryManLR);
+            SetFader("closed");
+            SetFader("fadeSlowBlinkOpen");
+
+        }
+        [SceneEvent]
+        public void MysteryManEnter()
+        {
+            SetFader("haze");
+        }
+        [SceneEvent]
+        public void MysteryManDialogue()
+        {
+
+        }
+        [SceneEvent]
+        public void MysteryManExit()
+        {
+            SetFader("fadeSlowBlinkClose");
+        }
+        [SceneEvent]
+        public void MysteryManSceneEnd()
+        {
+            SetFader("closed");
         }
     }
 }

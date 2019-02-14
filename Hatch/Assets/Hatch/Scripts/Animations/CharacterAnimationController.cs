@@ -31,4 +31,9 @@ public class CharacterAnimationController : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void Walk()
+    {
+
+    }
 }
