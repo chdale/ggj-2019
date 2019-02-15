@@ -35,6 +35,7 @@ public class MysteryManIntro : MonoBehaviour
     {
         conversationEnsues = true;
         conversationCount = 0;
+        StaticEvent.StartDialogue(gameObject, true);
         manager.StartDialogue(objectiveDialogue[0]);
     }
 

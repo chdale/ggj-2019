@@ -11,11 +11,11 @@ public class GameController : MonoBehaviour
     public static event InteractAction Interact;
     public static event InteractAction InteractActive;
     public static event InteractAction InteractInactive;
-    public delegate void CancelDialogueAction();
+    public delegate void CancelDialogueAction(bool isStatic = false);
     public static event CancelDialogueAction CancelDialogue;
     public delegate void FinishModalAction();
     public static event FinishModalAction FinishModal;
-    public delegate void EndDialogueAction();
+    public delegate void EndDialogueAction(bool isStatic = false);
     public static event EndDialogueAction EndDialogue;
     public delegate void NextDialogueAction();
     public static event NextDialogueAction NextDialogue;
@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
     public static event StopPlayerAction StopPlayer;
     public delegate void StartPlayerAction();
     public static event StartPlayerAction StartPlayer;
-    public delegate void StartDialogueAction(GameObject dialogueTarget);
+    public delegate void StartDialogueAction(GameObject dialogueTarget, bool isStatic = false);
     public static event StartDialogueAction StartDialogue;
     public delegate void CancelPhotoAction();
     public static event CancelPhotoAction CancelPhoto;
@@ -146,11 +146,20 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void StartDialogueEvent(GameObject dialogueTarget)
+    public void StartDialogueEvent(GameObject dialogueTarget, bool isStatic = false)
     {
         if (StartDialogue != null)
         {
-            StartDialogue(dialogueTarget);
+            StartDialogue(dialogueTarget, isStatic);
+            InteractInactiveEvent();
+            StopCharacter();
+        }
+    }
+    public void EndDialogueEvent(GameObject dialogueTarget, bool isStatic = false)
+    {
+        if (StartDialogue != null)
+        {
+            StartDialogue(dialogueTarget, isStatic);
             InteractInactiveEvent();
             StopCharacter();
         }

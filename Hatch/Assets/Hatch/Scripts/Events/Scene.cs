@@ -20,6 +20,7 @@ namespace Assets.Hatch.Scripts.Events
             MysteryManEnter,
             MysteryManDialogue1,
             MysteryManDialogue2,
+            MysteryManDialogueEnd,
             MysteryManWave,
             MysteryManExit,
             MysteryManSceneEnd

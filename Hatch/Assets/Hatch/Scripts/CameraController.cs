@@ -103,54 +103,59 @@ public class CameraController : MonoBehaviour {
         return sceneFader.GetComponent<SceneFader>();
     }
 
-    private void BeginDialogue(GameObject dialogueTarget)
+    private void BeginDialogue(GameObject dialogueTarget, bool isStatic = false)
     {
         if (!dialogueActive)
         {
             dialogueActive = true;
             dialogue.SetActive(true);
-            if (dynamicCameraHorizontal)
+            if (!isStatic)
             {
-                m_camera.orthographicSize = 5.0f;
-            }
-            float dialogueCameraPosition = defaultCameraPosition.y - (savedSize * (2.0f / 5.0f));
-            if (dialogueTarget != null)
-            {
-                transform.position = new Vector3(MidPointBetween(player, dialogueTarget), dialogueCameraPosition, -10f);
-                FacePlayer faceScript = dialogueTarget.GetComponent<FacePlayer>();
-                if (faceScript != null)
+                if (dynamicCameraHorizontal)
                 {
-                    faceScript.FaceAndUnfacePlayer(player);
+                    m_camera.orthographicSize = 5.0f;
+                }
+                float dialogueCameraPosition = defaultCameraPosition.y - (savedSize * (2.0f / 5.0f));
+                if (dialogueTarget != null)
+                {
+                    transform.position = new Vector3(MidPointBetween(player, dialogueTarget), dialogueCameraPosition, -10f);
+                    FacePlayer faceScript = dialogueTarget.GetComponent<FacePlayer>();
+                    if (faceScript != null)
+                    {
+                        faceScript.FaceAndUnfacePlayer(player);
+                    }
                 }
             }
         }
     }
 
-    private void EndDialogue()
+    private void EndDialogue(bool isStatic = false)
     {
         if (dialogueActive)
         {
             dialogueActive = false;
             dialogue.SetActive(false);
-            m_camera.orthographicSize = savedSize;
-            if (dynamicCameraHorizontal)
+            if (!isStatic)
             {
-                transform.position = new Vector3(PostEventCameraPosition(), 0, -10);
-            }
-            else
-            {
-                transform.position = defaultCameraPosition;
-            }
-
-            if (dialogueTarget != null)
-            {
-                FacePlayer faceScript = dialogueTarget.GetComponent<FacePlayer>();
-                if (faceScript != null)
+                m_camera.orthographicSize = savedSize;
+                if (dynamicCameraHorizontal)
                 {
-                    faceScript.FaceAndUnfacePlayer(player);
+                    transform.position = new Vector3(PostEventCameraPosition(), 0, -10);
+                }
+                else
+                {
+                    transform.position = defaultCameraPosition;
+                }
+
+                if (dialogueTarget != null)
+                {
+                    FacePlayer faceScript = dialogueTarget.GetComponent<FacePlayer>();
+                    if (faceScript != null)
+                    {
+                        faceScript.FaceAndUnfacePlayer(player);
+                    }
                 }
             }
-
             dialogueTarget = null;
         }
     }
