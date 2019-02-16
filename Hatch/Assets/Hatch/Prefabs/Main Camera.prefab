@@ -716,6 +716,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   dialogueTarget: {fileID: 0}
+  sceneFader: {fileID: 1894691771767290}
 --- !u!114 &114491357668143240
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1134,7 +1135,7 @@ Canvas:
   m_GameObject: {fileID: 1894691771767290}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 2
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -1359,18 +1360,18 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1894691771767290}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 0.03705729, y: 0.0370573, z: 0.0370573}
   m_Children: []
   m_Father: {fileID: 4245631492827196}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.0000019073, y: 0}
+  m_SizeDelta: {x: 1154, y: 638}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224686469454455476
 RectTransform:
   m_ObjectHideFlags: 1

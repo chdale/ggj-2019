@@ -74,6 +74,11 @@ namespace Assets.Hatch.Scripts.Events.Scenes
             MysteryManIntroDialogue.StartDialogue(MysteryMan);
         }
         [SceneEvent]
+        public void MysteryManWave()
+        {
+            MysteryManController.Wave();
+        }
+        [SceneEvent]
         public void MysteryManDialogue2()
         {
             MysteryManIntroDialogue.NextDialogue();
@@ -82,11 +87,6 @@ namespace Assets.Hatch.Scripts.Events.Scenes
         public void MysteryManDialogueEnd()
         {
             MysteryManIntroDialogue.EndDialogue();
-        }
-        [SceneEvent]
-        public void MysteryManWave()
-        {
-            MysteryManController.Wave();
         }
         [SceneEvent]
         public void MysteryManExit()

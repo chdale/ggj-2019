@@ -82,7 +82,7 @@ public class CameraController : MonoBehaviour {
         m_camera.orthographicSize = savedSize;
     }
 
-    private void BeginDialogue(GameObject dialogueTarget)
+    public void SetCamera(LevelRequirement levelRequirement)
     {
         //player.transform.position = levelRequirement.playerPosition;
         defaultCameraPosition = levelRequirement.defaultCameraPosition;
@@ -124,16 +124,6 @@ public class CameraController : MonoBehaviour {
                     {
                         faceScript.FaceAndUnfacePlayer(player);
                     }
-                }
-            }
-            float dialogueCameraPosition = defaultCameraPosition.y - (savedSize * (2.0f / 5.0f));
-            if (dialogueTarget != null)
-            {
-                transform.position = new Vector3(MidPointBetween(player, dialogueTarget), dialogueCameraPosition, -10f);
-                FacePlayer faceScript = dialogueTarget.GetComponent<FacePlayer>();
-                if (faceScript != null)
-                {
-                    faceScript.FaceAndUnfacePlayer(player);
                 }
             }
         }

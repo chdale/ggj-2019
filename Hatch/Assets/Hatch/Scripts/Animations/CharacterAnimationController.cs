@@ -48,8 +48,7 @@ public class CharacterAnimationController : MonoBehaviour {
     public void Wave()
     {
         spineAnimationState = skeletonAnimation.AnimationState;
-        spineAnimationState.SetAnimation(0, "wave", false);
-
+        spineAnimationState.SetAnimation(1, "wave", false);
     }
 
     public void Walk(float duration = 1, Vector3 direction = new Vector3())
