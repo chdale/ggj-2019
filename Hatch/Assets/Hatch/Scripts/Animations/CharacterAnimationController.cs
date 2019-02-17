@@ -51,7 +51,7 @@ public class CharacterAnimationController : MonoBehaviour {
         spineAnimationState.SetAnimation(1, "wave", false);
     }
 
-    public void Walk(float duration = 1, Vector3 direction = new Vector3())
+    public void Walk(float duration = 1, Vector3 direction = new Vector3(), float speed = 0.035f, float animSpeed = 1)
     {
         if (Math.Abs(direction.x) < 0)
         {
@@ -64,15 +64,16 @@ public class CharacterAnimationController : MonoBehaviour {
         animationTime = duration;
         spineAnimationState = skeletonAnimation.AnimationState;
         Debug.Log("walk");
-        spineAnimationState.SetAnimation(0, "walk", true);
-        this.StartCoroutine(Walking());
+        spineAnimationState.SetAnimation(0, "walk", true).TimeScale = animSpeed;
+
+        this.StartCoroutine(Walking(speed));
         this.StartCoroutine(Idle(duration));
     }
-    public IEnumerator Walking()
+    public IEnumerator Walking(float speed)
     {
         while (animationTime  > animationTimeCounter)
         {
-            this.transform.position += (this.characterDirection * walkSpeed);
+            this.transform.position += (this.characterDirection * speed);
             animationTimeCounter += Time.deltaTime;
             yield return null;
         }

@@ -17,4 +17,9 @@ public class StaticEvent
     {
         GameObject.Find("GameController").GetComponent<GameController>().EndDialogueEvent(dialogueTarget, isStatic);
     }
+    public static void CameraShake(float duration, float magnitude)
+    {
+        var cameraController = Camera.main.GetComponent<CameraController>();
+        cameraController.CameraShakeStart(duration, magnitude);
+    }
 }

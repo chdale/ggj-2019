@@ -43,6 +43,7 @@ namespace Assets.Hatch.Scripts.Events.Scenes
             subwayCarFlashLR.defaultCameraPosition = SubwayFlashPos.transform.position;
             SetCamera(subwayCarFlashLR);
             SetFader("fadeFastOpen");
+            StaticEvent.CameraShake(3, 0.15f);
         }
         [SceneEvent]
         public void SubwayCarFlashEnd()
@@ -59,14 +60,15 @@ namespace Assets.Hatch.Scripts.Events.Scenes
             SetCamera(mysteryManLR);
             SetFader("closed");
             SetFader("fadeSlowBlinkOpen");
+            StaticEvent.CameraShake(20, 0.01f);
 
+            MysteryMan.transform.position = MysteryManPos.transform.position;
         }
         [SceneEvent]
         public void MysteryManEnter()
         {
             SetFader("haze");
-            MysteryMan.transform.position = MysteryManPos.transform.position;
-            MysteryManController.Walk(2, new Vector3() { x = 1, y = 0, z = 0 });
+            MysteryManController.Walk(4, new Vector3() { x = 1, y = 0, z = 0 }, 0.02f, .7f);
         }
         [SceneEvent]
         public void MysteryManDialogue1()
@@ -93,7 +95,7 @@ namespace Assets.Hatch.Scripts.Events.Scenes
         {
             SetFader("fadeSlowBlinkClose");
             var mysteryMan = MysteryMan.GetComponent<CharacterAnimationController>();
-            MysteryManController.Walk(2, new Vector3() { x = -1, y = 0, z = 0 });
+            MysteryManController.Walk(4, new Vector3() { x = -1, y = 0, z = 0 }, 0.02f, .7f);
         }
         [SceneEvent]
         public void MysteryManSceneEnd()
