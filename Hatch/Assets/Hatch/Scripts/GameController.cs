@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Assets.Hatch.Scripts.ScriptableObjects;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -31,6 +32,8 @@ public class GameController : MonoBehaviour
     public static event CancelPhotoAction CancelPhoto;
     public delegate void ClearFogWallAction(GameObject fogWall);
     public static event ClearFogWallAction ClearFogWall;
+    [SerializeField]
+    public static GameStateDatabase gameStateSettings;
 
     public bool isPhotoActive = false;
 
