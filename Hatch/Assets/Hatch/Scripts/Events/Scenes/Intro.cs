@@ -14,6 +14,7 @@ namespace Assets.Hatch.Scripts.Events.Scenes
         public GameObject PlayerIntroEndCamPos;
         public GameObject MysteryManPos;
         public GameObject MysteryManCamPos;
+        public GameObject MysteryManCamEndPos;
         public GameObject MysteryMan;
         public GameObject Medic;
         public GameObject MysteryManIntroDialogueObject;
@@ -80,7 +81,7 @@ namespace Assets.Hatch.Scripts.Events.Scenes
             SetCamera(mysteryManLR);
             SetFader("closed");
             SetFader("fadeSlowBlinkOpen");
-            StaticEvent.CameraShake(20, 0.01f);
+            StaticEvent.CameraShake(10, 0.01f);
 
             MysteryMan.transform.position = MysteryManPos.transform.position;
         }
@@ -109,25 +110,35 @@ namespace Assets.Hatch.Scripts.Events.Scenes
         public void MysteryManSnap1()
         {
             MysteryManController.Snap();
-            StaticEvent.CameraShake(3, 0.025f);
+            //StaticEvent.CameraShake(3, 0.025f);
         }
         [SceneEvent]
         public void MysteryManSnap2()
         {
             MysteryManController.Snap();
-            StaticEvent.CameraShake(3, 0.025f);
+            //StaticEvent.CameraShake(3, 0.025f);
         }
         [SceneEvent]
         public void MysteryManSnap3()
         {
             MysteryManController.Snap();
-            StaticEvent.CameraShake(3, 0.025f);
+            //StaticEvent.CameraShake(3, 0.025f);
         }
         [SceneEvent]
         public void MysteryManSnap4()
         {
             MysteryManController.Snap();
-            StaticEvent.CameraShake(3, 0.025f);
+            //StaticEvent.CameraShake(3, 0.025f);
+        }
+        [SceneEvent]
+        public void MemoryFocus()
+        {
+            SetCameraLerp(MysteryManCamPos.transform.position, MysteryManCamEndPos.transform.position, 5);
+        }
+        [SceneEvent]
+        public void MemoryBlur()
+        {
+            SetCameraLerp(MysteryManCamEndPos.transform.position, MysteryManCamPos.transform.position, 5);
         }
         [SceneEvent]
         public void MysteryManDialogue1()
