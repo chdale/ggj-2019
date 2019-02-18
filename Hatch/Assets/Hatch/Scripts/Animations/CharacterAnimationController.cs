@@ -51,6 +51,12 @@ public class CharacterAnimationController : MonoBehaviour {
         spineAnimationState.SetAnimation(1, "wave", false);
     }
 
+    public void Snap()
+    {
+        spineAnimationState = skeletonAnimation.AnimationState;
+        spineAnimationState.SetAnimation(1, "snap", false);
+    }
+
     public void Walk(float duration = 1, Vector3 direction = new Vector3(), float speed = 0.035f, float animSpeed = 1)
     {
         if (Math.Abs(direction.x) < 0)

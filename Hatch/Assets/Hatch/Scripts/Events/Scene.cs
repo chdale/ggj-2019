@@ -26,7 +26,7 @@ namespace Assets.Hatch.Scripts.Events
             MysteryManSceneEnd
         };
         public SceneEventDictionary SceneEvents;
-        private static Dictionary<EVENT, Action> eventTable = new Dictionary<EVENT, Action>();
+        private static Dictionary<string, Action> eventTable = new Dictionary<string, Action>();
 
         public void Awake()
         {
@@ -40,24 +40,23 @@ namespace Assets.Hatch.Scripts.Events
 
         public void StartScene()
         {
-            foreach (KeyValuePair<EVENT, float> sceneEvent in SceneEvents)
+            foreach (KeyValuePair<string, float> sceneEvent in SceneEvents)
             {
                 Broadcast(sceneEvent.Key, sceneEvent.Value);
             }
         }
 
-
-
         // Adds a delegate to get called for a specific event
-        public static void AddHandler(EVENT evnt, Action action)
+        public static void AddHandler(string evnt, Action action)
         {
             if (!eventTable.ContainsKey(evnt)) eventTable[evnt] = action;
             else eventTable[evnt] += action;
         }
 
         // Fires the event
-        public void Broadcast(EVENT evnt, float time)
+        public void Broadcast(string evnt, float time)
         {
+            evnt = evnt.ToLower();
             if (eventTable[evnt] != null) Invoke(eventTable[evnt], time);
         }
 
@@ -71,10 +70,10 @@ namespace Assets.Hatch.Scripts.Events
             yield return new WaitForSeconds(delay);
             theDelegate();
         }
-        public Dictionary<EVENT, Action> GetSceneEventMethods(Scene scene)
+        public Dictionary<string, Action> GetSceneEventMethods(Scene scene)
         {
             Attribute type = new SceneEventAttribute();
-            var result = new Dictionary<EVENT, Action>();
+            var result = new Dictionary<string, Action>();
             var sceneType = scene.GetType();
             foreach (var method in sceneType.GetMethods(BindingFlags.Public | BindingFlags.Instance))
             {
@@ -82,22 +81,24 @@ namespace Assets.Hatch.Scripts.Events
                 if (attrs.Any(x => ((Attribute)x).Match(type)))
                 {
                     var action = (Action)Delegate.CreateDelegate(typeof(Action), scene, method);
-                    var names = Enum.GetNames(typeof(EVENT));
-                    var name = names.Where(x => x.ToLower() == method.Name.ToLower()).FirstOrDefault();;
-                    EVENT eventEnum;
-                    if (!String.IsNullOrEmpty(name))
-                    {
-                        try
-                        {
-                            eventEnum = (EVENT)Enum.Parse(typeof(EVENT), name);
-                            result.Add(eventEnum, action);
+                    result.Add(method.Name.ToLower(), action);
 
-                        }
-                        catch (Exception e)
-                        {
+                    //var names = Enum.GetNames(typeof(EVENT));
+                    //var name = names.Where(x => x.ToLower() == method.Name.ToLower()).FirstOrDefault();
+                    //EVENT eventEnum;
+                    //if (!String.IsNullOrEmpty(name))
+                    //{
+                    //    try
+                    //    {
+                    //        eventEnum = (EVENT)Enum.Parse(typeof(EVENT), name);
+                    //        result.Add(eventEnum, action);
 
-                        }
-                    }
+                    //    }
+                    //    catch (Exception e)
+                    //    {
+
+                    //    }
+                    //}
                 }
             }
             return result;
@@ -110,6 +111,11 @@ namespace Assets.Hatch.Scripts.Events
         public static void SetCamera(LevelRequirement levelReq)
         {
             Camera.main.GetComponent<CameraController>().LoadLevel(levelReq);
+        }
+
+        public static void SetCameraLerp(Vector3 startPos, Vector3 endPos, float duration)
+        {
+            Camera.main.GetComponent<CameraController>().CameraLerpStart(startPos, endPos, duration);
         }
 
         public static void StartDialogue(GameObject dialogueTarget = null)

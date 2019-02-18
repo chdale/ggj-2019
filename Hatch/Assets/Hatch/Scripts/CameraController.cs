@@ -261,5 +261,24 @@ public class CameraController : MonoBehaviour {
         }
         transform.localPosition = originalPos;
     }
+    public void CameraLerpStart(Vector3 startPos, Vector3 endPos, float duration)
+    {
+        this.StartCoroutine(CameraLerp(startPos, endPos, duration));
+    }
+    public IEnumerator CameraLerp(Vector3 startPos, Vector3 endPos, float duration)
+    {
+        var pitchCurve = AnimationCurve.EaseInOut(0.0f, 0.0f, 1.0f, 90.0f);
+        float elapsed = 0.0f;
+
+        while (elapsed < duration)
+        {
+            var t = pitchCurve.Evaluate(elapsed / duration);
+            t = t / (pitchCurve.Evaluate(1));
+            transform.position = Vector3.Lerp(startPos, endPos, t);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+        yield break;
+    }
 
 }

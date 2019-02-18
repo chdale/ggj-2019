@@ -7,7 +7,7 @@ using System.Text;
 namespace Assets.Hatch.Scripts.Events
 {
     [Serializable]
-    public class SceneEventDictionary : SerializableDictionaryBase<Scene.EVENT, float>
+    public class SceneEventDictionary : SerializableDictionaryBase<string, float>
     {
 
     }

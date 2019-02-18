@@ -10,11 +10,14 @@ namespace Assets.Hatch.Scripts.Events.Scenes
     public class Intro : Scene
     {
         public GameObject SubwayFlashPos;
+        public GameObject PlayerIntroCamPos;
+        public GameObject PlayerIntroEndCamPos;
         public GameObject MysteryManPos;
         public GameObject MysteryManCamPos;
         public GameObject MysteryMan;
         public GameObject Medic;
         public GameObject MysteryManIntroDialogueObject;
+        public GameObject DreamBubble;
 
         private CharacterAnimationController MysteryManController;
         private CharacterAnimationController MedicController;
@@ -22,7 +25,7 @@ namespace Assets.Hatch.Scripts.Events.Scenes
 
         public override void InitScene()
         {
-            foreach (KeyValuePair<EVENT, Action> sceneEvent in GetSceneEventMethods(this))
+            foreach (KeyValuePair<string, Action> sceneEvent in GetSceneEventMethods(this))
             {
                 AddHandler(sceneEvent.Key, sceneEvent.Value);
             }
@@ -52,6 +55,23 @@ namespace Assets.Hatch.Scripts.Events.Scenes
             SetFader("opened");
             SetFader("fadeFastClose");
         }
+
+        [SceneEvent]
+        public void PlayerSceneStart()
+        {
+            var playerIntroLR = LevelRequirements.PresetLevelRequirements["PlayerIntro"];
+            playerIntroLR.defaultCameraPosition = PlayerIntroCamPos.transform.position;
+            SetCamera(playerIntroLR);
+            SetFader("fadeSlowOpen");
+
+            SetCameraLerp(PlayerIntroCamPos.transform.position, PlayerIntroEndCamPos.transform.position, 6);
+        }
+        [SceneEvent]
+        public void PlayerSceneEnd()
+        {
+            SetFader("fadeSlowClose");
+        }
+
         [SceneEvent]
         public void MysteryManSceneStart()
         {
@@ -71,9 +91,14 @@ namespace Assets.Hatch.Scripts.Events.Scenes
             MysteryManController.Walk(4, new Vector3() { x = 1, y = 0, z = 0 }, 0.02f, .7f);
         }
         [SceneEvent]
-        public void MysteryManDialogue1()
+        public void OpenBubble()
         {
-            MysteryManIntroDialogue.StartDialogue(MysteryMan);
+            DreamBubble.GetComponent<DreamBubbleAnimationController>().OpenBubbleStart();
+        }
+        [SceneEvent]
+        public void CloseBubble()
+        {
+            DreamBubble.GetComponent<DreamBubbleAnimationController>().CloseBubbleStart();
         }
         [SceneEvent]
         public void MysteryManWave()
@@ -81,7 +106,61 @@ namespace Assets.Hatch.Scripts.Events.Scenes
             MysteryManController.Wave();
         }
         [SceneEvent]
+        public void MysteryManSnap1()
+        {
+            MysteryManController.Snap();
+            StaticEvent.CameraShake(3, 0.025f);
+        }
+        [SceneEvent]
+        public void MysteryManSnap2()
+        {
+            MysteryManController.Snap();
+            StaticEvent.CameraShake(3, 0.025f);
+        }
+        [SceneEvent]
+        public void MysteryManSnap3()
+        {
+            MysteryManController.Snap();
+            StaticEvent.CameraShake(3, 0.025f);
+        }
+        [SceneEvent]
+        public void MysteryManSnap4()
+        {
+            MysteryManController.Snap();
+            StaticEvent.CameraShake(3, 0.025f);
+        }
+        [SceneEvent]
+        public void MysteryManDialogue1()
+        {
+            MysteryManIntroDialogue.StartDialogue(MysteryMan);
+        }
+        [SceneEvent]
         public void MysteryManDialogue2()
+        {
+            MysteryManIntroDialogue.NextDialogue();
+        }
+        [SceneEvent]
+        public void MysteryManDialogue3()
+        {
+            MysteryManIntroDialogue.NextDialogue();
+        }
+        [SceneEvent]
+        public void MysteryManDialogue4()
+        {
+            MysteryManIntroDialogue.NextDialogue();
+        }
+        [SceneEvent]
+        public void MysteryManDialogue5()
+        {
+            MysteryManIntroDialogue.NextDialogue();
+        }
+        [SceneEvent]
+        public void MysteryManDialogue6()
+        {
+            MysteryManIntroDialogue.NextDialogue();
+        }
+        [SceneEvent]
+        public void MysteryManDialogue7()
         {
             MysteryManIntroDialogue.NextDialogue();
         }
