@@ -26,13 +26,13 @@ public class MysteryManIntro : MonoBehaviour
         };
         objectiveDialogue = new DialogueObject[]
         {
-            new DialogueObject(DialogueTarget.MysteryMan, "Oh my, what a shattered state to find you in.", .1f, Emotions.Idle, talkClip),
-            new DialogueObject(DialogueTarget.MysteryMan, "All of these fragments will take great care to piece together.", .04f, Emotions.Idle, talkClip),
-            new DialogueObject(DialogueTarget.MysteryMan, "Shall we take a look?", .04f, Emotions.Idle, talkClip),
-            new DialogueObject(DialogueTarget.MysteryMan, "I have always found your kind to be so.. fragile", .04f, Emotions.Idle, talkClip),
-            new DialogueObject(DialogueTarget.MysteryMan, "Like absence versus thin air", .04f, Emotions.Idle, talkClip),
-            new DialogueObject(DialogueTarget.MysteryMan, "I think it is time to collect your thoughts..", .04f, Emotions.Idle, talkClip),
-            new DialogueObject(DialogueTarget.MysteryMan, "Perhaps I will see you up ahead.", .04f, Emotions.Idle, talkClip)
+            new DialogueObject(DialogueTarget.MysteryMan, "Oh my, what a shattered state to find you in.", .06f, Emotions.Idle, talkClip),
+            new DialogueObject(DialogueTarget.MysteryMan, "All of these fragments will take great care to piece together.", .06f, Emotions.Idle, talkClip),
+            new DialogueObject(DialogueTarget.MysteryMan, "Shall we take a look?", .08f, Emotions.Idle, talkClip),
+            new DialogueObject(DialogueTarget.MysteryMan, "I have always found your kind to be so.. fragile", .08f, Emotions.Idle, talkClip),
+            new DialogueObject(DialogueTarget.MysteryMan, "Like absence versus thin air", .08f, Emotions.Idle, talkClip),
+            new DialogueObject(DialogueTarget.MysteryMan, "I think it is time to collect your thoughts..", .06f, Emotions.Idle, talkClip),
+            new DialogueObject(DialogueTarget.MysteryMan, "Perhaps I will see you up ahead.", .06f, Emotions.Idle, talkClip)
         };
     }
 

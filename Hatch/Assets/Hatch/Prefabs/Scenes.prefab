@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4535513949127680}
   m_Layer: 0
-  m_Name: MysteryManCamPos
+  m_Name: MysteryManCamEndPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,6 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4496142199802476}
   - component: {fileID: 114506093121069454}
+  - component: {fileID: 82675090848380094}
   m_Layer: 0
   m_Name: Intro
   m_TagString: Untagged
@@ -134,6 +135,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1915512232902012
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4757115643164344}
+  m_Layer: 0
+  m_Name: MysteryManCamPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1963317927080286
 GameObject:
   m_ObjectHideFlags: 1
@@ -161,7 +177,7 @@ Transform:
   m_Children:
   - {fileID: 4356451864120974}
   m_Father: {fileID: 4496142199802476}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4160580732384248
 Transform:
@@ -216,6 +232,7 @@ Transform:
   - {fileID: 4231527173083042}
   - {fileID: 4160580732384248}
   - {fileID: 4771791697848862}
+  - {fileID: 4757115643164344}
   - {fileID: 4535513949127680}
   - {fileID: 4115727487233676}
   m_Father: {fileID: 4903028101332868}
@@ -228,7 +245,20 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1191166409604292}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -30.15, y: -4.6, z: -10}
+  m_LocalPosition: {x: -29.1, y: -2.14, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4496142199802476}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4757115643164344
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1915512232902012}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -30.15, y: -4.86, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4496142199802476}
@@ -274,6 +304,86 @@ Transform:
   m_Father: {fileID: 4496142199802476}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &82675090848380094
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1193545709121846}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114295328667474970
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -327,12 +437,14 @@ MonoBehaviour:
     - MysteryManDialogue2
     - MysteryManDialogue3
     - MysteryManSnap1
+    - MemoryFocus
     - OpenBubble
     - MysteryManDialogue4
     - MysteryManSnap2
     - MysteryManDialogue5
     - MysteryManSnap3
     - MysteryManDialogue6
+    - MemoryBlur
     - MysteryManSnap4
     - CloseBubble
     - MysteryManExit
@@ -348,12 +460,14 @@ MonoBehaviour:
     - MysteryManDialogue2
     - MysteryManDialogue3
     - MysteryManSnap1
+    - MemoryFocus
     - OpenBubble
     - MysteryManDialogue4
     - MysteryManSnap2
     - MysteryManDialogue5
     - MysteryManSnap3
     - MysteryManDialogue6
+    - MemoryBlur
     - MysteryManSnap4
     - CloseBubble
     - MysteryManExit
@@ -369,12 +483,14 @@ MonoBehaviour:
     - 17
     - 23
     - 24
+    - 24
     - 25.5
     - 30
     - 33
     - 37
     - 40
     - 45
+    - 46
     - 47
     - 48.5
     - 52
@@ -387,7 +503,8 @@ MonoBehaviour:
   PlayerIntroCamPos: {fileID: 1247365356659884}
   PlayerIntroEndCamPos: {fileID: 1832179452675072}
   MysteryManPos: {fileID: 1389530059626680}
-  MysteryManCamPos: {fileID: 1191166409604292}
+  MysteryManCamPos: {fileID: 1915512232902012}
+  MysteryManCamEndPos: {fileID: 1191166409604292}
   MysteryMan: {fileID: 0}
   Medic: {fileID: 0}
   MysteryManIntroDialogueObject: {fileID: 1544880900626894}

@@ -133,12 +133,12 @@ namespace Assets.Hatch.Scripts.Events.Scenes
         [SceneEvent]
         public void MemoryFocus()
         {
-            SetCameraLerp(MysteryManCamPos.transform.position, MysteryManCamEndPos.transform.position, 5);
+            SetCameraLerp(MysteryManCamPos.transform.position, MysteryManCamEndPos.transform.position, 3);
         }
         [SceneEvent]
         public void MemoryBlur()
         {
-            SetCameraLerp(MysteryManCamEndPos.transform.position, MysteryManCamPos.transform.position, 5);
+            SetCameraLerp(MysteryManCamEndPos.transform.position, MysteryManCamPos.transform.position, 3);
         }
         [SceneEvent]
         public void MysteryManDialogue1()
