@@ -1,0 +1,13 @@
+
+skeleton.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/SubwayCar
+  rotate: false
+  xy: 2, 2
+  size: 2000, 706
+  orig: 2000, 706
+  offset: 0, 0
+  index: -1

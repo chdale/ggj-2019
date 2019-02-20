@@ -38,7 +38,7 @@ public class MedicRescue : MonoBehaviour
 
     }
 
-    private void StartDialogue(GameObject dialogueTarget)
+    private void StartDialogue(GameObject dialogueTarget, bool isStatic = false)
     {
         if (medicEvent.isActivated)
         {
@@ -100,7 +100,7 @@ public class MedicRescue : MonoBehaviour
         }
     }
 
-    private void EndDialogue()
+    private void EndDialogue(bool isStatic = false)
     {
         medicEvent.isActivated = false;
         manager.EndDialogue();

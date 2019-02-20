@@ -9,19 +9,28 @@ public class SceneFader : MonoBehaviour
     public AudioSource sceneLoad;
     public float timeToLoad;
 
-	// Use this for initialization
-	void Start ()
+    private void Awake()
+    {
+	    m_Animator = gameObject.GetComponent<Animator>();
+        m_Animator.SetTrigger("closed");
+    }
+
+    // Use this for initialization
+    void Start ()
 	{
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
-	    m_Animator = gameObject.GetComponent<Animator>();
-        StartCoroutine(StopPlayerDuration());
-        Invoke("BeginScene", timeToLoad);
+        //StartCoroutine(StopPlayerDuration());
+        //Invoke("BeginScene", timeToLoad);
 	}
 
     public void BeginScene()
     {
         m_Animator.SetTrigger("fade");
         sceneLoad.Play();
+    }
+    public void SetTrigger(string trigger)
+    {
+        m_Animator.SetTrigger(trigger);
     }
 
     IEnumerator StopPlayerDuration()
