@@ -70,6 +70,7 @@ namespace Spine.Unity.Examples
         {
             // Make sure you get these AnimationState and Skeleton references in Start or Later.
             // Getting and using them in Awake is not guaranteed by default execution order.
+
             skeletonAnimation = GetComponent<SkeletonAnimation>();
             spineAnimationState = skeletonAnimation.AnimationState;
             skeleton = skeletonAnimation.Skeleton;
