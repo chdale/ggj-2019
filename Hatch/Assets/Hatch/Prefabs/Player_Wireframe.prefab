@@ -185,7 +185,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1376561853246442}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.92, y: -5.33, z: 1.4039582}
+  m_LocalPosition: {x: -0.01, y: -22.25, z: 1.4039582}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children:
   - {fileID: 224332383052399548}
@@ -229,7 +229,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1417214010622698}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.04, y: -5.02, z: 0}
+  m_LocalPosition: {x: 0.03, y: -3.93, z: 0}
   m_LocalScale: {x: 0.9903522, y: 0.9903522, z: 0.9903522}
   m_Children:
   - {fileID: 4753812241631120}
@@ -580,7 +580,7 @@ MonoBehaviour:
   m_MaxSpeed: 10
   m_JumpForce: 500
   m_CrouchSpeed: 0.36
-  m_AirControl: 0
+  m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -614,7 +614,7 @@ MonoBehaviour:
   addNormals: 0
   calculateTangents: 0
   disableRenderingOnOverride: 1
-  _animationName: passedOut
+  _animationName: idle
   loop: 1
   timeScale: 1
 --- !u!114 &114932652003213002
