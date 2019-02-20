@@ -12,7 +12,7 @@ namespace Assets.Hatch.Scripts.Events.Scenes
         private void Start()
         {
             var intro = Intro.GetComponent<Intro>();
-            //intro.StartScene();
+            intro.StartScene();
         }
     }
 }

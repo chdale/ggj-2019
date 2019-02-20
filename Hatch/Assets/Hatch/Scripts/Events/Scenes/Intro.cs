@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Spine.Unity;
 using UnityEngine;
 
 namespace Assets.Hatch.Scripts.Events.Scenes
@@ -19,6 +20,13 @@ namespace Assets.Hatch.Scripts.Events.Scenes
         public GameObject Medic;
         public GameObject MysteryManIntroDialogueObject;
         public GameObject DreamBubble;
+        public GameObject Crows;
+        public GameObject Arms;
+        public GameObject Teeth1;
+        public GameObject Teeth2;
+        public GameObject BeginGamePos;
+        public GameObject PlayerEndPos;
+
 
         private CharacterAnimationController MysteryManController;
         private CharacterAnimationController MedicController;
@@ -42,7 +50,6 @@ namespace Assets.Hatch.Scripts.Events.Scenes
         [SceneEvent]
         public void SubwayCarFlashStart()
         {
-            Console.WriteLine("SubwayCarFlashStart");
             var subwayCarFlashLR = LevelRequirements.PresetLevelRequirements["SubwayCarFlash"];
             subwayCarFlashLR.defaultCameraPosition = SubwayFlashPos.transform.position;
             SetCamera(subwayCarFlashLR);
@@ -52,8 +59,6 @@ namespace Assets.Hatch.Scripts.Events.Scenes
         [SceneEvent]
         public void SubwayCarFlashEnd()
         {
-            Console.WriteLine("SubwayCarFlashEnd");
-            SetFader("opened");
             SetFader("fadeFastClose");
         }
 
@@ -79,7 +84,6 @@ namespace Assets.Hatch.Scripts.Events.Scenes
             var mysteryManLR = LevelRequirements.PresetLevelRequirements["MysteryManIntro"];
             mysteryManLR.defaultCameraPosition = MysteryManCamPos.transform.position;
             SetCamera(mysteryManLR);
-            SetFader("closed");
             SetFader("fadeSlowBlinkOpen");
             StaticEvent.CameraShake(10, 0.01f);
 
@@ -95,6 +99,40 @@ namespace Assets.Hatch.Scripts.Events.Scenes
         public void OpenBubble()
         {
             DreamBubble.GetComponent<DreamBubbleAnimationController>().OpenBubbleStart();
+        }
+        [SceneEvent]
+        public void CrowsStart()
+        {
+
+            Crows.GetComponent<CrowsEmitter>().CrowsSceneStart();
+        }
+        [SceneEvent]
+        public void CrowsEnd()
+        {
+            Crows.GetComponent<CrowsEmitter>().CrowsSceneEnd();
+        }
+        [SceneEvent]
+        public void ArmsStart()
+        {
+            Arms.GetComponent<ArmsEmitter>().ArmsSceneStart();
+        }
+        [SceneEvent]
+        public void ArmsEnd()
+        {
+            Arms.GetComponent<ArmsEmitter>().ArmsSceneEnd();
+        }
+        [SceneEvent]
+        public void TeethStart()
+        {
+            var teeth1 = Teeth1.GetComponent<SkeletonAnimation>();
+            teeth1.AnimationState.SetAnimation(1, "bite", false);
+            var teeth2 = Teeth2.GetComponent<SkeletonAnimation>();
+            teeth2.AnimationState.SetAnimation(1, "bite", false);
+        }
+        [SceneEvent]
+        public void TeethEnd()
+        {
+
         }
         [SceneEvent]
         public void CloseBubble()
@@ -191,6 +229,16 @@ namespace Assets.Hatch.Scripts.Events.Scenes
         public void MysteryManSceneEnd()
         {
             SetFader("closed");
+        }
+        [SceneEvent]
+        public void MedicIntroStart()
+        {
+            var player = GameObject.FindGameObjectWithTag("Player").transform;
+            player.position = PlayerEndPos.transform.position;
+            var beginGameLR = LevelRequirements.PresetLevelRequirements["BeginGame"];
+            beginGameLR.defaultCameraPosition = BeginGamePos.transform.position;
+            SetCamera(beginGameLR);
+            SetFader("fadeSlowOpen");
         }
     }
 }

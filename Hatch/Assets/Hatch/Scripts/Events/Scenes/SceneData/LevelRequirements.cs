@@ -11,7 +11,8 @@ namespace Assets.Hatch.Scripts.Events.Scenes.SceneData
         {
             { "SubwayCarFlash", new LevelRequirement(new UnityEngine.Vector2(), new UnityEngine.Vector3(), Level.Hatch, 4) },
             { "PlayerIntro", new LevelRequirement(new UnityEngine.Vector2(), new UnityEngine.Vector3(), Level.Hatch, 0.5f) },
-            { "MysteryManIntro", new LevelRequirement(new UnityEngine.Vector2(), new UnityEngine.Vector3(), Level.Hatch, 4) }
+            { "MysteryManIntro", new LevelRequirement(new UnityEngine.Vector2(), new UnityEngine.Vector3(), Level.Hatch, 4) },
+            { "BeginGame", new LevelRequirement(new UnityEngine.Vector2(), new UnityEngine.Vector3(), Level.Hatch, 4.5f) }
         };
     }
 }

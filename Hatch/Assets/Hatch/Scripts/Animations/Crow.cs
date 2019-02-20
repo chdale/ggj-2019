@@ -20,11 +20,9 @@ public class Crow : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        LifeTime = 20;
         LifeTimeCounter = 0;
         AnimDuration = 0.8f;
         AnimCounter = 0.8f;
-        Speed = 0.1f;
         skeletonAnimation = GetComponent<SkeletonAnimation>();
         spineAnimationState = skeletonAnimation.AnimationState;
         skeleton = skeletonAnimation.Skeleton;
@@ -50,9 +48,9 @@ public class Crow : MonoBehaviour {
                 spineAnimationState.SetAnimation(0, "idle", true);
             }
         }
-        if (LifeTimeCounter > LifeTime)
-        {
-            Object.Destroy(this.gameObject);
-        }
+        //if (LifeTimeCounter > LifeTime)
+        //{
+        //    Object.Destroy(this.gameObject);
+        //}
     }
 }

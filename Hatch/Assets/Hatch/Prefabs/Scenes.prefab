@@ -104,6 +104,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1509102040907726
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4091023939810616}
+  m_Layer: 0
+  m_Name: BeginGameCamPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1544880900626894
 GameObject:
   m_ObjectHideFlags: 1
@@ -165,6 +180,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4091023939810616
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1509102040907726}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.41, y: -21.73, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4496142199802476}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4115727487233676
 Transform:
   m_ObjectHideFlags: 1
@@ -235,6 +263,7 @@ Transform:
   - {fileID: 4757115643164344}
   - {fileID: 4535513949127680}
   - {fileID: 4115727487233676}
+  - {fileID: 4091023939810616}
   m_Father: {fileID: 4903028101332868}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -431,6 +460,11 @@ MonoBehaviour:
     reqReferences: {fileID: 0}
     isExpanded: 1
     _keyValues:
+    - StartGame
+    - SubwayCarFlashStart
+    - SubwayCarFlashEnd
+    - playerscenestart
+    - PlayerSceneEnd
     - MysteryManSceneStart
     - MysteryManEnter
     - MysteryManDialogue1
@@ -439,10 +473,15 @@ MonoBehaviour:
     - MysteryManSnap1
     - MemoryFocus
     - OpenBubble
+    - CrowsStart
     - MysteryManDialogue4
     - MysteryManSnap2
+    - CrowsEnd
+    - ArmsStart
     - MysteryManDialogue5
     - MysteryManSnap3
+    - ArmsEnd
+    - TeethStart
     - MysteryManDialogue6
     - MemoryBlur
     - MysteryManSnap4
@@ -451,9 +490,13 @@ MonoBehaviour:
     - MysteryManDialogue7
     - MysteryManDialogueEnd
     - MysteryManSceneEnd
-    - playersceneend
-    - playerscenestart
+    - MedicIntroStart
     _keys:
+    - StartGame
+    - SubwayCarFlashStart
+    - SubwayCarFlashEnd
+    - playerscenestart
+    - PlayerSceneEnd
     - MysteryManSceneStart
     - MysteryManEnter
     - MysteryManDialogue1
@@ -462,10 +505,15 @@ MonoBehaviour:
     - MysteryManSnap1
     - MemoryFocus
     - OpenBubble
+    - CrowsStart
     - MysteryManDialogue4
     - MysteryManSnap2
+    - CrowsEnd
+    - ArmsStart
     - MysteryManDialogue5
     - MysteryManSnap3
+    - ArmsEnd
+    - TeethStart
     - MysteryManDialogue6
     - MemoryBlur
     - MysteryManSnap4
@@ -474,31 +522,39 @@ MonoBehaviour:
     - MysteryManDialogue7
     - MysteryManDialogueEnd
     - MysteryManSceneEnd
-    - playersceneend
-    - playerscenestart
+    - MedicIntroStart
     _values:
     - 0
-    - 3
-    - 10
-    - 17
-    - 23
-    - 24
-    - 24
-    - 25.5
-    - 30
-    - 33
-    - 37
-    - 40
-    - 45
-    - 46
+    - 4
+    - 6
+    - 12
+    - 18
+    - 25
+    - 27
+    - 35
+    - 42
     - 47
-    - 48.5
-    - 52
-    - 52
+    - 49
+    - 49
+    - 50.5
+    - 49
+    - 55
     - 58
-    - 60
-    - 98
-    - 92
+    - 59
+    - 59
+    - 61
+    - 65
+    - 66
+    - 66
+    - 70
+    - 71
+    - 72
+    - 73.5
+    - 77
+    - 77
+    - 79
+    - 80
+    - 83
   SubwayFlashPos: {fileID: 1462265631154048}
   PlayerIntroCamPos: {fileID: 1247365356659884}
   PlayerIntroEndCamPos: {fileID: 1832179452675072}
@@ -509,6 +565,11 @@ MonoBehaviour:
   Medic: {fileID: 0}
   MysteryManIntroDialogueObject: {fileID: 1544880900626894}
   DreamBubble: {fileID: 0}
+  Crows: {fileID: 0}
+  Arms: {fileID: 0}
+  Teeth1: {fileID: 0}
+  Teeth2: {fileID: 0}
+  BeginGamePos: {fileID: 1509102040907726}
 --- !u!114 &114683076740557610
 MonoBehaviour:
   m_ObjectHideFlags: 1

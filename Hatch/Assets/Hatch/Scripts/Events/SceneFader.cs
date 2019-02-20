@@ -12,7 +12,7 @@ public class SceneFader : MonoBehaviour
     private void Awake()
     {
 	    m_Animator = gameObject.GetComponent<Animator>();
-        m_Animator.SetTrigger("closed");
+        //m_Animator.SetTrigger("closed");
     }
 
     // Use this for initialization
