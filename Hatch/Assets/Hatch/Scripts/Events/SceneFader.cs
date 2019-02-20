@@ -19,8 +19,8 @@ public class SceneFader : MonoBehaviour
     void Start ()
 	{
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
-        StartCoroutine(StopPlayerDuration());
-        Invoke("BeginScene", timeToLoad);
+        //StartCoroutine(StopPlayerDuration());
+        //Invoke("BeginScene", timeToLoad);
 	}
 
     public void BeginScene()
