@@ -52,8 +52,14 @@ TagManager:
   - name: Player
     uniqueID: 2213978785
     locked: 0
+  - name: Props
+    uniqueID: 2616586607
+    locked: 0
   - name: Foreground
     uniqueID: 3179986539
+    locked: 0
+  - name: Lighting
+    uniqueID: 137488805
     locked: 0
   - name: UI Container
     uniqueID: 2407055857
