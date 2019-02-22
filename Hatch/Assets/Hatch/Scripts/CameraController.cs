@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class CameraController : MonoBehaviour {
     public GameObject player;
     public GameObject dialogueTarget;
+    public GameObject sceneFader;
 
     private GameController gameController;
     private Vector3 defaultCameraPosition;
@@ -81,39 +82,79 @@ public class CameraController : MonoBehaviour {
         m_camera.orthographicSize = savedSize;
     }
 
-    private void BeginDialogue(GameObject dialogueTarget)
+    public void SetCamera(LevelRequirement levelRequirement)
+    {
+        //player.transform.position = levelRequirement.playerPosition;
+        defaultCameraPosition = levelRequirement.defaultCameraPosition;
+        transform.position = defaultCameraPosition;
+        //level = levelRequirement.level;
+        //dynamicCameraHorizontal = levelRequirement.dynamicCameraHorizontal;
+
+        //if (dynamicCameraHorizontal)
+        //{
+        //    cameraLeftLimit = levelRequirement.cameraLeftThreshold;
+        //    cameraRightLimit = levelRequirement.cameraRightThreshold;
+        //}
+        savedSize = levelRequirement.cameraSize;
+        m_camera.orthographicSize = savedSize;
+    }
+    public SceneFader GetSceneFader()
+    {
+        return sceneFader.GetComponent<SceneFader>();
+    }
+
+    private void BeginDialogue(GameObject dialogueTarget, bool isStatic = false)
     {
         if (!dialogueActive)
         {
             dialogueActive = true;
             dialogue.SetActive(true);
-            if (dynamicCameraHorizontal)
+            if (!isStatic)
             {
-                m_camera.orthographicSize = 5.0f;
-            }
-            float dialogueCameraPosition = defaultCameraPosition.y - (savedSize * (2.0f / 5.0f));
-            if (dialogueTarget != null)
-            {
-                transform.position = new Vector3(MidPointBetween(player, dialogueTarget), dialogueCameraPosition, -10f);
-                FacePlayer faceScript = dialogueTarget.GetComponent<FacePlayer>();
-                if (faceScript != null)
+                if (dynamicCameraHorizontal)
                 {
-                    faceScript.FaceAndUnfacePlayer(player);
+                    m_camera.orthographicSize = 5.0f;
+                }
+                float dialogueCameraPosition = defaultCameraPosition.y - (savedSize * (2.0f / 5.0f));
+                if (dialogueTarget != null)
+                {
+                    transform.position = new Vector3(MidPointBetween(player, dialogueTarget), dialogueCameraPosition, -10f);
+                    FacePlayer faceScript = dialogueTarget.GetComponent<FacePlayer>();
+                    if (faceScript != null)
+                    {
+                        faceScript.FaceAndUnfacePlayer(player);
+                    }
                 }
             }
         }
     }
 
-    private void EndDialogue()
+    private void EndDialogue(bool isStatic = false)
     {
         if (dialogueActive)
         {
             dialogueActive = false;
             dialogue.SetActive(false);
-            m_camera.orthographicSize = savedSize;
-            if (dynamicCameraHorizontal)
+            if (!isStatic)
             {
-                transform.position = new Vector3(PostEventCameraPosition(), 0, -10);
+                m_camera.orthographicSize = savedSize;
+                if (dynamicCameraHorizontal)
+                {
+                    transform.position = new Vector3(PostEventCameraPosition(), 0, -10);
+                }
+                else
+                {
+                    transform.position = defaultCameraPosition;
+                }
+
+                if (dialogueTarget != null)
+                {
+                    FacePlayer faceScript = dialogueTarget.GetComponent<FacePlayer>();
+                    if (faceScript != null)
+                    {
+                        faceScript.FaceAndUnfacePlayer(player);
+                    }
+                }
             }
             else
             {
@@ -201,4 +242,43 @@ public class CameraController : MonoBehaviour {
             }
         }
     }
+    public void CameraShakeStart(float duration, float magnitiude)
+    {
+        this.StartCoroutine(CameraShake(duration, magnitiude));
+    }
+    public IEnumerator CameraShake(float duration, float magnitude)
+    {
+        Vector3 originalPos = transform.localPosition;
+        float elapsed = 0.0f;
+
+        while(elapsed < duration)
+        {
+            float x = UnityEngine.Random.Range(-1f, 1f) * magnitude;
+            float y = UnityEngine.Random.Range(-1f, 1f) * magnitude;
+            transform.localPosition = new Vector3(originalPos.x + x, originalPos.y + y, originalPos.z);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+        transform.localPosition = originalPos;
+    }
+    public void CameraLerpStart(Vector3 startPos, Vector3 endPos, float duration)
+    {
+        this.StartCoroutine(CameraLerp(startPos, endPos, duration));
+    }
+    public IEnumerator CameraLerp(Vector3 startPos, Vector3 endPos, float duration)
+    {
+        var pitchCurve = AnimationCurve.EaseInOut(0.0f, 0.0f, 1.0f, 90.0f);
+        float elapsed = 0.0f;
+
+        while (elapsed < duration)
+        {
+            var t = pitchCurve.Evaluate(elapsed / duration);
+            t = t / (pitchCurve.Evaluate(1));
+            transform.position = Vector3.Lerp(startPos, endPos, t);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+        yield break;
+    }
+
 }

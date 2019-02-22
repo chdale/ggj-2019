@@ -1,0 +1,118 @@
+
+Player Sheet.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+eyebrow left
+  rotate: false
+  xy: 668, 123
+  size: 21, 13
+  orig: 21, 13
+  offset: 0, 0
+  index: -1
+eyebrow right
+  rotate: false
+  xy: 593, 108
+  size: 22, 13
+  orig: 22, 13
+  offset: 0, 0
+  index: -1
+eyes
+  rotate: false
+  xy: 593, 123
+  size: 73, 13
+  orig: 73, 13
+  offset: 0, 0
+  index: -1
+hat
+  rotate: false
+  xy: 308, 40
+  size: 150, 96
+  orig: 150, 96
+  offset: 0, 0
+  index: -1
+head
+  rotate: true
+  xy: 843, 90
+  size: 164, 167
+  orig: 164, 167
+  offset: 0, 0
+  index: -1
+left arm
+  rotate: false
+  xy: 445, 197
+  size: 396, 57
+  orig: 396, 57
+  offset: 0, 0
+  index: -1
+left leg
+  rotate: true
+  xy: 2, 207
+  size: 47, 441
+  orig: 47, 441
+  offset: 0, 0
+  index: -1
+right leg
+  rotate: true
+  xy: 2, 207
+  size: 47, 441
+  orig: 47, 441
+  offset: 0, 0
+  index: -1
+mouth
+  rotate: false
+  xy: 43, 9
+  size: 40, 19
+  orig: 40, 19
+  offset: 0, 0
+  index: -1
+mouth lines
+  rotate: false
+  xy: 706, 141
+  size: 52, 30
+  orig: 52, 30
+  offset: 0, 0
+  index: -1
+neck
+  rotate: true
+  xy: 2, 2
+  size: 26, 39
+  orig: 26, 39
+  offset: 0, 0
+  index: -1
+nose
+  rotate: false
+  xy: 787, 180
+  size: 25, 15
+  orig: 25, 15
+  offset: 0, 0
+  index: -1
+right arm
+  rotate: false
+  xy: 308, 138
+  size: 396, 57
+  orig: 396, 57
+  offset: 0, 0
+  index: -1
+shade
+  rotate: false
+  xy: 706, 173
+  size: 79, 22
+  orig: 79, 22
+  offset: 0, 0
+  index: -1
+torso
+  rotate: true
+  xy: 2, 30
+  size: 175, 304
+  orig: 175, 304
+  offset: 0, 0
+  index: -1
+waist
+  rotate: false
+  xy: 460, 48
+  size: 131, 88
+  orig: 131, 88
+  offset: 0, 0
+  index: -1
