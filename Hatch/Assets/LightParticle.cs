@@ -4,17 +4,18 @@ using UnityEngine;
 using System;
 
 public class LightParticle : MonoBehaviour {
-    public Light lightComp;
-    public float rate;
-    public float brightness;
+    public Light LightComp;
+    public float Rate;
+    public float MaxBrightness;
+    public float MinBrightness;
 
     // Use this for initialization
     void Start () {
-        lightComp = GetComponent<Light>();
+        LightComp = GetComponent<Light>();
     }
 	
 	// Update is called once per frame
 	void Update () {
-        lightComp.intensity = brightness * Math.Abs(Mathf.Sin(Time.time * rate));
+        LightComp.intensity = MaxBrightness * Math.Abs(Mathf.Sin(Time.time * Rate)) + MinBrightness;
 	}
 }
