@@ -15,6 +15,6 @@ public class LightParticle : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        lightComp.intensity = brightness * Mathf.Sin(Time.time * rate);
+        lightComp.intensity = brightness * Math.Abs(Mathf.Sin(Time.time * rate));
 	}
 }
