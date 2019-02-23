@@ -34,6 +34,8 @@ namespace UnityStandardAssets._2D
         public string hurtIdleAnimationName;
         [SpineAnimation]
         public string hurtStandAnimationName;
+        [SpineAnimation]
+        public string runAnimationName;
 
         public SkeletonAnimation skeletonAnimation;
         public Spine.AnimationState spineAnimationState;
@@ -42,6 +44,7 @@ namespace UnityStandardAssets._2D
         private float climbDuration = 2.5f;
         private float climbStart = -2.5f;
         private bool isClimbing = false;
+        private bool isRunning = false;
 
         private GameObject interactText;
 
@@ -113,12 +116,29 @@ namespace UnityStandardAssets._2D
             bool crouch = Input.GetKey(KeyCode.LeftControl);
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-                h = -1.0f;
+                if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+                {
+                    isRunning = true;
+                    h = -1.5f;
+                }
+                else
+                {
+                    isRunning = false;
+                    h = -1.0f;
+                }
             }
             else if (Input.GetKey(KeyCode.RightArrow))
             {
-                h = 1.0f;
-                
+                if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+                {
+                    isRunning = true;
+                    h = 1.5f;
+                }
+                else
+                {
+                    isRunning = false;
+                    h = 1.0f;
+                }
             }
             else
             {
@@ -147,7 +167,8 @@ namespace UnityStandardAssets._2D
             }
             else if (Math.Abs(h) > 0 && !m_Character.preventMovement)
             {
-                SetAnimationState(0, walkAnimationName, true);
+                var movementAnimation = isRunning ? runAnimationName : walkAnimationName;
+                SetAnimationState(0, movementAnimation, true);
             }
             else
             {
