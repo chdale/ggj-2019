@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
   m_Name: Player Sheet_Atlas
   m_EditorClassIdentifier: 
-  atlasFile: {fileID: 4900000, guid: c44b143714559ba41855e024426c60bb, type: 3}
+  atlasFile: {fileID: 4900000, guid: 46b2787bc9f9bef408cda27e97391488, type: 3}
   materials:
   - {fileID: 2100000, guid: 082173bf26384f34e983a4583f7b138d, type: 2}

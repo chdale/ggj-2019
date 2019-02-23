@@ -29,7 +29,7 @@ public class Deadgineer : MonoBehaviour
         GameController.CancelDialogue += EndDialogue;
     }
 
-    private void StartDialogue(GameObject dialogueTarget)
+    private void StartDialogue(GameObject dialogueTarget, bool isStatic = false)
     {
         if (deadgineerEvent.isActivated)
         {
@@ -62,7 +62,7 @@ public class Deadgineer : MonoBehaviour
         }
     }
 
-    private void EndDialogue()
+    private void EndDialogue(bool isStatic = false)
     {
         if (conversationCount > 1)
         {
