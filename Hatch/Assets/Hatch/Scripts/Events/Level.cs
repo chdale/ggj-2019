@@ -7,5 +7,7 @@ public enum Level
     Hatch,
     HatchInterior,
     ConsoleExterior,
-    ConsoleInterior
+    ConsoleInterior,
+    TopOfPit,
+    DogDomain
 }
