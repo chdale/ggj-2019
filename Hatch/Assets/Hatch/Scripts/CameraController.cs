@@ -30,8 +30,8 @@ public class CameraController : MonoBehaviour {
     {
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
         dynamicCameraHorizontal = false;
-        cameraLeftLimit = -20.5f;
-        cameraRightLimit = 20.5f;
+        //cameraLeftLimit = -20.5f;
+        //cameraRightLimit = 20.5f;
         savedSize = 10.0f;
         level = Level.HatchInterior;
         m_camera = GetComponent<Camera>();
