@@ -1,11 +1,14 @@
-﻿using System;
+﻿using Assets.Hatch.Scripts.Enumerations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Assets.Hatch.Scripts.ScriptableObjects;
 
 public class GameController : MonoBehaviour
 {
-    public Dictionary<string, bool> gameStates;
+    public GameState currentGameState = GameState.Menu;
+    public GameStateDatabase.GameState_GameStateData gameStateData;
 
     public delegate void InteractAction();
     public static event InteractAction Interact;
@@ -36,7 +39,7 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        gameStates = GameStates.States;
+        StaticEvent.LoadLevel(gameStateData[currentGameState]);
     }
 
     public void StopCharacter()
