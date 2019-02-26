@@ -659,6 +659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24c47372b6694af49a58a44aa43b3bab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Limbo: {fileID: 1591974499855362}
   SceneEvents:
     reorderableList:
       canAdd: 1
@@ -791,6 +792,7 @@ MonoBehaviour:
   MysteryManIntroDialogueObject: {fileID: 1544880900626894}
   Medic: {fileID: 0}
   MedicIntroDialogueObject: {fileID: 1800899783236158}
+  PlayerPuppet: {fileID: 0}
   DreamBubble: {fileID: 0}
   Crows: {fileID: 0}
   Arms: {fileID: 0}

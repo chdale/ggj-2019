@@ -11,6 +11,7 @@ namespace Assets.Hatch.Scripts.Events
 {
     public class Scene : MonoBehaviour
     {
+        public GameObject Limbo;
         public SceneEventDictionary SceneEvents;
         private static Dictionary<string, Action> eventTable = new Dictionary<string, Action>();
 

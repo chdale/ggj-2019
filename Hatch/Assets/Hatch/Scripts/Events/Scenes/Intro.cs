@@ -20,6 +20,7 @@ namespace Assets.Hatch.Scripts.Events.Scenes
         public GameObject MysteryManIntroDialogueObject;
         public GameObject Medic;
         public GameObject MedicIntroDialogueObject;
+        public GameObject PlayerPuppet;
         public GameObject DreamBubble;
         public GameObject Crows;
         public GameObject Arms;
@@ -246,6 +247,8 @@ namespace Assets.Hatch.Scripts.Events.Scenes
         {
             var medicDialogue = MedicIntroDialogueObject.GetComponent<MedicIntro>();
             medicDialogue.StartDialogue(Medic.gameObject);
+            MysteryMan.transform.position = Limbo.transform.position;
+            PlayerPuppet.transform.position = Limbo.transform.position;
         }
     }
 }
