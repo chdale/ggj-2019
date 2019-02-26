@@ -255,6 +255,8 @@ namespace Assets.Hatch.Scripts.Events.Scenes
         {
             MysteryMan.transform.position = Limbo.transform.position;
             PlayerPuppet.transform.position = Limbo.transform.position;
+
+
         }
     }
 }

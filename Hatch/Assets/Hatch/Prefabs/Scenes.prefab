@@ -151,6 +151,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1758182972653266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4014201521844992}
+  m_Layer: 0
+  m_Name: PlayerSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1800899783236158
 GameObject:
   m_ObjectHideFlags: 1
@@ -214,6 +229,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4014201521844992
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1758182972653266}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4903028101332868}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4091023939810616
 Transform:
   m_ObjectHideFlags: 1
@@ -379,6 +407,7 @@ Transform:
   m_Children:
   - {fileID: 4496142199802476}
   - {fileID: 4890666063445830}
+  - {fileID: 4014201521844992}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -647,6 +676,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnableCinematics: 0
+  PlayerSpawn: {fileID: 1758182972653266}
+  Player: {fileID: 0}
   Intro: {fileID: 1193545709121846}
 --- !u!114 &114506093121069454
 MonoBehaviour:
@@ -716,6 +747,7 @@ MonoBehaviour:
     - MysteryManSceneEnd
     - MedicIntroStart
     - MedicIntroStartDialogue
+    - End
     _keys:
     - StartGame
     - SubwayCarFlashStart
@@ -749,6 +781,7 @@ MonoBehaviour:
     - MysteryManSceneEnd
     - MedicIntroStart
     - MedicIntroStartDialogue
+    - End
     _values:
     - 0
     - 4
@@ -781,6 +814,7 @@ MonoBehaviour:
     - 81
     - 80
     - 83
+    - 86
     - 86
   SubwayFlashPos: {fileID: 1462265631154048}
   PlayerIntroCamPos: {fileID: 1247365356659884}

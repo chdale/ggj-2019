@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Spine.Unity;
 using System;
+using Assets.Hatch.Scripts.Events.Scenes.SceneData;
 
 namespace Assets.Hatch.Scripts.Events.Scenes
 {
@@ -10,6 +11,8 @@ namespace Assets.Hatch.Scripts.Events.Scenes
     {
         // Controls
         public bool EnableCinematics;
+        public GameObject PlayerSpawn;
+        public GameObject Player;
 
         // Scenes
         public GameObject Intro;
@@ -26,6 +29,7 @@ namespace Assets.Hatch.Scripts.Events.Scenes
             else
             {
                 this.StartCoroutine(SceneStart(intro.LastScene));
+                Player.transform.position = PlayerSpawn.transform.position;
 
             }
         }
@@ -39,6 +43,14 @@ namespace Assets.Hatch.Scripts.Events.Scenes
                 yield return null;
             }
             action.Invoke();
+
+            // Delete Me
+            Player.transform.position = PlayerSpawn.transform.position;
+            var beginGameLR = LevelRequirements.PresetLevelRequirements["DogDomain"];
+            Camera.main.GetComponent<CameraController>().transform.position = new Vector3(PlayerSpawn.transform.position.x, PlayerSpawn.transform.position.y, -10);
+
+            // End Delete Me
+
             yield break;
         }
     }
