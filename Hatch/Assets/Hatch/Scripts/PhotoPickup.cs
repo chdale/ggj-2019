@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Hatch.Scripts.Enumerations;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,6 +16,11 @@ public class PhotoPickup : TriggeredEvent {
     void Start()
     {
         Subscribe();
+        if (gameController.currentGameState >= GameState.Photo1)
+        {
+            overworldPhoto.SetActive(false);
+            GetComponent<BoxCollider2D>().enabled = false;
+        }
     }
 
     private void Subscribe()

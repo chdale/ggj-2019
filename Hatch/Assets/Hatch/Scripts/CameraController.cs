@@ -29,11 +29,11 @@ public class CameraController : MonoBehaviour {
     private void Start()
     {
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
-        dynamicCameraHorizontal = true;
-        cameraLeftLimit = -20.5f;
-        cameraRightLimit = 20.5f;
+        dynamicCameraHorizontal = false;
+        //cameraLeftLimit = -20.5f;
+        //cameraRightLimit = 20.5f;
         savedSize = 10.0f;
-        level = Level.Hatch;
+        level = Level.HatchInterior;
         m_camera = GetComponent<Camera>();
         dialogue = transform.GetChild(0).GetChild(0).gameObject;
         GameController.StartDialogue += BeginDialogue;

@@ -76,6 +76,8 @@ GameObject:
   - component: {fileID: 61245408767508960}
   - component: {fileID: 58281165929517000}
   - component: {fileID: 61066090359736072}
+  - component: {fileID: 82369922380248746}
+  - component: {fileID: 114962198927341186}
   m_Layer: 9
   m_Name: Player_Wireframe
   m_TagString: Player
@@ -185,7 +187,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1376561853246442}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -22.25, z: 1.4039582}
+  m_LocalPosition: {x: 0, y: -22.66, z: 1.4039582}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children:
   - {fileID: 224332383052399548}
@@ -456,6 +458,87 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!82 &82369922380248746
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1376561853246442}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243269797553075308, guid: ae45bab46163c11439b75f80e95a969f,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114043152498999564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -636,7 +719,59 @@ MonoBehaviour:
   hangIdleAnimationName: hang_idle
   hurtIdleAnimationName: hurt_idle
   hurtStandAnimationName: hurt_stand
+  runAnimationName: run
   skeletonAnimation: {fileID: 114883776027908310}
+--- !u!114 &114962198927341186
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1376561853246442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7206fa0761f5122489b7c02bfb394abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skeletonAnimation: {fileID: 114883776027908310}
+  audioSource: {fileID: 82369922380248746}
+  basePitch: 1
+  randomPitchOffset: 0.1
+  logDebugMessage: 0
+  spineAudioDictionary:
+    reorderableList:
+      canAdd: 1
+      canRemove: 1
+      draggable: 1
+      expandable: 1
+      multipleSelection: 1
+      isExpanded: 1
+      label:
+        m_Text: Keys
+        m_Image: {fileID: 0}
+        m_Tooltip: 
+      headerHeight: 18
+      footerHeight: 13
+      slideEasing: 0.15
+      verticalSpacing: 2
+      showDefaultBackground: 1
+      elementDisplayType: 0
+      elementNameProperty: 
+      elementNameOverride: 
+      elementIcon: {fileID: 0}
+    reqReferences: {fileID: 0}
+    isExpanded: 1
+    _keyValues:
+    - spineEvent: 
+    - spineEvent: 
+    - spineEvent: 
+    _keys:
+    - spineEvent: footstep
+    - spineEvent: climb
+    - spineEvent: jump
+    _values:
+    - {fileID: 8300000, guid: d039bc379313c9349806d8f8076785ae, type: 3}
+    - {fileID: 8300000, guid: 70164baea1806904e897e27bf7f54791, type: 3}
+    - {fileID: 8300000, guid: c4c695ee30a596344b86890eb9291135, type: 3}
 --- !u!212 &212855030457664524
 SpriteRenderer:
   m_ObjectHideFlags: 1
