@@ -250,5 +250,11 @@ namespace Assets.Hatch.Scripts.Events.Scenes
             MysteryMan.transform.position = Limbo.transform.position;
             PlayerPuppet.transform.position = Limbo.transform.position;
         }
+        [SceneEvent]
+        public void End()
+        {
+            MysteryMan.transform.position = Limbo.transform.position;
+            PlayerPuppet.transform.position = Limbo.transform.position;
+        }
     }
 }
