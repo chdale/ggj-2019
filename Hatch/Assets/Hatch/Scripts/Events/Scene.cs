@@ -11,20 +11,6 @@ namespace Assets.Hatch.Scripts.Events
 {
     public class Scene : MonoBehaviour
     {
-        public enum EVENT
-        {
-            StartGame,
-            SubwayCarFlashStart,
-            SubwayCarFlashEnd,
-            MysteryManSceneStart,
-            MysteryManEnter,
-            MysteryManDialogue1,
-            MysteryManDialogue2,
-            MysteryManDialogueEnd,
-            MysteryManWave,
-            MysteryManExit,
-            MysteryManSceneEnd
-        };
         public SceneEventDictionary SceneEvents;
         private static Dictionary<string, Action> eventTable = new Dictionary<string, Action>();
 
@@ -44,6 +30,11 @@ namespace Assets.Hatch.Scripts.Events
             {
                 Broadcast(sceneEvent.Key, sceneEvent.Value);
             }
+        }
+        public void LastScene()
+        {
+            var lastEvent = SceneEvents.LastOrDefault();
+            Broadcast(lastEvent.Key, 0);
         }
 
         // Adds a delegate to get called for a specific event
@@ -110,7 +101,7 @@ namespace Assets.Hatch.Scripts.Events
 
         public static void SetCamera(LevelRequirement levelReq)
         {
-            Camera.main.GetComponent<CameraController>().LoadLevel(levelReq);
+            Camera.main.GetComponent<CameraController>().SetCamera(levelReq);
         }
 
         public static void SetCameraLerp(Vector3 startPos, Vector3 endPos, float duration)

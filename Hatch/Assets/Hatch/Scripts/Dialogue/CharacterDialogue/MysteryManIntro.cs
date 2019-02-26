@@ -17,7 +17,6 @@ public class MysteryManIntro : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        medicEvent = GameObject.Find("MedicRescueDialogue").GetComponent<DialogueEvent>();
         talkClip = gameObject.GetComponent<AudioSource>();
         playerClip = GameObject.Find("Player_Wireframe").GetComponentInChildren<AudioSource>();
         completedDialogue = new DialogueObject[]

@@ -129,11 +129,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4628128992866118}
   - component: {fileID: 114276124102588782}
-  - component: {fileID: 114715539955226094}
   - component: {fileID: 33287736318263134}
   - component: {fileID: 23140535923260328}
   - component: {fileID: 114705390260996094}
-  - component: {fileID: 114276100273780876}
   - component: {fileID: 82394676995911276}
   - component: {fileID: 114339117264989310}
   m_Layer: 0
@@ -255,7 +253,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1717709681859888}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.29, y: -3.65, z: -0.06391054}
+  m_LocalPosition: {x: 24.23, y: -20.73, z: -0.06391054}
   m_LocalScale: {x: 0.24758999, y: 0.24758999, z: 0.24758999}
   m_Children: []
   m_Father: {fileID: 4616524120553338}
@@ -685,18 +683,6 @@ MonoBehaviour:
   AnimCounter: 1
   Speed: 0.1
   Direction: {x: 0, y: 0, z: 0}
---- !u!114 &114276100273780876
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1717709681859888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4b02bbe15f3463428174f4930c957f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  manager: {fileID: 0}
 --- !u!114 &114276124102588782
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -748,7 +734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb1081a18d0f4414f97e0c087914b044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentAnimation: 
+  currentAnimation: idle
   skeletonAnimation: {fileID: 0}
 --- !u!114 &114362981052830306
 MonoBehaviour:
@@ -834,37 +820,9 @@ MonoBehaviour:
   addNormals: 0
   calculateTangents: 0
   disableRenderingOnOverride: 1
-  _animationName: hurt_idle
+  _animationName: idle
   loop: 1
   timeScale: 1
---- !u!114 &114715539955226094
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1717709681859888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c06f99cefc52e44fac7f3306f01dbed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggeredRestState:
-  - idle
-  triggerAnimation:
-  - hurt_stand
-  untriggerAnimation:
-  - idle
-  untriggeredRestState:
-  - hurt_idle
-  animationLength:
-  - 2
-  - 2
-  - 2
-  isTriggered: 0
-  isFinished: 0
-  isToggleable: 0
-  lastState: 0
-  isDualStateTransition: 1
 --- !u!114 &114737146188623906
 MonoBehaviour:
   m_ObjectHideFlags: 1

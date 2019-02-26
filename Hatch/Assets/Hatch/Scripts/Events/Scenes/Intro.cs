@@ -17,8 +17,9 @@ namespace Assets.Hatch.Scripts.Events.Scenes
         public GameObject MysteryManCamPos;
         public GameObject MysteryManCamEndPos;
         public GameObject MysteryMan;
-        public GameObject Medic;
         public GameObject MysteryManIntroDialogueObject;
+        public GameObject Medic;
+        public GameObject MedicIntroDialogueObject;
         public GameObject DreamBubble;
         public GameObject Crows;
         public GameObject Arms;
@@ -239,6 +240,12 @@ namespace Assets.Hatch.Scripts.Events.Scenes
             beginGameLR.defaultCameraPosition = BeginGamePos.transform.position;
             SetCamera(beginGameLR);
             SetFader("fadeSlowOpen");
+        }
+        [SceneEvent]
+        public void MedicIntroStartDialogue()
+        {
+            var medicDialogue = MedicIntroDialogueObject.GetComponent<MedicIntro>();
+            medicDialogue.StartDialogue(Medic.gameObject);
         }
     }
 }
