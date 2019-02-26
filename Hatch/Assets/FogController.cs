@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using Assets.Hatch.Scripts.Enumerations;
+using System.Collections;
 using UnityEngine;
 
 public class FogController : MonoBehaviour
 {
+    private GameController gameController;
     [SerializeField]
     private ParticleSystem fogParticles;
     [SerializeField]
@@ -25,8 +27,13 @@ public class FogController : MonoBehaviour
 	    {
 	        fogParticles = this.GetComponentInChildren<ParticleSystem>();
         }
-        
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
 	    player = GameObject.Find("Player_Wireframe");
+
+        if (gameController.currentGameState >= GameState.Photo1)
+        {
+            this.gameObject.SetActive(false);
+        }
 	}
 	
 	void Update ()
@@ -61,6 +68,10 @@ public class FogController : MonoBehaviour
                 yield return null;
             }
 
+            if (sprite == fogWallSmoke)
+            {
+                this.gameObject.SetActive(false);
+            }
             sprite.color = color;
         }
         
@@ -76,6 +87,7 @@ public class FogController : MonoBehaviour
 
     public void ClearFogWall()
     {
-        this.gameObject.SetActive(false);
+        //this.gameObject.SetActive(false);
+        StartCoroutine(FadeSpriteRenderer(fogWallSmoke, false));
     }
 }
