@@ -49,7 +49,7 @@ public class FogController : MonoBehaviour
 
         if (fadeIn)
         {
-            //iTween.ShakePosition(sprite.gameObject, shake, shakeTime);
+            iTween.ShakePosition(sprite.gameObject, shake, shakeTime);
             while (color.a < 1)
             {
                 color.a += Time.deltaTime / 1f;
