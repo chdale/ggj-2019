@@ -118,6 +118,7 @@ public class MedicIntro : MonoBehaviour
 
     public void EndDialogue(bool isStatic = false)
     {
+        conversationEnsues = false;
         manager.EndDialogue();
     }
 }
