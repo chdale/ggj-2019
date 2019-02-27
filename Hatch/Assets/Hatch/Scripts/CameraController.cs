@@ -210,6 +210,8 @@ public class CameraController : MonoBehaviour {
 
     private IEnumerator FogWallCoroutine(GameObject target, float lerpDuration)
     {
+        var fogWallController = fogWall.GetComponent<FogController>();
+
         float targetPositionX;
         float targetPositionY;
         if (target == player)
@@ -233,6 +235,8 @@ public class CameraController : MonoBehaviour {
             yield return 0;
         }
 
+        fogWallController.ClearFogWall();
+
         if (target == player)
         {
             disableStandardCameraControls = false;
@@ -242,10 +246,12 @@ public class CameraController : MonoBehaviour {
             }
         }
     }
+
     public void CameraShakeStart(float duration, float magnitiude)
     {
         this.StartCoroutine(CameraShake(duration, magnitiude));
     }
+
     public IEnumerator CameraShake(float duration, float magnitude)
     {
         Vector3 originalPos = transform.localPosition;
@@ -261,10 +267,12 @@ public class CameraController : MonoBehaviour {
         }
         transform.localPosition = originalPos;
     }
+
     public void CameraLerpStart(Vector3 startPos, Vector3 endPos, float duration)
     {
         this.StartCoroutine(CameraLerp(startPos, endPos, duration));
     }
+
     public IEnumerator CameraLerp(Vector3 startPos, Vector3 endPos, float duration)
     {
         var pitchCurve = AnimationCurve.EaseInOut(0.0f, 0.0f, 1.0f, 90.0f);
