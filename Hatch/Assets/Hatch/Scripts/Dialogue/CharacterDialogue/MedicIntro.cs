@@ -5,6 +5,7 @@ using UnityStandardAssets._2D;
 
 public class MedicIntro : MonoBehaviour
 {
+    public GameObject target;
     public DialogueManager manager;
     private DialogueObject[] objectiveDialogue;
     private DialogueObject[] completedDialogue;
@@ -40,19 +41,22 @@ public class MedicIntro : MonoBehaviour
 
     public void StartDialogue(GameObject dialogueTarget, bool isStatic = false)
     {
-        conversationEnsues = true;
-        conversationCount = 0;
-        if (!GameStates.States[GameStates.MEDIC])
+        if (dialogueTarget == target)
         {
-            //StaticEvent.StartDialogue(dialogueTarget, true);
-            manager.StartDialogueEvent(dialogueTarget, true);
-            manager.StartDialogue(objectiveDialogue[0]);
-        }
-        else
-        {
-            //StaticEvent.StartDialogue(dialogueTarget, true);
-            manager.StartDialogueEvent(dialogueTarget, true);
-            manager.StartDialogue(completedDialogue[0]);
+            conversationEnsues = true;
+            conversationCount = 0;
+            if (!GameStates.States[GameStates.MEDIC])
+            {
+                //StaticEvent.StartDialogue(dialogueTarget, true);
+                manager.StartDialogueEvent(dialogueTarget, true);
+                manager.StartDialogue(objectiveDialogue[0]);
+            }
+            else
+            {
+                //StaticEvent.StartDialogue(dialogueTarget, true);
+                manager.StartDialogueEvent(dialogueTarget, true);
+                manager.StartDialogue(completedDialogue[0]);
+            }
         }
     }
 
