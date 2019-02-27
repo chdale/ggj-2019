@@ -67,6 +67,7 @@ public class DreamBubbleAnimationController : MonoBehaviour {
             elapsed += Time.deltaTime;
             yield return null;
         }
+        gameObject.SetActive(false);
         yield break;
     }
 }
