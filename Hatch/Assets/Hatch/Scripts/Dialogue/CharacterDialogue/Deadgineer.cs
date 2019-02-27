@@ -64,6 +64,7 @@ public class Deadgineer : MonoBehaviour
 
     private void EndDialogue(bool isStatic = false)
     {
+        conversationEnsues = false;
         if (conversationCount > 1)
         {
             deadgineerEvent.isActivated = false;
