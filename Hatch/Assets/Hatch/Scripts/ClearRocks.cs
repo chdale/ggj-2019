@@ -3,16 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClearRocks : InteractEvent
+public class ClearRocks : TriggeredEvent
 {
-
     public GameObject AnimationObject;
     public GameObject AnimationObject2;
     public GameObject DialogueTrigger;
 
     private void Awake()
     {
-        Subscribe();
+        GameController.Interact += ConditionallyTriggerEvent;
     }
 
     public override void TriggerEvent()

@@ -29,7 +29,7 @@
  *****************************************************************************/
 
 using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 using Spine.Unity;
 
 namespace Spine.Unity.Examples
@@ -40,18 +40,19 @@ namespace Spine.Unity.Examples
         #region Inspector
         // [SpineAnimation] attribute allows an Inspector dropdown of Spine animation names coming form SkeletonAnimation.
         [SpineAnimation]
-        public string[] animationListIntro;
+        public string[] triggeredRestState;
         [SpineAnimation]
-        public string[] animationTriggeredList;
+        public string[] triggerAnimation;
         [SpineAnimation]
-        public string[] animationRelaxedList;
+        public string[] untriggerAnimation;
         [SpineAnimation]
-        public string[] animationOutroList;
+        public string[] untriggeredRestState;
         public float[] animationLength;
         public bool isTriggered = false;
         public bool isFinished = false;
         public bool isToggleable;
         public bool lastState;
+        public bool isDualStateTransition = true;
         #endregion
 
         SkeletonAnimation skeletonAnimation;
@@ -60,15 +61,24 @@ namespace Spine.Unity.Examples
         public Spine.AnimationState spineAnimationState;
         public Spine.Skeleton skeleton;
 
+        private float introTime = 0f;
+        private float outroTime = 0f;
+        private bool outro = false;
+        private bool intro = false;
+
         void Start()
         {
             // Make sure you get these AnimationState and Skeleton references in Start or Later.
             // Getting and using them in Awake is not guaranteed by default execution order.
+
             skeletonAnimation = GetComponent<SkeletonAnimation>();
             spineAnimationState = skeletonAnimation.AnimationState;
             skeleton = skeletonAnimation.Skeleton;
 
-            StartCoroutine(DoDemoRoutine());
+            foreach (var animation in untriggeredRestState)
+            {
+                spineAnimationState.SetAnimation(0, animation, true);
+            }
         }
 
         public void TriggerAnimationsToggle(bool state = true)
@@ -77,55 +87,60 @@ namespace Spine.Unity.Examples
             isTriggered = state;
         }
 
-        /// This is an infinitely repeating Unity Coroutine. Read the Unity documentation on Coroutines to learn more.
-        IEnumerator DoDemoRoutine()
+        private void Update()
         {
-            while (true)
+            if (isDualStateTransition)
             {
-                int count = 0;
-                if (isTriggered && lastState == isTriggered)
-                {
-                    foreach (var animation in animationOutroList)
-                    {
+                DualStateTransitionAnimation();
+            }
+        }
 
-                        spineAnimationState.SetAnimation(0, animation, true);
-                        yield return new WaitForSeconds(animationLength[count]);
-                        count++;
-                    }
-                }
-                else if(isTriggered && lastState != isTriggered)
-                {
-                    foreach (var animation in animationTriggeredList)
-                    {
+        private void DualStateTransitionAnimation()
+        {
+            if (outro)
+            {
+                outroTime -= Time.deltaTime;
+            }
+            if (intro)
+            {
+                introTime -= Time.deltaTime;
+            }
 
-                        spineAnimationState.SetAnimation(0, animation, false);
-                        yield return new WaitForSeconds(animationLength[count]);
-                        count++;
-                    }
-                    lastState = isTriggered;
-                }
-                else if (!isTriggered && lastState != isTriggered)
+            if (isTriggered && lastState && outro && outroTime <= 0)
+            {
+                foreach (var animation in triggeredRestState)
                 {
-                    foreach (var animation in animationRelaxedList)
-                    {
-
-                        spineAnimationState.SetAnimation(0, animation, false);
-                        yield return new WaitForSeconds(animationLength[count]);
-                        count++;
-                    }
-                    lastState = isTriggered;
+                    spineAnimationState.SetAnimation(0, animation, true);
+                    outro = false;
                 }
-                else
+            }
+            else if (isTriggered && !lastState)
+            {
+                foreach (var animation in triggerAnimation)
                 {
-                    foreach (var animation in animationListIntro)
-                    {
-
-                        spineAnimationState.SetAnimation(0, animation, true);
-                        yield return new WaitForSeconds(animationLength[count]);
-                        count++;
-                    }
+                    spineAnimationState.SetAnimation(0, animation, false);
+                    outro = true;
+                    outroTime = animationLength[1];
                 }
-                yield return new WaitForSeconds(.1f);
+                lastState = isTriggered;
+            }
+            else if (!isTriggered && lastState)
+            {
+                foreach (var animation in untriggerAnimation)
+                {
+                    spineAnimationState.SetAnimation(0, animation, false);
+                    intro = true;
+                    introTime = animationLength[0];
+                }
+                lastState = isTriggered;
+            }
+            else if (!isTriggered && !lastState && intro && introTime <= 0)
+            {
+                foreach (var animation in untriggeredRestState)
+                {
+                    spineAnimationState.SetAnimation(0, animation, true);
+                    intro = false;
+                }
             }
         }
     }

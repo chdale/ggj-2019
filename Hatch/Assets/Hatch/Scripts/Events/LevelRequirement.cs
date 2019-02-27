@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelRequirement : MonoBehaviour {
-
-    public Vector2 playerPosition { get; set; }
-    public Vector3 defaultCameraPosition { get; set; }
-    public Level level { get; set; }
-    public bool dynamicCameraHorizontal { get; set; }
-    public float cameraLeftThreshold { get; set; }
-    public float cameraRightThreshold { get; set; }
-    public float cameraSize { get; set; }
+[System.Serializable]
+public class LevelRequirement
+{
+    public Vector2 playerPosition;
+    public Vector3 defaultCameraPosition;
+    public Level level;
+    public bool dynamicCameraHorizontal;
+    public float cameraLeftThreshold;
+    public float cameraRightThreshold;
+    public float cameraSize;
 
 	public LevelRequirement(Vector2 playerPosition, Vector3 defaultCameraPosition, Level level, float cameraSize)
     {

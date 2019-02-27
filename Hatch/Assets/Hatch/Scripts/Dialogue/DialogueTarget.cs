@@ -10,5 +10,9 @@ public enum DialogueTarget
     [Description("Medic")]
     Medic,
     [Description("Ex-Engineer")]
-    Engineer
+    Engineer,
+    [Description("Mystery-Man")]
+    MysteryMan,
+    [Description("Mystery-Man")]
+    MysteryMan_Dark
 }

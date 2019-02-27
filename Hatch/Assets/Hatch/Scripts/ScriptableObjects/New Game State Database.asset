@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cd41184bbf99e04797de1dedcdeae4d, type: 3}
+  m_Name: New Game State Database
+  m_EditorClassIdentifier: 
+  _gameStateDictionary:
+    reorderableList:
+      canAdd: 1
+      canRemove: 1
+      draggable: 1
+      expandable: 1
+      multipleSelection: 1
+      isExpanded: 1
+      label:
+        m_Text: Keys
+        m_Image: {fileID: 0}
+        m_Tooltip: 
+      headerHeight: 18
+      footerHeight: 13
+      slideEasing: 0.15
+      verticalSpacing: 2
+      showDefaultBackground: 1
+      elementDisplayType: 0
+      elementNameProperty: 
+      elementNameOverride: 
+      elementIcon: {fileID: 0}
+    reqReferences: {fileID: 0}
+    isExpanded: 1
+    _keyValues: 0100000002000000
+    _keys: 0100000002000000
+    _values:
+    - playerPosition: {x: 0, y: -22.25}
+      defaultCameraPosition: {x: 0, y: -21.8, z: -10}
+      level: 1
+      dynamicCameraHorizontal: 0
+      cameraLeftThreshold: 0
+      cameraRightThreshold: 0
+      cameraSize: 5
+    - playerPosition: {x: 75.48, y: -4.55}
+      defaultCameraPosition: {x: 63.8, y: 0, z: -10}
+      level: 2
+      dynamicCameraHorizontal: 0
+      cameraLeftThreshold: 0
+      cameraRightThreshold: 0
+      cameraSize: 10
