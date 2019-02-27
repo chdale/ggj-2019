@@ -11,6 +11,7 @@ namespace Assets.Hatch.Scripts.Events.Scenes
     public class Pit : Scene
     {
         public GameObject SceneTrigger;
+        public GameObject Player;
 
         private MysteryManIntro MysteryManIntroDialogue;
 
@@ -27,6 +28,10 @@ namespace Assets.Hatch.Scripts.Events.Scenes
             var sceneTrigger = SceneTrigger.GetComponent<RockFall>();
             sceneTrigger.RockSceneStart();
             sceneTrigger.GetComponent<Collider2D>().enabled = false;
+            
+            var skeletonAnimation = Player.GetComponent<SkeletonAnimation>();
+            var spineAnimationState = skeletonAnimation.AnimationState;
+            spineAnimationState.SetAnimation(1, "trip", false);
         }
     }
 }

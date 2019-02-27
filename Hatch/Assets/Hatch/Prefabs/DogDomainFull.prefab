@@ -2033,7 +2033,9 @@ MonoBehaviour:
   State: 
   PrevState: 
   AnimCounter: 0
+  AnimDuration: 0.5
   Player: {fileID: 0}
+  digChance: 0.5
   skeletonAnimation: {fileID: 0}
 --- !u!212 &212016717850013338
 SpriteRenderer:
