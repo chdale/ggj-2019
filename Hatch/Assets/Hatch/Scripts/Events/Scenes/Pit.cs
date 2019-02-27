@@ -26,6 +26,7 @@ namespace Assets.Hatch.Scripts.Events.Scenes
         {
             var sceneTrigger = SceneTrigger.GetComponent<RockFall>();
             sceneTrigger.RockSceneStart();
+            sceneTrigger.GetComponent<Collider2D>().enabled = false;
         }
     }
 }
