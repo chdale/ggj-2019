@@ -675,7 +675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64b9643fde5dc6d4ca1db21b7e66285c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnableCinematics: 0
+  EnableCinematics: 1
   Intro: {fileID: 1193545709121846}
 --- !u!114 &114506093121069454
 MonoBehaviour:
