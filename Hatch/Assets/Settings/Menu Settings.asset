@@ -8,11 +8,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a4168394f61b16449c9ab1dd026a3e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 2129faa56f92e9441bb199c032e082f2, type: 3}
   m_Name: Menu Settings
   m_EditorClassIdentifier: 
   menuFadeTime: 4
   sceneChangeFadeColor: {r: 0, g: 0, b: 0, a: 1}
   nextSceneIndex: 1
-  mainMenuMusicLoop: {fileID: 8300000, guid: d955c5fd52245fe4382d29b8bfb3302e, type: 3}
+  mainMenuMusicLoop: {fileID: 8300000, guid: a028ce5a2d1daf048809b11ffdb23e12, type: 3}
   musicLoopToChangeTo: {fileID: 0}
