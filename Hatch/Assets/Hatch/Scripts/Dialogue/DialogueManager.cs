@@ -85,4 +85,14 @@ public class DialogueManager : MonoBehaviour
         gameController.CancelJumpEvent();
         gameController.EndDialogueEvent();
     }
+    public void StartDialogueEvent(GameObject dialogueTarget, bool isStatic = false)
+    {
+        Camera.main.GetComponent<CameraController>().BDialogue(dialogueTarget, isStatic);
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        gameController.StopCharacter();
+    }
+    public void EndDialogueEvent()
+    {
+        Camera.main.GetComponent<CameraController>().EDialogue();
+    }
 }

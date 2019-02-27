@@ -103,6 +103,15 @@ public class CameraController : MonoBehaviour {
         return sceneFader.GetComponent<SceneFader>();
     }
 
+    public void BDialogue(GameObject dialogueTarget, bool isStatic = false)
+    {
+        BeginDialogue(dialogueTarget, isStatic);
+    }
+    public void EDialogue(bool isStatic = false)
+    {
+        EndDialogue(isStatic);
+    }
+
     private void BeginDialogue(GameObject dialogueTarget, bool isStatic = false)
     {
         if (!dialogueActive)

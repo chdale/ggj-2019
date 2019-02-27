@@ -12,7 +12,7 @@ public class CrowsEmitter : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        CrowsSceneStart();
+
     }
 	
 	// Update is called once per frame
@@ -33,11 +33,15 @@ public class CrowsEmitter : MonoBehaviour {
 
         while (elapsed < duration)
         {
-            if (Rate < rateElapsed && Crows.Count < CrowCount) { 
+            if (Rate < rateElapsed && Crows.Count < CrowCount) {
                 var crow = Object.Instantiate(Crow).GetComponent<Crow>();
-                crow.Speed = Random.Range(0.1f, 0.8f);
-                var xSpeed = 1 - crow.Speed;
-                crow.Direction = new Vector3(1 - crow.Speed, 1 - xSpeed, 0);
+                var scale = Random.Range(0.03f, 1f);
+                crow.transform.position = transform.position;
+                crow.transform.localScale *= scale;
+                crow.Speed = Random.Range(0.05f, 0.1f) * scale;
+                var ySpeed = Random.Range(0.05f, 0.5f);
+                var xSpeed = 1 - ySpeed;
+                crow.Direction = new Vector3(1 - ySpeed, 1 - xSpeed, 0);
                 Crows.Add(crow);
                 rateElapsed = 0;
             }
@@ -50,6 +54,7 @@ public class CrowsEmitter : MonoBehaviour {
     }
     public void CrowsSceneEnd(float duration = 0.8f)
     {
+        Crows.ForEach(x => x.transform.gameObject.SetActive(false));
         gameObject.SetActive(false);
     }
 }

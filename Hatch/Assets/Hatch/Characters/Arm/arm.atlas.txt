@@ -1,0 +1,62 @@
+
+arm.png
+size: 1024,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm
+  rotate: true
+  xy: 409, 7
+  size: 93, 393
+  orig: 93, 393
+  offset: 0, 0
+  index: -1
+fingerRing
+  rotate: false
+  xy: 945, 21
+  size: 38, 79
+  orig: 38, 79
+  offset: 0, 0
+  index: -1
+fingerIndex
+  rotate: false
+  xy: 945, 21
+  size: 38, 79
+  orig: 38, 79
+  offset: 0, 0
+  index: -1
+fingerMiddle
+  rotate: false
+  xy: 945, 21
+  size: 38, 79
+  orig: 38, 79
+  offset: 0, 0
+  index: -1
+fingerPinky
+  rotate: false
+  xy: 945, 21
+  size: 38, 79
+  orig: 38, 79
+  offset: 0, 0
+  index: -1
+forearm
+  rotate: true
+  xy: 2, 2
+  size: 98, 405
+  orig: 98, 405
+  offset: 0, 0
+  index: -1
+hand
+  rotate: true
+  xy: 804, 2
+  size: 98, 105
+  orig: 98, 105
+  offset: 0, 0
+  index: -1
+thumb
+  rotate: false
+  xy: 911, 14
+  size: 32, 86
+  orig: 32, 86
+  offset: 0, 0
+  index: -1
