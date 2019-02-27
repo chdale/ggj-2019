@@ -274,7 +274,7 @@ Prefab:
     - target: {fileID: 114077120668472712, guid: ab05014fbafcef14bb2259fa4cf0db99,
         type: 2}
       propertyPath: currentGameState
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ab05014fbafcef14bb2259fa4cf0db99, type: 2}
@@ -385,27 +385,27 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 114764164654217804, guid: bcaa5a40cfd1846419ed6cbf075b0fc2,
+    - target: {fileID: 33868122034380626, guid: bcaa5a40cfd1846419ed6cbf075b0fc2,
         type: 2}
-      propertyPath: manager
+      propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1654419453}
-    - target: {fileID: 114581475791084192, guid: bcaa5a40cfd1846419ed6cbf075b0fc2,
-        type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 523363279}
+      objectReference: {fileID: 0}
     - target: {fileID: 82140548769855610, guid: bcaa5a40cfd1846419ed6cbf075b0fc2,
         type: 2}
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: 243269797553075308, guid: f061345c18e409a4f81233cfa38f26d6,
         type: 2}
-    - target: {fileID: 33868122034380626, guid: bcaa5a40cfd1846419ed6cbf075b0fc2,
+    - target: {fileID: 114581475791084192, guid: bcaa5a40cfd1846419ed6cbf075b0fc2,
         type: 2}
-      propertyPath: m_Mesh
+      propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 523363279}
+    - target: {fileID: 114764164654217804, guid: bcaa5a40cfd1846419ed6cbf075b0fc2,
+        type: 2}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1654419453}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bcaa5a40cfd1846419ed6cbf075b0fc2, type: 2}
   m_IsPrefabParent: 0
@@ -456,6 +456,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3c2d9ac86b738de4396052845266c7b2, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1196432283 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1200986826589468, guid: 949a859d13c736743bd67455ca85172b,
+    type: 2}
+  m_PrefabInternal: {fileID: 424317110}
 --- !u!1001 &1234879074
 Prefab:
   m_ObjectHideFlags: 0
@@ -719,6 +724,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 114637130760137134, guid: 1aa1bc14b1ce56445b7080cd971ff82c,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 476041259}
+    - target: {fileID: 114637130760137134, guid: 1aa1bc14b1ce56445b7080cd971ff82c,
+        type: 2}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1654419453}
     - target: {fileID: 114683076740557610, guid: 1aa1bc14b1ce56445b7080cd971ff82c,
         type: 2}
       propertyPath: manager
@@ -736,19 +751,24 @@ Prefab:
       objectReference: {fileID: 476041259}
     - target: {fileID: 114506093121069454, guid: 1aa1bc14b1ce56445b7080cd971ff82c,
         type: 2}
-      propertyPath: DreamBubble
-      value: 
-      objectReference: {fileID: 1489358796}
-    - target: {fileID: 114506093121069454, guid: 1aa1bc14b1ce56445b7080cd971ff82c,
-        type: 2}
       propertyPath: PlayerPuppet
       value: 
       objectReference: {fileID: 988554541}
     - target: {fileID: 114506093121069454, guid: 1aa1bc14b1ce56445b7080cd971ff82c,
         type: 2}
+      propertyPath: DreamBubble
+      value: 
+      objectReference: {fileID: 1489358796}
+    - target: {fileID: 114506093121069454, guid: 1aa1bc14b1ce56445b7080cd971ff82c,
+        type: 2}
       propertyPath: Crows
       value: 
-      objectReference: {fileID: 1542848611}
+      objectReference: {fileID: 1196432283}
+    - target: {fileID: 114506093121069454, guid: 1aa1bc14b1ce56445b7080cd971ff82c,
+        type: 2}
+      propertyPath: Arms
+      value: 
+      objectReference: {fileID: 1951769004}
     - target: {fileID: 114506093121069454, guid: 1aa1bc14b1ce56445b7080cd971ff82c,
         type: 2}
       propertyPath: Teeth1
@@ -759,26 +779,6 @@ Prefab:
       propertyPath: Teeth2
       value: 
       objectReference: {fileID: 2059197470}
-    - target: {fileID: 114506093121069454, guid: 1aa1bc14b1ce56445b7080cd971ff82c,
-        type: 2}
-      propertyPath: Arms
-      value: 
-      objectReference: {fileID: 1951769004}
-    - target: {fileID: 114295328667474970, guid: 1aa1bc14b1ce56445b7080cd971ff82c,
-        type: 2}
-      propertyPath: EnableCinematics
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114637130760137134, guid: 1aa1bc14b1ce56445b7080cd971ff82c,
-        type: 2}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 476041259}
-    - target: {fileID: 114637130760137134, guid: 1aa1bc14b1ce56445b7080cd971ff82c,
-        type: 2}
-      propertyPath: manager
-      value: 
-      objectReference: {fileID: 1654419453}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1aa1bc14b1ce56445b7080cd971ff82c, type: 2}
   m_IsPrefabParent: 0
@@ -969,6 +969,10 @@ Prefab:
         type: 2}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1128254378875396, guid: 94e9397e686bff547a3933202910e47d, type: 2}
+      propertyPath: m_Name
+      value: MysteryMan_Dark
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 94e9397e686bff547a3933202910e47d, type: 2}
