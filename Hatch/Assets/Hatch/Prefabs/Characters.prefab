@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 114910838066724126}
   - component: {fileID: 114787168986796740}
   m_Layer: 0
-  m_Name: Mystery Man
+  m_Name: MysteryMan_Dark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -364,8 +364,8 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1114980757
-  m_SortingLayer: 4
+  m_SortingLayerID: -992474561
+  m_SortingLayer: 2
   m_SortingOrder: 0
 --- !u!23 &23161487673146466
 MeshRenderer:
