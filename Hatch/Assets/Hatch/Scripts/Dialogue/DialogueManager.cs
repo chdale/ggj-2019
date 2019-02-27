@@ -22,17 +22,28 @@ public class DialogueManager : MonoBehaviour
 
     //private Queue<DialogueSentence> sentences;
     private GameController gameController;
+    private GameObject continueText;
 
     // Use this for initialization
     void Start()
     {
         //sentences = new Queue<DialogueSentence>();
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        continueText = transform.GetChild(0).Find("Canvas").GetChild(0).Find("Continue").gameObject;
     }
 
-    public void StartDialogue(DialogueObject dialogue)
+    public void StartDialogue(DialogueObject dialogue, bool skipText = true)
     {
         animator.SetBool("IsOpen", true);
+        
+        if (!skipText)
+        {
+            continueText.SetActive(false);
+        }
+        else
+        {
+            continueText.SetActive(true);
+        }
 
         DisplayNextSentence(dialogue);
     }
@@ -49,10 +60,23 @@ public class DialogueManager : MonoBehaviour
             portrait.sprite = portraitList.FirstOrDefault();
         }
 
-        nameText.text = dialogue.Speaker.GetDescription();
+        string name = dialogue.Speaker.GetDescription();
+
+        nameText.text = GetName(name);
 
         StopAllCoroutines();
         StartCoroutine(TypeSentence(dialogue.Text, dialogue.Speed, dialogue.Sound));
+    }
+
+    private string GetName(string name)
+    {
+        switch (name)
+        {
+            case "Medic":
+                return GameStates.States[GameStates.MEDICNAME] ? "Riley" : name;
+            default:
+                return name;
+        }
     }
 
     IEnumerator TypeSentence(string sentence, float speed, [CanBeNull] AudioSource clip)
