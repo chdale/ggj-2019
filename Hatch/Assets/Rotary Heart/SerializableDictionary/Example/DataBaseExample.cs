@@ -17,29 +17,12 @@ namespace RotaryHeart.Lib
             Value6
         }
 
-        public enum GameState
-        {
-            Intro,
-            Photo1,
-            Scare,
-            Rescue,
-            Reunion
-        }
-
         [System.Serializable]
         public class ChildTest
         {
             public Color myChildColor;
             public bool myChildBool;
             public Gradient test;
-        }
-
-        [System.Serializable]
-        public class GameStateData
-        {
-            public string stuff;
-            public bool boolStuff;
-            public Vector3 playerPosition;
         }
 
         [System.Serializable]
@@ -139,8 +122,6 @@ namespace RotaryHeart.Lib
         [SerializeField, DrawKeyAsProperty]
         private AdvanGeneric_String _advancedGenericKey;
 
-        [SerializeField] private GameState_GameStateData _gameStateData;
-
         [System.Serializable]
         public class Generic_String : SerializableDictionaryBase<ClassTest, string> { }
 
@@ -194,10 +175,5 @@ namespace RotaryHeart.Lib
 
         [System.Serializable]
         public class AdvanGeneric_String : SerializableDictionaryBase<AdvancedGenericClass, string> { };
-
-        [System.Serializable]
-        public class GameState_GameStateData : SerializableDictionaryBase<GameState, GameStateData>
-        {
-        }
     }
 }

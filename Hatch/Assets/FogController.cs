@@ -1,5 +1,7 @@
-﻿using Assets.Hatch.Scripts.Enumerations;
+﻿using System;
+using Assets.Hatch.Scripts.Enumerations;
 using System.Collections;
+using RotaryHeart.Lib.SerializableDictionary;
 using UnityEngine;
 
 public class FogController : MonoBehaviour
@@ -20,8 +22,19 @@ public class FogController : MonoBehaviour
 
     private Vector3 shake = new Vector3(0.1f, 0.1f);
     private float shakeTime = 5f;
-    
-	void Start ()
+    private float fadeTime = 1f;
+
+    [SerializeField, Space]
+    private FogAudioDictionary fogAudioDictionary;
+
+    [Serializable]
+    public class FogAudioDictionary : SerializableDictionaryBase<int, AudioClip> {}
+
+    private AudioSource audioSource;
+
+    public CameraController cameraController;
+
+    void Start ()
 	{
 	    if (fogParticles == null)
 	    {
@@ -34,14 +47,36 @@ public class FogController : MonoBehaviour
         {
             this.gameObject.SetActive(false);
         }
+
+	    audioSource = GetComponent<AudioSource>();
 	}
 	
 	void Update ()
 	{
 	    FadeFaces(smallFaces, 18f);
-	    FadeFaces(bigFaceClosed, 10f);
-	    FadeFaces(bigFaceOpen, 7f);
-	}
+	    FadeFaces(bigFaceClosed, 12f);
+	    FadeFaces(bigFaceOpen, 8f);
+
+	    var distance = Vector2.Distance(cameraController.transform.position, transform.position);
+	    if (distance < 20f)
+	    {
+	        audioSource.clip = fogAudioDictionary[0];
+	        if (!audioSource.isPlaying)
+	        {
+	            audioSource.Play();
+	        }
+	    }
+
+	    if (distance < 17f)
+	    {
+            audioSource.Stop();
+	        audioSource.clip = fogAudioDictionary[1];
+	        if (!audioSource.isPlaying)
+	        {
+	            audioSource.Play();
+	        }
+        }
+    }
 
     IEnumerator FadeSpriteRenderer(SpriteRenderer sprite, bool fadeIn)
     {
@@ -52,7 +87,7 @@ public class FogController : MonoBehaviour
             iTween.ShakePosition(sprite.gameObject, shake, shakeTime);
             while (color.a < 1)
             {
-                color.a += Time.deltaTime / 1f;
+                color.a += Time.deltaTime / fadeTime;
                 sprite.color = color;
                 yield return null;
             }
@@ -63,7 +98,7 @@ public class FogController : MonoBehaviour
         {
             while (color.a > 0)
             {
-                color.a -= Time.deltaTime / 1f;
+                color.a -= Time.deltaTime / fadeTime;
                 sprite.color = color;
                 yield return null;
             }
@@ -87,7 +122,6 @@ public class FogController : MonoBehaviour
 
     public void ClearFogWall()
     {
-        //this.gameObject.SetActive(false);
         StartCoroutine(FadeSpriteRenderer(fogWallSmoke, false));
     }
 }

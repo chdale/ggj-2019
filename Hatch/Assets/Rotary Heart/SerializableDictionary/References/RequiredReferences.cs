@@ -1,6 +1,4 @@
-﻿using Spine.Unity;
-using UnityEngine;
-using Event = Spine.Event;
+﻿using UnityEngine;
 
 namespace RotaryHeart.Lib.SerializableDictionary
 {
@@ -18,7 +16,5 @@ namespace RotaryHeart.Lib.SerializableDictionary
         private Material _material;
         [SerializeField]
         private AudioClip _audioClip;
-        [SerializeField]
-        private SpineEvent _spineEvent;
     }
 }
