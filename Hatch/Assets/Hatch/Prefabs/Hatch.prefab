@@ -2196,7 +2196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 0
   oneTimeOnlyEvent: 0
-  newPlayerPosition: {x: 48.13, y: -4.7}
+  newPlayerPosition: {x: 46.95, y: -5.91}
   newCameraPosition: {x: 63.8, y: 0, z: -10}
   level: 2
   levelMusic: {fileID: 0}
