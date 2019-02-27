@@ -60,10 +60,23 @@ public class DialogueManager : MonoBehaviour
             portrait.sprite = portraitList.FirstOrDefault();
         }
 
-        nameText.text = dialogue.Speaker.GetDescription();
+        string name = dialogue.Speaker.GetDescription();
+
+        nameText.text = GetName(name);
 
         StopAllCoroutines();
         StartCoroutine(TypeSentence(dialogue.Text, dialogue.Speed, dialogue.Sound));
+    }
+
+    private string GetName(string name)
+    {
+        switch (name)
+        {
+            case "Medic":
+                return GameStates.States[GameStates.MEDICNAME] ? "Riley" : name;
+            default:
+                return name;
+        }
     }
 
     IEnumerator TypeSentence(string sentence, float speed, [CanBeNull] AudioSource clip)
