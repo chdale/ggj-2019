@@ -9,12 +9,17 @@ public class DemonDog : MonoBehaviour
     public float Agro1;
     public float Agro2;
     public float Agro3;
+    public float Agro4;
     public string State;
     public string PrevState;
     public float AnimCounter;
     public float AnimDuration = 0.5f;
     public GameObject Player;
     public float digChance = 0.5f;
+
+    public GameObject PitTrigger;
+
+    public DemonDogDialogue dialogue;
 
     public SkeletonAnimation skeletonAnimation;
     // Spine.AnimationState and Spine.Skeleton are not Unity-serialized objects. You will not see them as fields in the inspector.
@@ -26,6 +31,7 @@ public class DemonDog : MonoBehaviour
     void Start()
     {
         skeletonAnimation = GetComponent<SkeletonAnimation>();
+        dialogue = GetComponent<DemonDogDialogue>();
         spineAnimationState = skeletonAnimation.AnimationState;
         skeleton = skeletonAnimation.Skeleton;
     }
@@ -34,7 +40,11 @@ public class DemonDog : MonoBehaviour
     void Update()
     {
         DistanceFromPlayer = Vector3.Distance(Player.transform.position, transform.position);
-        if (DistanceFromPlayer < Agro3)
+        if (DistanceFromPlayer < Agro4)
+        {
+            State = "agro4";
+        }
+        else if (DistanceFromPlayer < Agro3)
         {
             State = "agro3";
         }
@@ -62,6 +72,12 @@ public class DemonDog : MonoBehaviour
             else if (State == "agro3")
             {
                 digChance = 1;
+            }
+            else if (State == "agro4")
+            {
+                digChance = 1;
+                dialogue.StartDialogue(gameObject);
+                PitTrigger.GetComponent<Collider2D>().enabled = true;
             }
             PrevState = State;
         }

@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 23583302665836446}
   - component: {fileID: 114434492577198474}
   - component: {fileID: 114866221060850162}
+  - component: {fileID: 114443760022371290}
   m_Layer: 0
   m_Name: DemonDog
   m_TagString: Untagged
@@ -1982,6 +1983,18 @@ MonoBehaviour:
   _animationName: idle
   loop: 1
   timeScale: 1
+--- !u!114 &114443760022371290
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1159951831977766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e64bb6da1574b1caf638cf0b3533ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 0}
 --- !u!114 &114720407518430996
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2029,13 +2042,16 @@ MonoBehaviour:
   DistanceFromPlayer: 0
   Agro1: 100
   Agro2: 18
-  Agro3: 13
+  Agro3: 15
+  Agro4: 11
   State: 
   PrevState: 
   AnimCounter: 0
   AnimDuration: 0.5
   Player: {fileID: 0}
   digChance: 0.5
+  PitTrigger: {fileID: 0}
+  dialogue: {fileID: 0}
   skeletonAnimation: {fileID: 0}
 --- !u!212 &212016717850013338
 SpriteRenderer:
