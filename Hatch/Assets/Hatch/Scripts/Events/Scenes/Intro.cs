@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using Spine.Unity;
 using UnityEngine;
+using System.Collections;
 
 namespace Assets.Hatch.Scripts.Events.Scenes
 {
@@ -28,6 +29,7 @@ namespace Assets.Hatch.Scripts.Events.Scenes
         public GameObject Teeth2;
         public GameObject BeginGamePos;
         public GameObject PlayerEndPos;
+        public AudioSource fullIntroSfx;
 
 
         private CharacterAnimationController MysteryManController;
@@ -47,8 +49,10 @@ namespace Assets.Hatch.Scripts.Events.Scenes
         [SceneEvent]
         public void StartGame()
         {
+            StartCoroutine(DelayAudio(fullIntroSfx, 1f));
             SetFader("closed");
         }
+
         [SceneEvent]
         public void SubwayCarFlashStart()
         {
