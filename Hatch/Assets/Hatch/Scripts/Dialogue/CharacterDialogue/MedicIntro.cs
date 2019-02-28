@@ -5,6 +5,7 @@ using UnityStandardAssets._2D;
 
 public class MedicIntro : MonoBehaviour
 {
+    public GameObject target;
     public DialogueManager manager;
     private DialogueObject[] objectiveDialogue;
     private DialogueObject[] completedDialogue;
@@ -22,15 +23,22 @@ public class MedicIntro : MonoBehaviour
         playerClip = GameObject.Find("Player_Wireframe").GetComponentInChildren<AudioSource>();
         completedDialogue = new DialogueObject[]
         {
-            new DialogueObject(DialogueTarget.Medic, "Thanks again, see you back at the train!", .04f, Emotions.Idle, talkClip)
+            new DialogueObject(DialogueTarget.Medic, "Let me know if you find anything out there.", .04f, Emotions.Idle, talkClip)
         };
         objectiveDialogue = new DialogueObject[]
         {
-            new DialogueObject(DialogueTarget.Medic, "OH MAN, THAT REALLY SMARTS!", .1f, Emotions.Angry, talkClip),
-            new DialogueObject(DialogueTarget.Medic, "I guess that's what my time in med school was for, huh?", .04f, Emotions.Idle, talkClip),
-            new DialogueObject(DialogueTarget.Player, "Yeah, I guess..", .1f, Emotions.Idle, playerClip),
-            new DialogueObject(DialogueTarget.Medic, "No need to let me ramble on...", .1f, Emotions.Idle, talkClip),
-            new DialogueObject(DialogueTarget.Medic, "We need to regroup in the train to figure out how to get out of here!", .04f, Emotions.Idle, talkClip)
+            new DialogueObject(DialogueTarget.Medic, "Oh hey, you're up!", .1f, Emotions.Idle, talkClip),
+            new DialogueObject(DialogueTarget.Medic, "We really had a rough go at it out there...", .04f, Emotions.Idle, talkClip),
+            new DialogueObject(DialogueTarget.Player, "Wha- What happened?", .1f, Emotions.Idle, playerClip),
+            new DialogueObject(DialogueTarget.Medic, "I'm not sure...", .1f, Emotions.Idle, talkClip),
+            new DialogueObject(DialogueTarget.Medic, "There was a loud noise then I woke up with everything in shambles.", .04f, Emotions.Idle, talkClip),
+            new DialogueObject(DialogueTarget.Player, "(I don't even remember how I got onto the subway...)", .1f, Emotions.Idle, playerClip),
+            new DialogueObject(DialogueTarget.Medic, "I don't even know if anyone else is hurt out there!", .04f, Emotions.Angry, talkClip),
+            new DialogueObject(DialogueTarget.Medic, "I can't get all heated up, not in this situation. I need to keep a cool head.", .04f, Emotions.Idle, talkClip),
+            new DialogueObject(DialogueTarget.Medic, "I'm Riley by the way, what's your name?", .04f, Emotions.Idle, talkClip),
+            new DialogueObject(DialogueTarget.Player, "...", .5f, Emotions.Idle, playerClip),
+            new DialogueObject(DialogueTarget.Medic, "You're probably still shaken up by the crash, don't worry about it.", .04f, Emotions.Idle, talkClip),
+            new DialogueObject(DialogueTarget.Medic, "I'll see what supplies I can dig out of this rubble, see what you can find out there.", .04f, Emotions.Idle, talkClip)
         };
         GameController.StartDialogue += StartDialogue;
         GameController.NextDialogue += NextDialogue;
@@ -40,19 +48,22 @@ public class MedicIntro : MonoBehaviour
 
     public void StartDialogue(GameObject dialogueTarget, bool isStatic = false)
     {
-        conversationEnsues = true;
-        conversationCount = 0;
-        if (!GameStates.States[GameStates.MEDIC])
+        if (dialogueTarget == target)
         {
-            //StaticEvent.StartDialogue(dialogueTarget, true);
-            manager.StartDialogueEvent(dialogueTarget, true);
-            manager.StartDialogue(objectiveDialogue[0]);
-        }
-        else
-        {
-            //StaticEvent.StartDialogue(dialogueTarget, true);
-            manager.StartDialogueEvent(dialogueTarget, true);
-            manager.StartDialogue(completedDialogue[0]);
+            conversationEnsues = true;
+            conversationCount = 0;
+            if (!GameStates.States[GameStates.MEDIC])
+            {
+                //StaticEvent.StartDialogue(dialogueTarget, true);
+                manager.StartDialogueEvent(dialogueTarget, true);
+                manager.StartDialogue(objectiveDialogue[0]);
+            }
+            else
+            {
+                //StaticEvent.StartDialogue(dialogueTarget, true);
+                manager.StartDialogueEvent(dialogueTarget, true);
+                manager.StartDialogue(completedDialogue[0]);
+            }
         }
     }
 
@@ -74,9 +85,13 @@ public class MedicIntro : MonoBehaviour
             else
             {
                 conversationCount++;
+                if (conversationCount == 8)
+                {
+                    GameStates.States[GameStates.MEDICNAME] = true;
+                }
                 if (!GameStates.States[GameStates.MEDIC])
                 {
-                    if (conversationCount > 4)
+                    if (conversationCount > objectiveDialogue.Length - 1)
                     {
                         GameStates.States[GameStates.MEDIC] = true;
                         EndDialogue();
@@ -103,6 +118,7 @@ public class MedicIntro : MonoBehaviour
 
     public void EndDialogue(bool isStatic = false)
     {
+        conversationEnsues = false;
         manager.EndDialogue();
     }
 }

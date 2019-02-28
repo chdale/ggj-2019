@@ -16,10 +16,16 @@ namespace Assets.Hatch.Scripts.Events.Scenes
 
         // Scenes
         public GameObject Intro;
-
+        private GameController gameController;
 
         private void Start()
         {
+            gameController = GameObject.Find("GameController").GetComponent<GameController>();
+            if (gameController.currentGameState >= Enumerations.GameState.Intro)
+            {
+                EnableCinematics = false;
+            }
+
             var intro = Intro.GetComponent<Intro>();
 
             if (EnableCinematics)

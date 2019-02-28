@@ -25,9 +25,11 @@ public class CameraController : MonoBehaviour {
     private Vector3 fogWallLerpStartingPosition;
     private float fogWallFadeDuration = 3.0f;
     private GameObject fogWall;
+    private PhotoPickup[] photoPickups;
 
     private void Start()
     {
+        photoPickups = FindObjectsOfType<PhotoPickup>();
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
         dynamicCameraHorizontal = false;
         //cameraLeftLimit = -20.5f;
@@ -219,6 +221,12 @@ public class CameraController : MonoBehaviour {
 
     private IEnumerator FogWallCoroutine(GameObject target, float lerpDuration)
     {
+        FogController fogWallController = null;
+        if (fogWall != null)
+        {
+            fogWallController = fogWall.GetComponent<FogController>();
+        }
+
         float targetPositionX;
         float targetPositionY;
         if (target == player)
@@ -242,19 +250,30 @@ public class CameraController : MonoBehaviour {
             yield return 0;
         }
 
+        if (fogWallController.gameObject.activeSelf)
+        {
+            fogWallController.ClearFogWall();
+        }
+
         if (target == player)
         {
             disableStandardCameraControls = false;
             if (transform.position.x == targetPositionX && transform.position.y == targetPositionY)
             {
+                foreach (var photoPickup in photoPickups)
+                {
+                    photoPickup.ReturnActiveMusic();
+                }
                 gameController.StartCharacter();
             }
         }
     }
+
     public void CameraShakeStart(float duration, float magnitiude)
     {
         this.StartCoroutine(CameraShake(duration, magnitiude));
     }
+
     public IEnumerator CameraShake(float duration, float magnitude)
     {
         Vector3 originalPos = transform.localPosition;
@@ -270,10 +289,12 @@ public class CameraController : MonoBehaviour {
         }
         transform.localPosition = originalPos;
     }
+
     public void CameraLerpStart(Vector3 startPos, Vector3 endPos, float duration)
     {
         this.StartCoroutine(CameraLerp(startPos, endPos, duration));
     }
+
     public IEnumerator CameraLerp(Vector3 startPos, Vector3 endPos, float duration)
     {
         var pitchCurve = AnimationCurve.EaseInOut(0.0f, 0.0f, 1.0f, 90.0f);

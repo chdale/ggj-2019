@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f805158fc7d3ee94cb7bc959d62a993f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentGameState: 1
+  currentGameState: 0
   gameStateData:
     reorderableList:
       canAdd: 1
