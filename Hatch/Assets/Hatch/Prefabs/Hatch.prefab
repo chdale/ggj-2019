@@ -68,7 +68,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4472705833690672}
-  - component: {fileID: 82577602211250640}
   m_Layer: 0
   m_Name: Hatch
   m_TagString: Untagged

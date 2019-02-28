@@ -121,6 +121,12 @@ namespace Assets.Hatch.Scripts.Events
             fader.SetTrigger(trigger);
         }
 
+        internal IEnumerator DelayAudio(AudioSource audio, float v)
+        {
+            yield return new WaitForSeconds(v);
+            audio.Play();
+        }
+
     }
     public class SceneEventAttribute : Attribute
     {
