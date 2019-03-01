@@ -24,7 +24,7 @@ public class DemonDogDialogue : MonoBehaviour {
         };
         objectiveDialogue = new DialogueObject[]
         {
-            new DialogueObject(DialogueTarget.Player, "I'm not going near that", .2f, Emotions.Angry, talkClip)
+            new DialogueObject(DialogueTarget.Player, "I'm not going near that", .05f, Emotions.Angry, talkClip)
         };
         GameController.StartDialogue += StartDialogue;
         GameController.NextDialogue += NextDialogue;
@@ -56,7 +56,7 @@ public class DemonDogDialogue : MonoBehaviour {
         {
             if (manager.typeSentenceActive)
             {
-                if (!GameStates.States[GameStates.MEDIC])
+                if (!GameStates.States[GameStates.DOG])
                 {
                     manager.FinishSentence(objectiveDialogue[conversationCount]);
                 }
@@ -68,11 +68,11 @@ public class DemonDogDialogue : MonoBehaviour {
             else
             {
                 conversationCount++;
-                if (!GameStates.States[GameStates.MEDIC])
+                if (!GameStates.States[GameStates.DOG])
                 {
                     if (conversationCount >= 1)
                     {
-                        GameStates.States[GameStates.MEDIC] = true;
+                        GameStates.States[GameStates.DOG] = true;
                         EndDialogue();
                     }
                     else

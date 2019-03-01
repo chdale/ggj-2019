@@ -279,8 +279,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4939846224203524}
-  - component: {fileID: 108432298276963456}
-  - component: {fileID: 114557664908505232}
   m_Layer: 1
   m_Name: Point light (14)
   m_TagString: Untagged
@@ -732,6 +730,7 @@ Transform:
   - {fileID: 4391699374317664}
   - {fileID: 4443334766043090}
   - {fileID: 4976318936797208}
+  - {fileID: 4939846224203524}
   m_Father: {fileID: 4950064919315596}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -811,7 +810,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4697099271143284}
-  m_RootOrder: 0
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4950064919315596
 Transform:
@@ -820,7 +819,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1047776027157216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -143.1, y: 0.1, z: 0}
+  m_LocalPosition: {x: -144.51, y: -1.7, z: 9.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4697099271143284}
@@ -2071,9 +2070,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DistanceFromPlayer: 0
   Agro1: 100
-  Agro2: 18
-  Agro3: 15
-  Agro4: 11
+  Agro2: 22
+  Agro3: 18
+  Agro4: 15
   State: 
   PrevState: 
   AnimCounter: 0
