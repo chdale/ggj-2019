@@ -229,6 +229,16 @@ Prefab:
       propertyPath: Arm
       value: 
       objectReference: {fileID: 1668135709}
+    - target: {fileID: 33763596986697120, guid: 949a859d13c736743bd67455ca85172b,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 33443108025669456, guid: 949a859d13c736743bd67455ca85172b,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 949a859d13c736743bd67455ca85172b, type: 2}
   m_IsPrefabParent: 0
@@ -446,11 +456,11 @@ GameObject:
   m_PrefabParentObject: {fileID: 1011284717110758, guid: a12fc64d03fe77247a876be250710f51,
     type: 2}
   m_PrefabInternal: {fileID: 1972787078}
---- !u!1 &894750053 stripped
+--- !u!1 &855018867 stripped
 GameObject:
-  m_PrefabParentObject: {fileID: 1498627809879518, guid: c3fe39e4f6df5384c83fa48bc7c0d6bf,
+  m_PrefabParentObject: {fileID: 1870934146169392, guid: 1ff5c8917340bf14184247fd3fbc6e0f,
     type: 2}
-  m_PrefabInternal: {fileID: 1593155566}
+  m_PrefabInternal: {fileID: 644548832}
 --- !u!1 &917168583 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1128254378875396, guid: 94e9397e686bff547a3933202910e47d,
@@ -568,6 +578,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 33977117943838366, guid: 3c2d9ac86b738de4396052845266c7b2,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114866221060850162, guid: 3c2d9ac86b738de4396052845266c7b2,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 523363279}
+    - target: {fileID: 114866221060850162, guid: 3c2d9ac86b738de4396052845266c7b2,
+        type: 2}
+      propertyPath: PitTrigger
+      value: 
+      objectReference: {fileID: 1347051797}
+    - target: {fileID: 114443760022371290, guid: 3c2d9ac86b738de4396052845266c7b2,
+        type: 2}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1654419453}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3c2d9ac86b738de4396052845266c7b2, type: 2}
   m_IsPrefabParent: 0
@@ -629,7 +659,7 @@ Prefab:
         type: 2}
       propertyPath: fogWall
       value: 
-      objectReference: {fileID: 894750053}
+      objectReference: {fileID: 1992460576}
     - target: {fileID: 114011709174791546, guid: 506802b57a49df44980921f8c40743cf,
         type: 2}
       propertyPath: photoMusic
@@ -700,6 +730,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1347051797 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1059706543081756, guid: 1aa1bc14b1ce56445b7080cd971ff82c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1718688534}
 --- !u!1 &1489358796 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1769976370099032, guid: 949a859d13c736743bd67455ca85172b,
@@ -914,6 +949,26 @@ Prefab:
       propertyPath: Teeth2
       value: 
       objectReference: {fileID: 2059197470}
+    - target: {fileID: 114295328667474970, guid: 1aa1bc14b1ce56445b7080cd971ff82c,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 523363279}
+    - target: {fileID: 114451337125345150, guid: 1aa1bc14b1ce56445b7080cd971ff82c,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 523363279}
+    - target: {fileID: 114451337125345150, guid: 1aa1bc14b1ce56445b7080cd971ff82c,
+        type: 2}
+      propertyPath: SceneTrigger
+      value: 
+      objectReference: {fileID: 855018867}
+    - target: {fileID: 114446190477237238, guid: 1aa1bc14b1ce56445b7080cd971ff82c,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 523363279}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1aa1bc14b1ce56445b7080cd971ff82c, type: 2}
   m_IsPrefabParent: 0
@@ -970,7 +1025,7 @@ Prefab:
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 082173bf26384f34e983a4583f7b138d, type: 2}
+      objectReference: {fileID: 2100000, guid: ccd22fd84e8dc4ef0b0dc7a8133f61be, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 56d57ee7c1d1ae84d8044b35d5b57264, type: 2}
   m_IsPrefabParent: 0
@@ -1060,6 +1115,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a12fc64d03fe77247a876be250710f51, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1992460576 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1868395859670184, guid: c3fe39e4f6df5384c83fa48bc7c0d6bf,
+    type: 2}
+  m_PrefabInternal: {fileID: 1593155566}
 --- !u!1 &2059197470 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1637979784675758, guid: 94e9397e686bff547a3933202910e47d,
