@@ -10,6 +10,8 @@ public class Deadgineer : MonoBehaviour
     private int conversationCount;
     public DialogueEvent deadgineerEvent;
     private bool conversationEnsues = false;
+    public AudioSource talkClip;
+    public AudioSource playerClip;
 
     // Use this for initialization
     void Start()
@@ -17,12 +19,12 @@ public class Deadgineer : MonoBehaviour
         //deadgineerEvent = GameObject.Find("DeadgineerDialogue").GetComponent<DialogueEvent>();
         completedDialogue = new DialogueObject[]
         {
-            new DialogueObject(DialogueTarget.Engineer, "...", 1.0f, Emotions.Idle, null)
+            new DialogueObject(DialogueTarget.Engineer, "...", 1.0f, Emotions.Idle, talkClip)
         };
         objectiveDialogue = new DialogueObject[]
         {
-            new DialogueObject(DialogueTarget.Player, "...", 0.5f, Emotions.Idle, null),
-            new DialogueObject(DialogueTarget.Engineer, "...", 1.0f, Emotions.Idle, null)
+            new DialogueObject(DialogueTarget.Player, "...", 0.5f, Emotions.Idle, playerClip),
+            new DialogueObject(DialogueTarget.Engineer, "...", 1.0f, Emotions.Idle, talkClip)
         };
         GameController.StartDialogue += StartDialogue;
         GameController.NextDialogue += NextDialogue;
