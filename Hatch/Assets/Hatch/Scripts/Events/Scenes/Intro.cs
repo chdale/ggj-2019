@@ -104,6 +104,7 @@ namespace Assets.Hatch.Scripts.Events.Scenes
         [SceneEvent]
         public void OpenBubble()
         {
+            DreamBubble.SetActive(true);
             DreamBubble.GetComponent<DreamBubbleAnimationController>().OpenBubbleStart();
         }
         [SceneEvent]
@@ -259,6 +260,8 @@ namespace Assets.Hatch.Scripts.Events.Scenes
         {
             MysteryMan.transform.position = Limbo.transform.position;
             PlayerPuppet.transform.position = Limbo.transform.position;
+
+
         }
     }
 }

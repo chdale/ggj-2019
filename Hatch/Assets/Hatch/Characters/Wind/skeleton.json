@@ -1,0 +1,36 @@
+{
+"skeleton": { "hash": "NuKYjoFUkwgOOvahG2wquXrGoy0", "spine": "3.7.91", "width": 803.45, "height": 4726.6, "images": "", "audio": "" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "wind2", "bone": "root", "attachment": "wind-bg" },
+	{ "name": "wind1", "bone": "root", "attachment": "wind-bg" },
+	{ "name": "wind3", "bone": "root", "attachment": "wind-bg" }
+],
+"skins": {
+	"default": {
+		"wind1": {
+			"wind-bg": { "width": 800, "height": 1600 }
+		},
+		"wind2": {
+			"wind-bg": { "x": -3.45, "y": 1578.03, "scaleY": -1, "rotation": 180, "width": 800, "height": 1600 }
+		},
+		"wind3": {
+			"wind-bg": { "y": 3126.6, "width": 800, "height": 1600 }
+		}
+	}
+},
+"animations": {
+	"idle": {
+		"bones": {
+			"root": {
+				"translate": [
+					{ "time": 0, "x": 0, "y": -3297.69 },
+					{ "time": 0.3333, "x": 0, "y": 29.92 }
+				]
+			}
+		}
+	}
+}
+}
