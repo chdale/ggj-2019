@@ -34,6 +34,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(DialogueObject dialogue, bool skipText = true)
     {
+        gameController.isInDialogue = true;
         animator.SetBool("IsOpen", true);
         
         if (!skipText)
@@ -105,6 +106,7 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
+        gameController.isInDialogue = false;
         animator.SetBool("IsOpen", false);
         gameController.CancelJumpEvent();
         gameController.EndDialogueEvent();
@@ -113,10 +115,12 @@ public class DialogueManager : MonoBehaviour
     {
         Camera.main.GetComponent<CameraController>().BDialogue(dialogueTarget, isStatic);
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        gameController.isInDialogue = true;
         gameController.StopCharacter();
     }
     public void EndDialogueEvent()
     {
+        gameController.isInDialogue = false;
         Camera.main.GetComponent<CameraController>().EDialogue();
     }
 }

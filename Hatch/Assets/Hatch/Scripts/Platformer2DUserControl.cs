@@ -75,7 +75,7 @@ namespace UnityStandardAssets._2D
 
         private void Update()
         {
-            if (!m_Jump)
+            if (!m_Jump && !gameController.isInDialogue)
             {
                 // Read the jump input in Update so button presses aren't missed.
                 m_Jump = Input.GetKeyDown(KeyCode.Space);
