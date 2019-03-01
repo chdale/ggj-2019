@@ -122,10 +122,7 @@ public class CameraController : MonoBehaviour {
             dialogue.SetActive(true);
             if (!isStatic)
             {
-                if (dynamicCameraHorizontal)
-                {
-                    m_camera.orthographicSize = 5.0f;
-                }
+                m_camera.orthographicSize = 5.0f;
                 float dialogueCameraPosition = defaultCameraPosition.y - (savedSize * (2.0f / 5.0f));
                 if (dialogueTarget != null)
                 {
