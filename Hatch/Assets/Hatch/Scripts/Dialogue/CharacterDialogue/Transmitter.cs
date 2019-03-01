@@ -63,7 +63,7 @@ public class Transmitter : MonoBehaviour
     private void EndDialogue(bool isStatic = false)
     {
         conversationEnsues = false;
-        if (conversationCount > 1)
+        if (conversationCount > objectiveDialogue.Length - 1)
         {
             transmitterEvent.isActivated = false;
             manager.EndDialogue();

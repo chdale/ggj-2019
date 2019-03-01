@@ -274,7 +274,7 @@ Prefab:
     - target: {fileID: 114077120668472712, guid: ab05014fbafcef14bb2259fa4cf0db99,
         type: 2}
       propertyPath: currentGameState
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ab05014fbafcef14bb2259fa4cf0db99, type: 2}
@@ -411,6 +411,16 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 114509837528044482, guid: bcaa5a40cfd1846419ed6cbf075b0fc2,
+        type: 2}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1654419453}
+    - target: {fileID: 114417846705691352, guid: bcaa5a40cfd1846419ed6cbf075b0fc2,
+        type: 2}
+      propertyPath: dialogueTarget
+      value: 
+      objectReference: {fileID: 523363279}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bcaa5a40cfd1846419ed6cbf075b0fc2, type: 2}
   m_IsPrefabParent: 0
