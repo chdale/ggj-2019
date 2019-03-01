@@ -78,7 +78,7 @@ public class DemonDog : MonoBehaviour
             {
                 digChance = 1;
                 agro4Activated = true;
-                dialogue.StartDialogue(gameObject);
+                dialogue.StartDialogue(Player);
                 PitTrigger.GetComponent<Collider2D>().enabled = true;
             }
             PrevState = State;

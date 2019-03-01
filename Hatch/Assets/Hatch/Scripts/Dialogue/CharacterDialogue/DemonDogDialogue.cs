@@ -36,7 +36,7 @@ public class DemonDogDialogue : MonoBehaviour {
             conversationEnsues = true;
             conversationCount = 0;
             //StaticEvent.StartDialogue(dialogueTarget, true);
-            manager.StartDialogueEvent(dialogueTarget, true);
+            manager.StartDialogueEvent(dialogueTarget, false);
             manager.StartDialogue(objectiveDialogue[0]);
         }
     }

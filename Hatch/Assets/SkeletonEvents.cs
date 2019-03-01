@@ -79,8 +79,7 @@ public class SkeletonEvents : MonoBehaviour
     public void Play(AudioClip clip)
     {
         audioSource.pitch = basePitch + Random.Range(-randomPitchOffset, randomPitchOffset);
-        audioSource.clip = clip;
-        audioSource.Play();
+        audioSource.PlayOneShot(clip);
     }
 
     bool TryGetSpineKey(string eventName, out SpineEventKey key)

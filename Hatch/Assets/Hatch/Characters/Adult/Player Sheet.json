@@ -1285,7 +1285,7 @@
 			}
 		},
 		"events": [
-			{ "time": 0, "name": "jump" }
+			{ "time": 0.2333, "name": "jump" }
 		]
 	},
 	"passedOut": {

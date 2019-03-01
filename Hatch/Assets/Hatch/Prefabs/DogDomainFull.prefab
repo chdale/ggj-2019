@@ -2122,11 +2122,13 @@ MonoBehaviour:
   newPlayerPosition: {x: -96.76, y: -4.51}
   newCameraPosition: {x: -80.85, y: 0, z: -10}
   level: 4
-  levelMusic: {fileID: 0}
+  levelMusic: []
+  tasteAudio: {fileID: 0}
   dynamicCameraHorizontal: 0
   cameraLeftThreshold: 0
   cameraRightThreshold: 0
   cameraSize: 10
+  removeTasteAudio: 1
 --- !u!114 &114753456180445334
 MonoBehaviour:
   m_ObjectHideFlags: 1

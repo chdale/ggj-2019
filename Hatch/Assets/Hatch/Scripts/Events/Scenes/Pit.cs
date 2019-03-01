@@ -59,6 +59,7 @@ namespace Assets.Hatch.Scripts.Events.Scenes
         public void SetFallingCinematic()
         {
             var fallingGameLR = LevelRequirements.PresetLevelRequirements["PitFall"];
+            Player.SetActive(false);
             fallingGameLR.defaultCameraPosition = FallingCameraPos.transform.position;
             SetCamera(fallingGameLR);
         }
