@@ -154,7 +154,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114773890247125368, guid: 50daa5fd091847646ad3e1a3fc2b6ca8,
         type: 2}
-      propertyPath: levelMusic
+      propertyPath: levelMusic.Array.data[0]
       value: 
       objectReference: {fileID: 1804871839}
     m_RemovedComponents: []
@@ -271,6 +271,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114077120668472712, guid: ab05014fbafcef14bb2259fa4cf0db99,
+        type: 2}
+      propertyPath: currentGameState
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ab05014fbafcef14bb2259fa4cf0db99, type: 2}
   m_IsPrefabParent: 0
@@ -331,6 +336,11 @@ GameObject:
   m_PrefabParentObject: {fileID: 1011284717110758, guid: a12fc64d03fe77247a876be250710f51,
     type: 2}
   m_PrefabInternal: {fileID: 1972787078}
+--- !u!82 &798189819 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82634211082833268, guid: bcaa5a40cfd1846419ed6cbf075b0fc2,
+    type: 2}
+  m_PrefabInternal: {fileID: 972629288}
 --- !u!1 &855018867 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1870934146169392, guid: 1ff5c8917340bf14184247fd3fbc6e0f,
@@ -491,7 +501,7 @@ GameObject:
   m_PrefabParentObject: {fileID: 1200986826589468, guid: 949a859d13c736743bd67455ca85172b,
     type: 2}
   m_PrefabInternal: {fileID: 424317110}
---- !u!1001 &1234879074
+--- !u!1001 &1306764845
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -530,6 +540,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114327700684391202, guid: 506802b57a49df44980921f8c40743cf,
+        type: 2}
+      propertyPath: tasteAudio
+      value: 
+      objectReference: {fileID: 798189819}
     - target: {fileID: 114011709174791546, guid: 506802b57a49df44980921f8c40743cf,
         type: 2}
       propertyPath: photo
@@ -609,9 +624,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114018017392979662, guid: c3fe39e4f6df5384c83fa48bc7c0d6bf,
         type: 2}
-      propertyPath: levelMusic
+      propertyPath: levelMusic.Array.data[0]
       value: 
       objectReference: {fileID: 922577027}
+    - target: {fileID: 114018017392979662, guid: c3fe39e4f6df5384c83fa48bc7c0d6bf,
+        type: 2}
+      propertyPath: levelMusic.Array.data[1]
+      value: 
+      objectReference: {fileID: 1820770397}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c3fe39e4f6df5384c83fa48bc7c0d6bf, type: 2}
   m_IsPrefabParent: 0
@@ -790,6 +810,11 @@ AudioSource:
   m_PrefabParentObject: {fileID: 82908488440026414, guid: c3fe39e4f6df5384c83fa48bc7c0d6bf,
     type: 2}
   m_PrefabInternal: {fileID: 1593155566}
+--- !u!82 &1820770397 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82445435965708132, guid: 50daa5fd091847646ad3e1a3fc2b6ca8,
+    type: 2}
+  m_PrefabInternal: {fileID: 285078727}
 --- !u!1001 &1877020486
 Prefab:
   m_ObjectHideFlags: 0

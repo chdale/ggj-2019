@@ -2215,7 +2215,9 @@ MonoBehaviour:
   newPlayerPosition: {x: 2.19, y: -22.8}
   newCameraPosition: {x: 2.17, y: -21.73, z: -10}
   level: 1
-  levelMusic: {fileID: 0}
+  levelMusic:
+  - {fileID: 0}
+  - {fileID: 0}
   dynamicCameraHorizontal: 0
   cameraLeftThreshold: 0
   cameraRightThreshold: 0
@@ -2377,7 +2379,7 @@ MonoBehaviour:
   newPlayerPosition: {x: 46.95, y: -5.91}
   newCameraPosition: {x: 63.8, y: 0, z: -10}
   level: 2
-  levelMusic: {fileID: 0}
+  levelMusic: []
   dynamicCameraHorizontal: 0
   cameraLeftThreshold: 0
   cameraRightThreshold: 0
@@ -2412,7 +2414,7 @@ MonoBehaviour:
   newPlayerPosition: {x: -64.43, y: -5.17}
   newCameraPosition: {x: -80.85, y: 0, z: -10}
   level: 4
-  levelMusic: {fileID: 0}
+  levelMusic: []
   dynamicCameraHorizontal: 0
   cameraLeftThreshold: 0
   cameraRightThreshold: 0
