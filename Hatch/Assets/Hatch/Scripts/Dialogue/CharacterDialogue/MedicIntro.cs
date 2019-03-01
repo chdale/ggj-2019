@@ -12,15 +12,13 @@ public class MedicIntro : MonoBehaviour
     private int conversationCount;
     private DialogueEvent medicEvent;
     private bool conversationEnsues = false;
-    private AudioSource talkClip;
-    private AudioSource playerClip;
+    public AudioSource talkClip;
+    public AudioSource playerClip;
 
 
     // Use this for initialization
     void Start()
     {
-        talkClip = gameObject.GetComponent<AudioSource>();
-        playerClip = GameObject.Find("Player_Wireframe").GetComponentInChildren<AudioSource>();
         completedDialogue = new DialogueObject[]
         {
             new DialogueObject(DialogueTarget.Medic, "Let me know if you find anything out there.", .04f, Emotions.Idle, talkClip)
