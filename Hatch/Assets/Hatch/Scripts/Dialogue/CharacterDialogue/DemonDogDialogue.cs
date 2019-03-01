@@ -7,24 +7,21 @@ public class DemonDogDialogue : MonoBehaviour {
     private DialogueObject[] objectiveDialogue;
     private DialogueObject[] completedDialogue;
     private int conversationCount;
-    private DialogueEvent medicEvent;
+    private DemonDog demonDog;
     private bool conversationEnsues = false;
-    private AudioSource talkClip;
-    private AudioSource playerClip;
+    public AudioSource playerClip;
 
 
     // Use this for initialization
     void Start()
     {
-        talkClip = gameObject.GetComponent<AudioSource>();
-        playerClip = GameObject.Find("Player_Wireframe").GetComponentInChildren<AudioSource>();
+        demonDog = gameObject.GetComponent<DemonDog>();
         completedDialogue = new DialogueObject[]
         {
-            new DialogueObject(DialogueTarget.Player, "...", .04f, Emotions.Idle, talkClip)
         };
         objectiveDialogue = new DialogueObject[]
         {
-            new DialogueObject(DialogueTarget.Player, "I'm not going near that", .05f, Emotions.Angry, talkClip)
+            new DialogueObject(DialogueTarget.Player, "I'm not going near that", .05f, Emotions.Angry, playerClip)
         };
         GameController.StartDialogue += StartDialogue;
         GameController.NextDialogue += NextDialogue;
@@ -34,69 +31,37 @@ public class DemonDogDialogue : MonoBehaviour {
 
     public void StartDialogue(GameObject dialogueTarget, bool isStatic = false)
     {
-        conversationEnsues = true;
-        conversationCount = 0;
-        if (!GameStates.States[GameStates.MEDIC])
+        if (demonDog.agro4Activated)
         {
+            conversationEnsues = true;
+            conversationCount = 0;
             //StaticEvent.StartDialogue(dialogueTarget, true);
             manager.StartDialogueEvent(dialogueTarget, true);
             manager.StartDialogue(objectiveDialogue[0]);
-        }
-        else
-        {
-            //StaticEvent.StartDialogue(dialogueTarget, true);
-            manager.StartDialogueEvent(dialogueTarget, true);
-            manager.StartDialogue(completedDialogue[0]);
         }
     }
 
     public void NextDialogue()
     {
-        if (conversationEnsues)
+        if (conversationEnsues && demonDog.agro4Activated)
         {
             if (manager.typeSentenceActive)
             {
-                if (!GameStates.States[GameStates.DOG])
-                {
-                    manager.FinishSentence(objectiveDialogue[conversationCount]);
-                }
-                else
-                {
-                    manager.FinishSentence(completedDialogue[conversationCount]);
-                }
+                manager.FinishSentence(objectiveDialogue[conversationCount]);
             }
             else
             {
                 conversationCount++;
-                if (!GameStates.States[GameStates.DOG])
-                {
-                    if (conversationCount >= 1)
-                    {
-                        GameStates.States[GameStates.DOG] = true;
-                        EndDialogue();
-                    }
-                    else
-                    {
-                        manager.DisplayNextSentence(objectiveDialogue[conversationCount]);
-                    }
-                }
-                else
-                {
-                    if (conversationCount > 0)
-                    {
-                        EndDialogue();
-                    }
-                    else
-                    {
-                        manager.DisplayNextSentence(completedDialogue[conversationCount]);
-                    }
-                }
+                GameStates.States[GameStates.DOG] = true;
+                EndDialogue();
             }
         }
     }
 
     public void EndDialogue(bool isStatic = false)
     {
+        conversationEnsues = false;
+        demonDog.agro4Activated = false;
         manager.EndDialogue();
     }
 }

@@ -25,6 +25,7 @@ public class DemonDog : MonoBehaviour
     // Spine.AnimationState and Spine.Skeleton are not Unity-serialized objects. You will not see them as fields in the inspector.
     public Spine.AnimationState spineAnimationState;
     public Spine.Skeleton skeleton;
+    public bool agro4Activated = false;
 
 
     // Use this for initialization
@@ -76,6 +77,7 @@ public class DemonDog : MonoBehaviour
             else if (State == "agro4")
             {
                 digChance = 1;
+                agro4Activated = true;
                 dialogue.StartDialogue(gameObject);
                 PitTrigger.GetComponent<Collider2D>().enabled = true;
             }

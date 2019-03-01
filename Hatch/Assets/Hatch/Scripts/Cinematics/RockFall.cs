@@ -9,15 +9,12 @@ public class RockFall : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        Rocks = new List<Rigidbody2D>();
 		foreach(Rigidbody2D rock in gameObject.GetComponentsInChildren<Rigidbody2D>()) {
 			Rocks.Add(rock);
 		}
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
     public void RockSceneStart(float duration = 20f)
     {
         this.StartCoroutine(RockStart(duration));

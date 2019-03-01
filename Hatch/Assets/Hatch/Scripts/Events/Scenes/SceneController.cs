@@ -50,13 +50,6 @@ namespace Assets.Hatch.Scripts.Events.Scenes
             }
             action.Invoke();
 
-            // Delete Me
-            Player.transform.position = PlayerSpawn.transform.position;
-            var beginGameLR = LevelRequirements.PresetLevelRequirements["DogDomain"];
-            Camera.main.GetComponent<CameraController>().transform.position = new Vector3(PlayerSpawn.transform.position.x, PlayerSpawn.transform.position.y, -10);
-
-            // End Delete Me
-
             yield break;
         }
     }

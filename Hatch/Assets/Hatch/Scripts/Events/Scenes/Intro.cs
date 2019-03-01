@@ -104,6 +104,7 @@ namespace Assets.Hatch.Scripts.Events.Scenes
         [SceneEvent]
         public void OpenBubble()
         {
+            DreamBubble.SetActive(true);
             DreamBubble.GetComponent<DreamBubbleAnimationController>().OpenBubbleStart();
         }
         [SceneEvent]
