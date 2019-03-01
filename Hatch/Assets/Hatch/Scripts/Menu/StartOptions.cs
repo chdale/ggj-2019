@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -22,6 +23,8 @@ public class StartOptions : MonoBehaviour {
 	private float fastFadeIn = .01f;									//Very short fade time (10 milliseconds) to start playing music immediately without a click/glitch
 	private ShowPanels showPanels;										//Reference to ShowPanels script on UI GameObject, to show and hide panels
     private CanvasGroup menuCanvasGroup;
+    [SerializeField]
+    private List<ParticleSystem> particles;
 
 
     void Awake()
@@ -41,6 +44,10 @@ public class StartOptions : MonoBehaviour {
 
 	public void StartButtonClicked()
 	{
+	    foreach (var particle in particles)
+	    {
+            particle.Stop();
+	    }
 		//If changeMusicOnStart is true, fade out volume of music group of AudioMixer by calling FadeDown function of PlayMusic
 		//To change fade time, change length of animation "FadeToColor"
 		if (menuSettingsData.musicLoopToChangeTo != null) 

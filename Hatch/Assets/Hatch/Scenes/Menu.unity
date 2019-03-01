@@ -275,7 +275,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 2b490ecbcdf3aee45b3412cc52d9f759, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cee5594e63895e243bb7e26f99d202ed, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -390,7 +390,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: b1ba8059e58b41b4cb99dbf026947801, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7f3aee52f43def144b25f4c51c46bfd9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -460,7 +460,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 48e9e8a48e9559c40929e54116e52aca, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 03004fb304edd5c4fa1209bbbce3f961, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1112,7 +1112,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1978618504
+  randomSeed: 556288188
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -4455,9 +4455,9 @@ AudioSource:
   m_GameObject: {fileID: 658021269}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243269797553075308, guid: f061345c18e409a4f81233cfa38f26d6,
+  OutputAudioMixerGroup: {fileID: 243269797553075308, guid: ae45bab46163c11439b75f80e95a969f,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: b0ca76c36586fe34f859129d3abaee72, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f7f1714ac27cfd7469e8546d5fc4e63e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.56
   m_Pitch: 1
@@ -4686,7 +4686,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 98f5686fe00d1f043ac393637ac3fdad, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b2e57ba12c1421c4baa8d33bbd9cc4b2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4895,7 +4895,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: f5910973c6ca15e4c9db62e1dce058aa,
+    m_HighlightedSprite: {fileID: 21300000, guid: c9e4a00a65f75bd489423cf88b1366bd,
       type: 3}
     m_PressedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -4941,7 +4941,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 42445e99906b70449b38e150c62f5f70, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 07b743584d2751e47970c7c3d2097857, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4997,9 +4997,9 @@ AudioSource:
   m_GameObject: {fileID: 990448475}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243269797553075308, guid: f061345c18e409a4f81233cfa38f26d6,
+  OutputAudioMixerGroup: {fileID: 243269797553075308, guid: ae45bab46163c11439b75f80e95a969f,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 508f2388ddfe8234e8b345489ca395d3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: efd74c712c88d9e409f44e96d231c873, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.57
   m_Pitch: 1
@@ -5198,10 +5198,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1114301374}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d348683a0eae5544eb400b48ee78c4bf, type: 3}
+  m_Script: {fileID: 11500000, guid: a12e253ae6ddca042b67304569e27fd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flexibleUIData: {fileID: 11400000, guid: 51e3ebb83b221a541a846ea79d23a45e, type: 2}
+  flexibleUIData: {fileID: 11400000, guid: 2493859e1843f9f438f9975c0876c4db, type: 2}
 --- !u!114 &1114301377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5210,7 +5210,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1114301374}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dc72aaa3a5de3646a998d9664ee8742, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ae015be66af55943b46095fd2c7b4b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   firstSelectedObject: {fileID: 1726102474}
@@ -5233,10 +5233,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1114301374}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 564c32dfbfc5cd445a8178b5a0c3385e, type: 3}
+  m_Script: {fileID: 11500000, guid: baf8c7fcf8809704486d7175b096f221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMixer: {fileID: 24100000, guid: f061345c18e409a4f81233cfa38f26d6, type: 2}
+  mainMixer: {fileID: 24100000, guid: ae45bab46163c11439b75f80e95a969f, type: 2}
 --- !u!114 &1114301380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5414,7 +5414,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -484146179
+  randomSeed: -645050748
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -8773,7 +8773,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 21e4565a7810bbc4da367dd598eef354, type: 3}
+  m_Sprite: {fileID: 21300000, guid: df52810592bad67458dd2f9039057921, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8807,7 +8807,7 @@ Animator:
   m_GameObject: {fileID: 1185760666}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3217e013140e0f94f8addc2487e36ac5, type: 2}
+  m_Controller: {fileID: 9100000, guid: e68b33adaccee6844a3237182632d6fa, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -8842,10 +8842,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1204604203}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77d932a19d25ce94ca8485d0073699db, type: 3}
+  m_Script: {fileID: 11500000, guid: db59b3f32a61b904cbefa80c0cd9f9a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flexibleUIData: {fileID: 11400000, guid: 51e3ebb83b221a541a846ea79d23a45e, type: 2}
+  flexibleUIData: {fileID: 11400000, guid: 2493859e1843f9f438f9975c0876c4db, type: 2}
 --- !u!222 &1204604205
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8999,7 +8999,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 5c5c39741011e6b429cf6134e7278484,
+    m_HighlightedSprite: {fileID: 21300000, guid: daae084844233dc4290285487e69c8c7,
       type: 3}
     m_PressedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -9045,7 +9045,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e01b49473354cb54e8bbf1bddb76580f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 747e6a38214835340be76235317b80e4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9161,7 +9161,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 70958c3aca2e3d541aa1c11f7d6fff78, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 415a31f882b210b48b7eb172ddf19844, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9206,10 +9206,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1417764305}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d348683a0eae5544eb400b48ee78c4bf, type: 3}
+  m_Script: {fileID: 11500000, guid: a12e253ae6ddca042b67304569e27fd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flexibleUIData: {fileID: 11400000, guid: 51e3ebb83b221a541a846ea79d23a45e, type: 2}
+  flexibleUIData: {fileID: 11400000, guid: 2493859e1843f9f438f9975c0876c4db, type: 2}
 --- !u!114 &1417764307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9219,7 +9219,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1417764305}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dc72aaa3a5de3646a998d9664ee8742, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ae015be66af55943b46095fd2c7b4b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   firstSelectedObject: {fileID: 1204604203}
@@ -9244,10 +9244,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1417764305}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 564c32dfbfc5cd445a8178b5a0c3385e, type: 3}
+  m_Script: {fileID: 11500000, guid: baf8c7fcf8809704486d7175b096f221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMixer: {fileID: 24100000, guid: f061345c18e409a4f81233cfa38f26d6, type: 2}
+  mainMixer: {fileID: 24100000, guid: ae45bab46163c11439b75f80e95a969f, type: 2}
 --- !u!114 &1417764310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9268,7 +9268,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 21e4565a7810bbc4da367dd598eef354, type: 3}
+  m_Sprite: {fileID: 21300000, guid: df52810592bad67458dd2f9039057921, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9361,7 +9361,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 3c7376bc605a44e48bac17978e9a84ec, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 67ae0b1aabbde454b89f6b899312e612, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9401,7 +9401,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 1a1d1a20909932c468bec8611e206767,
+    m_HighlightedSprite: {fileID: 21300000, guid: d53adf91cd613ba41b2cb4c98589b8cb,
       type: 3}
     m_PressedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -9521,12 +9521,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1517850083}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77d932a19d25ce94ca8485d0073699db, type: 3}
+  m_Script: {fileID: 11500000, guid: db59b3f32a61b904cbefa80c0cd9f9a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flexibleUIData: {fileID: 11400000, guid: 51e3ebb83b221a541a846ea79d23a45e, type: 2}
+  flexibleUIData: {fileID: 11400000, guid: 2493859e1843f9f438f9975c0876c4db, type: 2}
 --- !u!114 &1517850086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9651,7 +9651,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: b1ba8059e58b41b4cb99dbf026947801, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7f3aee52f43def144b25f4c51c46bfd9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9693,7 +9693,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1726102474}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d98388cd668e01a4babc94f0ba17e558, type: 3}
+  m_Script: {fileID: 11500000, guid: 0b822ddc4d23c1f4a8a4d31eebb501da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   optionsPanel: {fileID: 1417764305}
@@ -9791,10 +9791,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1726102474}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b95a59b42e44ca0428ede2233bdcd017, type: 3}
+  m_Script: {fileID: 11500000, guid: c06bf4a393c59b94a9cb35090a5cdcbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuSettingsData: {fileID: 11400000, guid: 5a92008d7b0540a4190328b12a1029f3, type: 2}
+  menuSettingsData: {fileID: 11400000, guid: 29e217410b3a4f64baf49dfc1a166ca6, type: 2}
   sceneToStart: 1
   changeScenes: 1
   changeMusicOnStart: 0
@@ -9802,6 +9802,9 @@ MonoBehaviour:
   fadeImage: {fileID: 386650295}
   inMainMenu: 1
   fadeAlphaAnimationClip: {fileID: 0}
+  particles:
+  - {fileID: 1170643443}
+  - {fileID: 646977988}
 --- !u!225 &1726102481
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -9821,7 +9824,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1726102474}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79d8c157f8eef62499ae1b06894756de, type: 3}
+  m_Script: {fileID: 11500000, guid: 36490f2a96c38394a99eb91926de68a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1726102483
@@ -9832,15 +9835,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1726102474}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9aff196ae92225498afa36ec0f128d1, type: 3}
+  m_Script: {fileID: 11500000, guid: b16a6032b9c8bf249928a1341f3ff2a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuSettings: {fileID: 11400000, guid: 5a92008d7b0540a4190328b12a1029f3, type: 2}
-  titleMusic: {fileID: 8300000, guid: d955c5fd52245fe4382d29b8bfb3302e, type: 3}
-  mainMusic: {fileID: 8300000, guid: d955c5fd52245fe4382d29b8bfb3302e, type: 3}
-  volumeDown: {fileID: 245623194241545844, guid: f061345c18e409a4f81233cfa38f26d6,
+  menuSettings: {fileID: 11400000, guid: 29e217410b3a4f64baf49dfc1a166ca6, type: 2}
+  titleMusic: {fileID: 8300000, guid: a028ce5a2d1daf048809b11ffdb23e12, type: 3}
+  mainMusic: {fileID: 8300000, guid: a028ce5a2d1daf048809b11ffdb23e12, type: 3}
+  volumeDown: {fileID: 245623194241545844, guid: ae45bab46163c11439b75f80e95a969f,
     type: 2}
-  volumeUp: {fileID: 24500006, guid: f061345c18e409a4f81233cfa38f26d6, type: 2}
+  volumeUp: {fileID: 24500006, guid: ae45bab46163c11439b75f80e95a969f, type: 2}
 --- !u!82 &1726102484
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9849,9 +9852,9 @@ AudioSource:
   m_GameObject: {fileID: 1726102474}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243129466008385338, guid: f061345c18e409a4f81233cfa38f26d6,
+  OutputAudioMixerGroup: {fileID: 243129466008385338, guid: ae45bab46163c11439b75f80e95a969f,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: d955c5fd52245fe4382d29b8bfb3302e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a028ce5a2d1daf048809b11ffdb23e12, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -9930,7 +9933,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1726102474}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe64d780bbf0bbd40a3c2520c8dcb031, type: 3}
+  m_Script: {fileID: 11500000, guid: 672c4227c6832b046beca5e9be0ea8ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1726102487
@@ -9941,7 +9944,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1726102474}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f386d576d5658774a95b47db3ff1ab8c, type: 3}
+  m_Script: {fileID: 11500000, guid: 2973dc2863574fe458ef8c8871d1f296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1804674064
@@ -10021,9 +10024,9 @@ AudioSource:
   m_GameObject: {fileID: 2083597680}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243269797553075308, guid: f061345c18e409a4f81233cfa38f26d6,
+  OutputAudioMixerGroup: {fileID: 243269797553075308, guid: ae45bab46163c11439b75f80e95a969f,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 4df9a5edd8925c14db622c659d2c72cb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 609565af306df0c4c83612c55010f402, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.59
   m_Pitch: 1

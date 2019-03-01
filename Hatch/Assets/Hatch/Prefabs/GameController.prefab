@@ -100,3 +100,4 @@ MonoBehaviour:
       cameraRightThreshold: 0
       cameraSize: 10
   isPhotoActive: 0
+  isInDialogue: 0

@@ -36,6 +36,7 @@ public class GameController : MonoBehaviour
     public static event ClearFogWallAction ClearFogWall;
 
     public bool isPhotoActive = false;
+    public bool isInDialogue = false;
 
     private void Start()
     {
@@ -104,6 +105,7 @@ public class GameController : MonoBehaviour
             CancelDialogue();
             InteractActiveEvent();
             StartCharacter();
+            isInDialogue = false;
         }
     }
 
@@ -130,6 +132,8 @@ public class GameController : MonoBehaviour
         {
             EndDialogue();
             StartCharacter();
+            isInDialogue = false;
+
         }
     }
 
@@ -156,6 +160,7 @@ public class GameController : MonoBehaviour
             StartDialogue(dialogueTarget, isStatic);
             InteractInactiveEvent();
             StopCharacter();
+            isInDialogue = true;
         }
     }
     public void EndDialogueEvent(GameObject dialogueTarget, bool isStatic = false)
@@ -165,6 +170,7 @@ public class GameController : MonoBehaviour
             StartDialogue(dialogueTarget, isStatic);
             InteractInactiveEvent();
             StopCharacter();
+            isInDialogue = false;
         }
     }
 }
